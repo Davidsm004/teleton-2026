@@ -80,9 +80,40 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 .btn-sec { display: flex; align-items: center; justify-content: center; gap: .4rem; width: 100%; box-sizing: border-box; font-family: var(--f-titulo); font-size: .95rem; text-decoration: none; padding: .7rem 1rem; border-radius: 999px; border: 2px solid var(--vino); color: var(--vino); background: #fff; cursor: pointer; }
 .btn-sec:hover { background: var(--vino); color: #fff; }
 .btn-sec:focus-visible { outline: 3px solid #ffe08a; outline-offset: 2px; }
+.bell { position: relative; }
+.nt-badge { position: absolute; top: -.45rem; right: -.45rem; min-width: 1.25rem; height: 1.25rem; padding: 0 .3rem; border-radius: 999px; background: var(--naranja); color: #fff; font-family: var(--f-titulo); font-size: .7rem; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px #fff; }
+.bell.ring > span:first-child { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) { .bell.ring > span:first-child { animation: swing 1s ease-in-out 2; transform-origin: 50% 0; } }
+@keyframes swing { 0%,100% { transform: rotate(0); } 20% { transform: rotate(18deg); } 40% { transform: rotate(-14deg); } 60% { transform: rotate(9deg); } 80% { transform: rotate(-5deg); } }
+.nt-overlay { position: fixed; inset: 0; background: rgba(34,0,28,.35); z-index: 60; }
+.nt-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(100%, 27rem); z-index: 61; background: #fff; box-shadow: -18px 0 50px rgba(90,0,73,.25); display: flex; flex-direction: column; gap: .7rem; padding: calc(env(safe-area-inset-top, 0px) + 1rem) 1rem calc(env(safe-area-inset-bottom, 0px) + 1rem); box-sizing: border-box; }
+.nt-head { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.nt-head h2 { margin: 0; font-family: var(--f-titulo); font-weight: 900; font-size: 1.3rem; background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nt-x { border: 0; background: var(--crema); color: var(--vino); width: 2.2rem; height: 2.2rem; border-radius: 50%; font-size: 1rem; cursor: pointer; }
+.nt-x:focus-visible { outline: 3px solid #ffe08a; }
+.nt-sub { margin: 0; color: var(--gris); font-style: italic; font-size: .88rem; }
+.nt-sound { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; background: var(--crema); border-radius: 12px; padding: .55rem .7rem; }
+.nt-sw { display: inline-flex; gap: .45rem; align-items: center; font-family: var(--f-titulo); font-size: .82rem; cursor: pointer; }
+.nt-sw input { width: 1.05rem; height: 1.05rem; accent-color: var(--vino); }
+.nt-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; display: grid; gap: .65rem; align-content: start; flex: 1; }
+.nt-item { border: 1px solid var(--linea); border-left: 4px solid var(--vino); border-radius: 12px; padding: .7rem .8rem; display: grid; gap: .35rem; }
+.nt-item.new { border-left-color: var(--naranja); background: #fff8f2; }
+.nt-meta { display: flex; justify-content: space-between; gap: .5rem; font-size: .75rem; color: var(--gris); }
+.nt-meta b { font-family: var(--f-titulo); color: var(--tinta); font-weight: 400; }
+.nt-tot { font-family: var(--f-titulo); font-size: .9rem; color: var(--vino-osc); }
+.nt-tot .up { color: var(--color-ok); }
+.nt-item ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .15rem; font-size: .85rem; }
+.nt-empty { color: var(--gris); font-style: italic; }
+.nt-toasts { position: fixed; right: 1rem; bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem); z-index: 70; display: grid; gap: .6rem; width: min(calc(100% - 2rem), 24rem); pointer-events: none; }
+.nt-toast { pointer-events: auto; background: #fff; border-radius: 16px; padding: .8rem .9rem; box-shadow: 0 16px 40px rgba(90,0,73,.28); border: 2px solid transparent; background-image: linear-gradient(#fff, #fff), var(--degradado); background-origin: border-box; background-clip: padding-box, border-box; display: grid; gap: .3rem; cursor: pointer; }
+.nt-toast b { font-family: var(--f-titulo); }
+.nt-toast .tt { display: flex; gap: .45rem; align-items: center; font-family: var(--f-titulo); color: var(--vino); font-size: .9rem; }
+.nt-toast p { margin: 0; font-size: .85rem; color: var(--tinta); }
+@media (prefers-reduced-motion: no-preference) { .nt-toast { animation: tin .35s ease-out; } }
+@keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T00:28:56-06:00", "fecha": "18 oct 2026, 00:28", "iter": 600000, "pepper": "7370e0d17dcf0ef6", "iv": "C5MXSbgXPXkmm/I1", "ct": "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", "users": [{"id": "8081f4e6502fd878e431d3a96e3495cc31ffc2026729de7a72d8bcd37a2a9004", "salt": "HNDFcnthAHJY5qz+evKo6w==", "iv": "1T5Du2Qp+tWgRKIN", "wrapped": "4SNRwTWmeI0SZwMEyjIVjuw3X9OURE2u6DVcK3Vh0nXIUUV01RSxrSK1vbdIWcfw", "giv": "JrbHCz3BmQHUngH0", "gw": "aXpB1hku8tQ8ZnY3eOsICBFO5LOfsxXMUyMcR50QNdYJYsPs/o5LCossdmfP2JWst4qGS48BdYtAdtdJBTyQAkl10Ne3oinGX+sTyrNtAkQibvlO3n77RxqtIEOV2i0p67wprGQAH/1m7aJTwg=="}, {"id": "d06a00ab0f7317d9d8c38a9e98ace6cfd63fbd207835d5246b78cbcbd43b240d", "salt": "CiPTd5vRSygnJDAVaQz7cw==", "iv": "2+G+zokRFCdZ1qdP", "wrapped": "KEpsUf1Yg89VSqtPavUuv+YIeNtWEgn+6LrKTTSeZZidoHjfa2uYaVOt67joEgwz", "giv": "zuQHflPkxTh7y6dZ", "gw": "JMMZpL7FhGoKDiB1PhZ3eoNKwvXKgghHL21SfjxGekU+7rw2HoHuCwrmto9zMAeWw0f77HxY8ZgW5xpi6uB7HGiOzGIv02sVQ24Ds4sSOzDPsjEiGpVBOo++yuGC3U96xMNi5Hh4q2J1FATf1Q=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T00:28:56-06:00", "fecha": "18 oct 2026, 00:28", "iter": 600000, "pepper": "beb51e7f8066031b", "iv": "J8gAX/BOBZ2w89YY", "ct": "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", "users": [{"id": "e77071f97e38bcd4480ef790ea1da7ad24aef6e590a67a41dc6f33eed835a502", "salt": "njYw/sO+GL1WbeM7YWWjaA==", "iv": "IeuNSNI3+ts8OFW1", "wrapped": "0MeAVMa/GZK+70j+0Yt5ThH0tl2ELmxw9PbcF1+Epsfc2QgcZinJTsOFi9N/BatF", "giv": "fzj1G1EwDFmtG9zU", "gw": "C+qXp1Ho2qo0e3iyfa75mJ+RpfWY/3w19wOvUf+x+uL2bLqhLZMH/3HsbI9RxSiZGTf1Xwn3nbM3i1Rc9qMHCQ1umDOQ3vX5gcnGEb+83gf5FP2INDwuSq5AdW6D99fgp+uw+YfxPhs0+OOlpQ=="}, {"id": "505c42ec3203ea5f4c78429b14eee7168e27f630033806b8462fad4a6c9427b6", "salt": "7TPCUcCFyGz78B+5lUmS1A==", "iv": "UCFqlqmxTG4Heitg", "wrapped": "z6FOuj0hj0VBDKu/+2kEu/6/jesFSKqFTqLjx5UZCUxabdYY7tZ6EAM7RH3dmYr8", "giv": "e6URBvcN+Yz35GUR", "gw": "5keHVj+AG3AS6PsSOLkSl7pThCe28iqicgxLKjS2vjifCiOMxl9+G3CEq/+SKM5ACzygv3K6ilmCR2PwxQ7Epv4b7HVzlE2GfEEYZP5Ieem8oEh/Y+Kwfx/ZOSusjA6JiJE+EK026LZPOmoWng=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -129,7 +160,7 @@ window.TL = (() => {
     if (!hasStore()) return null;
     const h = { Accept: 'application/vnd.github+json' };
     if (gh) h.Authorization = 'Bearer ' + gh;
-    const r = await fetch(url() + '?ref=' + encodeURIComponent(ST().branch || 'datos'), { headers: h, cache: 'no-cache' });
+    const r = await fetch(url() + '?ref=' + encodeURIComponent(ST().branch || 'datos') + '&_=' + Date.now(), { headers: h, cache: 'no-store' });
     if (r.status === 404) return { pkg: null, sha: null };
     if (!r.ok) throw new Error('lectura_' + r.status);
     const j = await r.json();
@@ -171,18 +202,70 @@ window.TL = (() => {
   }
   // ---------- Día del evento ----------
   const act = (a) => (a || []).filter((r) => !r.del);
-  const col = (v) => '₡' + Math.round(Number(v) || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  const parseCol = (s) => { const t = String(s).replace(/[^\d,]/g, '').replace(',', '.'); if (t === '') return 0; const n = Number(t); return isFinite(n) ? Math.round(n) : NaN; };
+  // Formato único de montos: ₡1,340,899.99 (coma de miles, punto decimal).
+  const FMT2 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const FMT0 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+  const r2 = (v) => Math.round((Number(v) || 0) * 100) / 100;
+  const col = (v) => { const n = r2(v); return (n < 0 ? '−' : '') + '₡' + FMT2.format(Math.abs(n)); };
+  const colInt = (v) => '₡' + FMT0.format(Math.round(Number(v) || 0));
+  const num2 = (v) => FMT2.format(r2(v));
+  // Lee montos escritos como 1,340,899.99 · 1340899.99 · 1.340.899,99 · ₡ 1 340 899
+  const parseCol = (s) => {
+    let t = String(s).replace(/[₡\s\u00a0]/g, '');
+    if (t === '') return 0;
+    if (!/^[\d.,]+$/.test(t)) return NaN;
+    const lc = t.lastIndexOf(','), ld = t.lastIndexOf('.');
+    if (lc > -1 && ld > -1) { t = lc > ld ? t.replace(/\./g, '').replace(',', '.') : t.replace(/,/g, ''); }
+    else if (lc > -1) { const parts = t.split(','); t = (parts.length > 2 || parts[parts.length - 1].length === 3) ? t.replace(/,/g, '') : t.replace(',', '.'); }
+    else if (ld > -1) { const parts = t.split('.'); if (parts.length > 2 || (parts.length === 2 && parts[1].length === 3 && parts[0].length <= 3 && parts[0] !== '0')) t = t.replace(/\./g, ''); }
+    const n = Number(t); return isFinite(n) ? r2(n) : NaN;
+  };
+  // Pizarra registrada: cada pizarra tiene bloque y líneas sin límite (tipo donativo / sinpe / otro).
+  // Convierte formatos anteriores (fotos acumuladas o montos fijos) a líneas.
+  function pizarrasDe(rows) {
+    const all = (rows || []).slice().sort((a, b) => (a.numero || 0) - (b.numero || 0));
+    let pe = 0, ps = 0;
+    return all.map((p) => {
+      if (Array.isArray(p.lineas)) return p;
+      let don, sin, otros = [];
+      if (p.donativos != null || p.otros != null) { don = Number(p.donativos) || 0; sin = Number(p.sinpe) || 0; otros = p.otros || []; }
+      else { const e = Number(p.empresas) || 0, sp = Number(p.sinpe) || 0; don = r2(e - pe); sin = r2(sp - ps); if (!p.del) { pe = e; ps = sp; } }
+      const lineas = [];
+      if (don) lineas.push({ id: p.id + '-d', tipo: 'donativo', concepto: 'Donativos', monto: don });
+      if (sin) lineas.push({ id: p.id + '-s', tipo: 'sinpe', concepto: 'SINPE', monto: sin });
+      otros.forEach((o, i) => lineas.push({ id: p.id + '-o' + i, tipo: 'otro', concepto: o.concepto || 'Otros', monto: Number(o.monto) || 0 }));
+      return { id: p.id, numero: p.numero, bloque_id: p.bloque_id || '', hora: p.hora, lineas, nota: p.nota || '', t: p.t, del: p.del };
+    });
+  }
+  const pzSum = (p, tipo) => r2((p.lineas || []).filter((l) => !tipo || l.tipo === tipo).reduce((s, l) => s + (Number(l.monto) || 0), 0));
+  const pzTotal = (p) => pzSum(p);
+  const TIPOS = { donativo: 'Donativo', sinpe: 'SINPE', otro: 'Otro' };
   function evento(d) {
     const bloques = act(d.evento_bloques).sort((a, b) => (a.orden || 0) - (b.orden || 0));
     const don = act(d.evento_donativos), sin = act(d.evento_sinpe);
     const cfg = act(d.evento_config)[0] || { previo: 0 };
-    const porBloque = bloques.map((bq) => { const rows = don.filter((r) => r.bloque_id === bq.id); return { ...bq, rows, total: rows.reduce((s, r) => s + (Number(r.monto) || 0), 0) }; });
-    const empresas = don.reduce((s, r) => s + (Number(r.monto) || 0), 0);
-    const sinpe = sin.reduce((s, r) => s + (Number(r.monto) || 0), 0);
-    const previo = Number(cfg.previo) || 0;
-    const pizarras = act(d.evento_pizarras).sort((a, b) => (a.numero || 0) - (b.numero || 0));
-    return { bloques: porBloque, donativos: don, sinpe: sin.sort((a, b) => (a.reporte || 0) - (b.reporte || 0)), cfg, empresas, sinpeTotal: sinpe, previo, total: empresas + sinpe + previo, pizarras };
+    const empresas = r2(don.reduce((s, r) => s + (Number(r.monto) || 0), 0));
+    const sinpe = r2(sin.reduce((s, r) => s + (Number(r.monto) || 0), 0));
+    const previo = r2(Number(cfg.previo) || 0);
+    const bname = new Map(bloques.map((b) => [b.id, b.nombre]));
+    let acc = previo;
+    const pizarras = act(pizarrasDe(d.evento_pizarras)).sort((a, b) => (a.numero || 0) - (b.numero || 0)).map((p) => {
+      const total = pzSum(p); acc = r2(acc + total);
+      return { ...p, total, don: pzSum(p, 'donativo'), sin: pzSum(p, 'sinpe'), otr: pzSum(p, 'otro'), acumulado: acc, bloque: bname.get(p.bloque_id) || (p.bloque_id ? 'Bloque eliminado' : 'Sin bloque') };
+    });
+    const manual = r2(pizarras.reduce((s, p) => s + p.total, 0));
+    const mDon = r2(pizarras.reduce((s, p) => s + p.don, 0)), mSin = r2(pizarras.reduce((s, p) => s + p.sin, 0)), mOtr = r2(pizarras.reduce((s, p) => s + p.otr, 0));
+    const porBloque = bloques.map((bq) => {
+      const rows = don.filter((r) => r.bloque_id === bq.id);
+      const auto = r2(rows.reduce((s, r) => s + (Number(r.monto) || 0), 0));
+      const pzs = pizarras.filter((p) => p.bloque_id === bq.id);
+      return { ...bq, rows, total: auto, auto, manualDon: r2(pzs.reduce((s, p) => s + p.don, 0)), manual: r2(pzs.reduce((s, p) => s + p.total, 0)), pizarras: pzs.length };
+    });
+    const auto = r2(empresas + sinpe);
+    return { bloques: porBloque, donativos: don, sinpe: sin.sort((a, b) => (a.reporte || 0) - (b.reporte || 0)), cfg, empresas, sinpeTotal: sinpe, previo,
+      pizarras, manual, mDon, mSin, mOtr, auto,
+      total: r2(previo + manual), totalAuto: r2(previo + auto), dif: r2(manual - auto), cuadra: Math.abs(manual - auto) < 0.005,
+      pendDon: r2(empresas - mDon), pendSinpe: r2(sinpe - mSin), enPizarras: manual, registrado: auto };
   }
   // Combina dos versiones de la lista (fila por id, gana la más reciente; las borradas quedan marcadas).
   function mergeRows(a, b) {
@@ -206,11 +289,12 @@ window.TL = (() => {
     const E = evento(d);
     const wb = X.utils.book_new();
     const add = (name, rows, cols) => { const ws = X.utils.json_to_sheet(rows, { header: cols }); ws['!cols'] = cols.map((c) => ({ wch: Math.max(12, c.length + 2, ...rows.map((r) => String(r[c] ?? '').length + 2)) })); X.utils.book_append_sheet(wb, ws, name); };
-    add('Resumen', [{ Concepto: 'Total pizarra', Monto: E.total }, { Concepto: 'Donativos de empresas', Monto: E.empresas }, { Concepto: 'Cortes SINPE', Monto: E.sinpeTotal }, { Concepto: 'Monto previo al evento', Monto: E.previo }], ['Concepto', 'Monto']);
+    add('Resumen', [{ Concepto: 'Total pizarra registrada (con monto previo)', Monto: E.total }, { Concepto: 'Total pizarra automática (con monto previo)', Monto: E.totalAuto }, { Concepto: 'Diferencia registrada - automática', Monto: E.dif }, { Concepto: 'Monto previo al evento', Monto: E.previo }], ['Concepto', 'Monto']);
     add('Bloques', E.bloques.map((b) => ({ ID: b.id, Orden: b.orden, Bloque: b.nombre, Total: b.total })), ['ID', 'Orden', 'Bloque', 'Total']);
     add('Donativos', E.bloques.flatMap((b) => b.rows.map((r) => ({ ID: r.id, Bloque: b.nombre, Empresa: r.empresa, Monto: Number(r.monto) || 0, Nota: r.nota || '' }))), ['ID', 'Bloque', 'Empresa', 'Monto', 'Nota']);
-    add('SINPE', E.sinpe.map((r) => ({ ID: r.id, Reporte: r.reporte, Hora: r.hora, Monto: Number(r.monto) || 0, Nota: r.nota || '' })), ['ID', 'Reporte', 'Hora', 'Monto', 'Nota']);
-    add('Pizarras', E.pizarras.map((p) => ({ ID: p.id, Pizarra: p.numero, Marcada: horaCR(p.hora), Empresas: p.empresas, SINPE: p.sinpe, Previo: p.previo, Total: p.total, Nota: p.nota || '' })), ['ID', 'Pizarra', 'Marcada', 'Empresas', 'SINPE', 'Previo', 'Total', 'Nota']);
+    add('SINPE', E.sinpe.map((r) => ({ ID: r.id, Reporte: r.reporte, Fecha: r.fecha ? horaCR(r.fecha) : (r.hora || ''), Monto: Number(r.monto) || 0, Nota: r.nota || '' })), ['ID', 'Reporte', 'Fecha', 'Monto', 'Nota']);
+    add('Pizarras', E.pizarras.flatMap((p) => (p.lineas.length ? p.lineas : [{ tipo: '', concepto: '', monto: 0 }]).map((l) => ({ ID: p.id, Pizarra: p.numero, Bloque: p.bloque, Hora: horaCR(p.hora), Tipo: TIPOS[l.tipo] || '', Concepto: l.concepto || '', Monto: Number(l.monto) || 0, Nota: p.nota || '' }))), ['ID', 'Pizarra', 'Bloque', 'Hora', 'Tipo', 'Concepto', 'Monto', 'Nota']);
+    add('Comparativa', [{ Concepto: 'Donativos', Automatica: E.empresas, Registrada: E.mDon, Diferencia: r2(E.mDon - E.empresas) }, { Concepto: 'SINPE', Automatica: E.sinpeTotal, Registrada: E.mSin, Diferencia: r2(E.mSin - E.sinpeTotal) }, { Concepto: 'Otros', Automatica: 0, Registrada: E.mOtr, Diferencia: E.mOtr }, { Concepto: 'Total', Automatica: E.auto, Registrada: E.manual, Diferencia: E.dif }], ['Concepto', 'Automatica', 'Registrada', 'Diferencia']);
     X.writeFile(wb, 'Teleton-2026-pizarra.xlsx');
   }
   // Lee el Excel y devuelve las listas del evento: actualiza por ID, agrega lo nuevo y marca como borrado lo que ya no está.
@@ -218,11 +302,11 @@ window.TL = (() => {
     const X = await loadXlsx();
     const wb = X.read(await file.arrayBuffer());
     const sheet = (n) => { const k = wb.SheetNames.find((s) => s.trim().toLowerCase() === n.toLowerCase()); return k ? X.utils.sheet_to_json(wb.Sheets[k], { defval: '' }) : null; };
-    const num = (v) => typeof v === 'number' ? Math.round(v) : parseCol(v);
+    const num = (v) => typeof v === 'number' ? r2(v) : parseCol(v);
     const t = nowIso();
     const out = {}; const errs = [];
-    const bq = sheet('Bloques'), dn = sheet('Donativos'), sp = sheet('SINPE');
-    if (!bq && !dn && !sp) throw new Error('El archivo no tiene las hojas Bloques, Donativos o SINPE.');
+    const bq = sheet('Bloques'), dn = sheet('Donativos'), sp = sheet('SINPE'), pzs = sheet('Pizarras');
+    if (!bq && !dn && !sp && !pzs) throw new Error('El archivo no tiene las hojas Bloques, Donativos, SINPE o Pizarras.');
     let bloques = act(d.evento_bloques).map((r) => ({ ...r }));
     if (bq || dn) {
       const keep = new Set(); const byName = new Map();
@@ -258,17 +342,79 @@ window.TL = (() => {
         const m = num(r.Monto); if (isNaN(m)) { errs.push('SINPE fila ' + (i + 2) + ': monto inválido'); return; }
         let x = rows.find((y) => y.id === String(r.ID).trim());
         if (!x) { x = { id: uid(), t }; rows.push(x); }
-        const hora = typeof r.Hora === 'number' ? (() => { const mins = Math.round(r.Hora * 1440) % 1440; return String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0'); })() : String(r.Hora || '');
+        const fv = r.Fecha !== undefined ? r.Fecha : r.Hora;
+        let fecha = x.fecha || '';
+        if (typeof fv === 'number' && fv > 1000) fecha = new Date(Math.round((fv - 25569) * 86400000) + 6 * 3600000).toISOString();
+        else if (fv instanceof Date) fecha = new Date(fv.getTime() + 6 * 3600000).toISOString();
+        else if (typeof fv === 'string' && /^\d{4}-\d{2}-\d{2}/.test(fv)) { const d = new Date(fv.length <= 16 ? fv.replace(' ', 'T') + ':00-06:00' : fv); if (!isNaN(d)) fecha = d.toISOString(); }
+        if (!fecha) fecha = nowIso();
+        const hora = new Date(new Date(fecha).getTime() - 6 * 3600000).toISOString().slice(11, 16);
         const rep = Number(r.Reporte) || rows.length;
-        if (x.reporte !== rep || x.hora !== hora || Number(x.monto) !== m || (x.nota || '') !== String(r.Nota || '')) Object.assign(x, { reporte: rep, hora, monto: m, nota: String(r.Nota || ''), t });
+        if (x.reporte !== rep || x.fecha !== fecha || Number(x.monto) !== m || (x.nota || '') !== String(r.Nota || '')) Object.assign(x, { reporte: rep, fecha, hora, monto: m, nota: String(r.Nota || ''), t });
         seen.add(x.id);
       });
       rows.forEach((x) => { if (!seen.has(x.id)) { x.del = true; x.t = t; } });
       out.evento_sinpe = rows;
     }
+    if (pzs) {
+      const exist = new Map(act(pizarrasDe(d.evento_pizarras)).map((r) => [r.id, r]));
+      const bl = act(out.evento_bloques || d.evento_bloques);
+      const groups = new Map();
+      pzs.forEach((r, i) => {
+        const n = Number(r.Pizarra); if (!n && !String(r.ID).trim()) return;
+        const key = String(r.ID).trim() || ('n' + n);
+        if (!groups.has(key)) groups.set(key, { id: String(r.ID).trim(), n, bloque: String(r.Bloque || '').trim(), nota: String(r.Nota || ''), lineas: [] });
+        const m = num(r.Monto); if (isNaN(m)) { errs.push('Pizarras fila ' + (i + 2) + ': monto inválido'); return; }
+        const tipo = /sinpe/i.test(r.Tipo) ? 'sinpe' : /don/i.test(r.Tipo) ? 'donativo' : 'otro';
+        if (m || String(r.Concepto || '').trim()) groups.get(key).lineas.push({ id: uid(), tipo, concepto: String(r.Concepto || ''), monto: m });
+      });
+      const rows = [...exist.values()].map((r) => ({ ...r }));
+      const seen = new Set();
+      groups.forEach((g) => {
+        let x = rows.find((y) => g.id && y.id === g.id);
+        if (!x) { x = { id: uid(), hora: nowIso(), t }; rows.push(x); }
+        const b = bl.find((q) => q.nombre.trim().toLowerCase() === g.bloque.toLowerCase());
+        const same = JSON.stringify((x.lineas || []).map((l) => [l.tipo, l.concepto, Number(l.monto)])) === JSON.stringify(g.lineas.map((l) => [l.tipo, l.concepto, l.monto]));
+        if (!same || x.numero !== (g.n || x.numero) || (x.nota || '') !== g.nota || (b && x.bloque_id !== b.id)) Object.assign(x, { numero: g.n || x.numero || rows.length, bloque_id: b ? b.id : (x.bloque_id || ''), lineas: same ? x.lineas : g.lineas, nota: g.nota, t });
+        seen.add(x.id);
+      });
+      rows.forEach((x) => { if (!seen.has(x.id)) { x.del = true; x.t = t; } });
+      out.evento_pizarras = rows;
+    }
     return { out, errs };
   }
-  const EV = { act, col, parseCol, evento, mergeRows, EV_KEYS, nowIso, uid, exportExcel, importExcel, horaCR };
+  // Resumen legible de lo que cambió entre dos versiones de los datos.
+  function diff(prev, next) {
+    prev = prev || {}; next = next || {};
+    const out = [];
+    const byId = (a) => new Map(act(a).map((r) => [r.id, r]));
+    const bP = byId(prev.evento_bloques), bN = byId(next.evento_bloques);
+    const bname = (id) => (bN.get(id) || bP.get(id) || {}).nombre || 'sin bloque';
+    bN.forEach((b, id) => { if (!bP.has(id)) out.push({ k: 'bloque', txt: 'Bloque nuevo: ' + b.nombre }); else if (bP.get(id).nombre !== b.nombre) out.push({ k: 'bloque', txt: 'Bloque renombrado: ' + bP.get(id).nombre + ' → ' + b.nombre }); });
+    bP.forEach((b, id) => { if (!bN.has(id)) out.push({ k: 'quitar', txt: 'Bloque eliminado: ' + b.nombre }); });
+    const dP = byId(prev.evento_donativos), dN = byId(next.evento_donativos);
+    dN.forEach((r, id) => {
+      const o = dP.get(id);
+      if (!o) { if (r.empresa || r.monto) out.push({ k: 'donativo', txt: 'Donativo nuevo: ' + (r.empresa || 'sin nombre') + ' · ' + col(r.monto) + ' (' + bname(r.bloque_id) + ')' }); }
+      else if (Number(o.monto) !== Number(r.monto)) out.push({ k: 'donativo', txt: 'Donativo de ' + (r.empresa || 'sin nombre') + ': ' + col(o.monto) + ' → ' + col(r.monto) });
+      else if (o.empresa !== r.empresa) out.push({ k: 'donativo', txt: 'Empresa corregida: ' + (o.empresa || 'sin nombre') + ' → ' + (r.empresa || 'sin nombre') });
+    });
+    dP.forEach((r, id) => { if (!dN.has(id)) out.push({ k: 'quitar', txt: 'Donativo eliminado: ' + (r.empresa || 'sin nombre') + ' · ' + col(r.monto) }); });
+    const sP = byId(prev.evento_sinpe), sN = byId(next.evento_sinpe);
+    sN.forEach((r, id) => { const o = sP.get(id); if (!o) out.push({ k: 'sinpe', txt: 'Corte SINPE #' + r.reporte + ' nuevo: ' + col(r.monto) }); else if (Number(o.monto) !== Number(r.monto)) out.push({ k: 'sinpe', txt: 'Corte SINPE #' + r.reporte + ': ' + col(o.monto) + ' → ' + col(r.monto) }); });
+    sP.forEach((r, id) => { if (!sN.has(id)) out.push({ k: 'quitar', txt: 'Corte SINPE #' + r.reporte + ' eliminado' }); });
+    const pP = new Map(act(pizarrasDe(prev.evento_pizarras)).map((r) => [r.id, r])), pN = new Map(act(pizarrasDe(next.evento_pizarras)).map((r) => [r.id, r]));
+    const bnm = (id) => (bN.get(id) || bP.get(id) || {}).nombre;
+    pN.forEach((p, id) => { const o = pP.get(id); const bl = bnm(p.bloque_id) ? ' (' + bnm(p.bloque_id) + ')' : ''; if (!o) out.push({ k: 'pizarra', txt: 'Pizarra #' + p.numero + bl + ' registrada: ' + col(pzTotal(p)) + (p.nota ? ' · ' + p.nota : '') }); else if (pzTotal(o) !== pzTotal(p)) out.push({ k: 'pizarra', txt: 'Pizarra #' + p.numero + bl + ': ' + col(pzTotal(o)) + ' → ' + col(pzTotal(p)) }); });
+    pP.forEach((p, id) => { if (!pN.has(id)) out.push({ k: 'quitar', txt: 'Pizarra #' + p.numero + ' eliminada del historial' }); });
+    const cP = act(prev.evento_config)[0] || {}, cN = act(next.evento_config)[0] || {};
+    if ((Number(cP.previo) || 0) !== (Number(cN.previo) || 0)) out.push({ k: 'donativo', txt: 'Monto previo al evento: ' + col(cP.previo) + ' → ' + col(cN.previo) });
+    const SEC = [['Ejecutivas (patrocinios y donaciones)', ['patrocinios', 'donaciones']], ['Captación por canal', ['historico']], ['Costos 2026', ['costos']], ['Costos del evento', ['costos_evento']], ['Metas y probabilidades', ['metas', 'probabilidades']]];
+    SEC.forEach(([n, ks]) => { if (ks.some((k) => JSON.stringify(prev[k] || []) !== JSON.stringify(next[k] || []))) out.push({ k: 'seccion', txt: 'Se actualizó: ' + n }); });
+    const tP = evento(prev).total, tN = evento(next).total;
+    return { cambios: out, totalAntes: tP, total: tN };
+  }
+  const EV = { pizarrasDe, pzTotal, pzSum, TIPOS, act, col, colInt, num2, r2, parseCol, evento, mergeRows, EV_KEYS, nowIso, uid, exportExcel, importExcel, horaCR, diff };
 
   return { unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
 })();
@@ -335,6 +481,7 @@ window.dash = (() => {
       <span class="bar-r">
         <span class="upd-msg" id="upd-msg" role="status" aria-live="polite"></span>
         <a class="out cap-btn" href="captura/">✎ Captura de datos</a>
+        <button class="out bell" id="nt-btn" type="button" aria-haspopup="dialog" aria-controls="nt-panel" aria-label="Notificaciones"><span aria-hidden="true">🔔</span> Notificaciones<span class="nt-badge" id="nt-badge" hidden>0</span></button>
         <button class="out upd" id="upd" type="button" aria-describedby="upd-msg">Actualizar<span class="dot" id="dot" hidden aria-hidden="true"></span></button>
         <button class="out" id="out" type="button">Cerrar sesión</button>
       </span>
@@ -343,8 +490,22 @@ window.dash = (() => {
       <strong>Todavía no hay datos cargados.</strong>
       <span>Cuando se carguen los datos de la Teletón 2026, este tablero se completa automáticamente en este mismo link.</span>
     </div>
+    <div class="nt-overlay" id="nt-overlay" hidden></div>
+    <aside class="nt-panel" id="nt-panel" role="dialog" aria-modal="true" aria-labelledby="nt-title" hidden>
+      <div class="nt-head">
+        <h2 id="nt-title">🔔 Notificaciones</h2>
+        <button type="button" class="nt-x" id="nt-close" aria-label="Cerrar notificaciones">✕</button>
+      </div>
+      <p class="nt-sub">Lo que se ha guardado desde la captura de datos, lo más reciente arriba.</p>
+      <div class="nt-sound">
+        <label class="nt-sw"><input type="checkbox" id="nt-sound" checked> <span>Sonar campana con cada actualización</span></label>
+        <button type="button" class="out" id="nt-test">Probar sonido</button>
+      </div>
+      <ol class="nt-list" id="nt-list"></ol>
+    </aside>
+    <div class="nt-toasts" id="nt-toasts" aria-live="polite" aria-atomic="false"></div>
     <style>
-.tl { max-width: 72rem; margin-inline: auto; display: grid; gap: 2.25rem; font-family: var(--font-anthropic-sans); }
+.tl { max-width: 84rem; margin-inline: auto; display: grid; gap: 2.25rem; font-family: var(--font-anthropic-sans); }
 .tl-head { position: relative; overflow: hidden; display: grid; gap: .6rem; justify-items: center; text-align: center; color: #fff; background: var(--hero); border-radius: 24px; padding: clamp(1.75rem, 5vw, 3rem) 1rem clamp(1.75rem, 5vw, 2.75rem); }
 .tl-head::before { content: ""; position: absolute; inset: 0; opacity: .16; pointer-events: none; background-image: radial-gradient(circle, #fff 2px, transparent 2.5px); background-size: 26px 26px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 90%); mask-image: linear-gradient(180deg, #000, transparent 90%); }
 .tl-head > * { position: relative; }
@@ -363,10 +524,10 @@ window.dash = (() => {
 .sec-h { display: grid; gap: .25rem; }
 .sec-h h2 { margin: 0; font-family: var(--f-titulo); font-weight: 900; font-size: clamp(1.25rem, 3.2vw, 1.6rem); background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
 .sec-h p { margin: 0; color: var(--gris); font-style: italic; font-size: var(--cds-font-size-body); max-width: 70ch; line-height: 1.5; }
-.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: .75rem; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .75rem; }
 .kpi { border: 1px solid var(--linea); border-top: 4px solid var(--vino); box-shadow: 0 8px 22px rgba(90,0,73,.07); border-radius: 16px; padding: 1rem; display: grid; gap: .3rem; align-content: start; background: var(--color-panel); }
 .kpi-l { font-family: var(--f-titulo); font-size: var(--cds-font-size-caption); color: var(--gris); }
-.kpi-v { font-family: var(--f-titulo); font-weight: 900; color: var(--vino); font-size: 1.55rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kpi-v { font-family: var(--f-titulo); font-weight: 900; color: var(--vino); font-size: clamp(1.15rem, 2.1vw, 1.45rem); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; line-height: 1.1; }
 .kpi-n { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 1rem; }
 .card { background: var(--color-panel); border: 1px solid var(--linea); box-shadow: 0 8px 22px rgba(90,0,73,.06); border-radius: 18px; padding: 1.1rem; display: grid; gap: .6rem; align-content: start; min-width: 0; }
@@ -381,13 +542,13 @@ window.dash = (() => {
 .tip b { font-family: var(--f-titulo); }
 .tip .r { display: flex; align-items: center; gap: .4rem; }
 .tbox { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.tbl { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: var(--cds-font-size-body); }
+.tbl { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .8rem; }
 .tbl th { font-family: var(--f-titulo); font-size: var(--cds-font-size-caption); color: var(--vino); text-align: right; padding: .5rem .55rem; border-bottom: 2px solid var(--color-border-line); white-space: nowrap; vertical-align: bottom; }
 .tbl td { font-family: var(--f-titulo); text-align: right; padding: .55rem; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
 .tbl th:first-child, .tbl td:first-child { text-align: left; }
 .tbl td:first-child { font-weight: 700; white-space: normal; min-width: 8rem; }
 .tbl td .sub { display: block; font-family: var(--f-apoyo); font-style: italic; font-weight: 400; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); white-space: normal; }
-.tbl td .n { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin-left: .2rem; }
+.tbl td .n { display: block; color: var(--color-fg-muted); font-size: .72rem; font-family: var(--f-apoyo); }
 .tbl tr.tot td { color: var(--vino-osc); border-top: 2px solid var(--linea); border-bottom: 0; background: var(--crema); }
 .tbl .g { border-left: 1px solid var(--color-border-line); }
 .tbl .ej { background: #fff7e6; }
@@ -438,6 +599,8 @@ window.dash = (() => {
 .board-split div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 16px; padding: .7rem .8rem; display: grid; gap: .2rem; }
 .board-split span { font-size: var(--cds-font-size-caption); opacity: .85; }
 .board-split b { font-family: var(--f-titulo); font-size: clamp(1.1rem, 3vw, 1.5rem); font-variant-numeric: tabular-nums; }
+.board-sub { margin: -.2rem 0 0; font-size: var(--cds-font-size-caption); opacity: .85; font-style: italic; }
+.board-last b { font-family: var(--f-titulo); color: #ffe08a; }
 .board-last { margin: .2rem 0 0; font-size: var(--cds-font-size-caption); opacity: .85; }
 .pz-tools { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; justify-content: flex-end; }
 .blocks { display: grid; gap: .7rem; }
@@ -450,6 +613,29 @@ window.dash = (() => {
 .blk ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .2rem; font-size: var(--cds-font-size-caption); }
 .blk li { display: flex; justify-content: space-between; gap: .6rem; }
 .blk li b { font-family: var(--f-titulo); font-weight: 400; white-space: nowrap; }
+.tbl th, .tbl td { padding-left: .45rem; padding-right: .45rem; }
+@media (max-width: 75rem) {
+  .tbox { overflow: visible; }
+  .tbl, .tbl tbody, .tbl tr, .tbl td { display: block; width: 100%; box-sizing: border-box; }
+  .tbl thead { display: none; }
+  .tbl tr { border: 1px solid var(--linea); border-radius: 14px; padding: .55rem .75rem; margin-bottom: .6rem; background: #fff; }
+  .tbl tbody { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: .6rem; }
+  .tbl tbody tr { margin-bottom: 0; }
+  .tbl tr.tot { background: var(--crema); }
+  .tbl tr.tot td { border-top: 0; background: transparent; }
+  .tbl td { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .1rem .75rem; text-align: right; white-space: normal; border-bottom: 1px dashed var(--linea); padding: .35rem 0; }
+  .tbl td:last-child { border-bottom: 0; }
+  .tbl td::before { content: attr(data-label); font-family: var(--f-apoyo); font-size: .78rem; color: var(--gris); text-align: left; flex: none; max-width: 50%; }
+  .tbl td:first-child { display: block; text-align: left; font-size: .95rem; border-bottom: 1px solid var(--linea); padding-bottom: .45rem; }
+  .tbl td:first-child::before { content: none; }
+  .tbl td .n { display: inline; margin-left: .3rem; }
+  .tbl td.ej { background: transparent; }
+  .tbl .g { border-left: 0; }
+}
+.chk-badge { margin: .2rem auto 0; font-family: var(--f-titulo); font-size: .9rem; border-radius: 999px; padding: .35rem .9rem; width: fit-content; }
+.chk-badge.ok { background: rgba(79,199,140,.2); color: #b9f5d3; border: 1px solid rgba(79,199,140,.5); }
+.chk-badge.bad { background: rgba(255,172,44,.18); color: #ffe08a; border: 1px solid rgba(255,172,44,.5); }
+.tl > * { min-width: 0; }
 </style>
 
 <div class="tl">
@@ -473,7 +659,7 @@ window.dash = (() => {
   </div>
 
   <section class="sec tabp" id="resumen" role="tabpanel" aria-labelledby="t-resumen">
-  <div class="sec-h"><h2>Resumen</h2><p>Las cifras principales de cada sección, en millones de colones.</p></div>
+  <div class="sec-h"><h2>Resumen</h2><p>Las cifras principales de cada sección, en colones.</p></div>
   <div class="kpis" id="kpis">
     <div class="kpi"><span class="kpi-l">Patrocinios firmados</span><span class="kpi-v" id="k-pf">—</span><span class="kpi-n" id="k-pf-n"></span></div>
     <div class="kpi"><span class="kpi-l">Donaciones confirmadas</span><span class="kpi-v" id="k-dc">—</span><span class="kpi-n" id="k-dc-n"></span></div>
@@ -505,7 +691,7 @@ window.dash = (() => {
     <div class="card">
       <h3>Detalle por ejecutiva</h3>
       <div class="tbox">
-        <table class="tbl" id="tb-ag">
+        <table class="tbl" id="tb-ag" data-cols="Ejecutiva|Patrocinios firmados|Patrocinios sin firmar|Patrocinios prospectados|Donaciones confirmadas|Donaciones prospectadas|Asegurado|Esperado">
           <thead>
             <tr><th rowspan="2">Ejecutiva</th><th colspan="3" class="g" style="text-align:center">Patrocinios</th><th colspan="2" class="g" style="text-align:center">Donaciones</th><th rowspan="2" class="g">Asegurado</th><th rowspan="2">Esperado</th></tr>
             <tr><th class="g">Firmado</th><th>Sin firmar</th><th>Prospectado</th><th class="g">Confirmada</th><th>Prospectada</th></tr>
@@ -530,7 +716,7 @@ window.dash = (() => {
     <div class="card">
       <h3>Comparativa por canal</h3>
       <div class="tbox">
-        <table class="tbl" id="tb-can">
+        <table class="tbl" id="tb-can" data-cols="Canal|2022|2023|2024|2025*|Var. 24→25|Tendencia anual|Proyección 2026">
           <thead><tr>
             <th>Canal</th><th>2022</th><th>2023</th><th>2024</th><th class="ej">2025*</th>
             <th class="g">Var. 24→25</th><th class="g">Tendencia anual</th><th class="g">Proyección 2026</th>
@@ -538,7 +724,7 @@ window.dash = (() => {
           <tbody></tbody>
         </table>
       </div>
-      <p class="note">2022–2024: archivo Teleton_Finanzas_2025.xlsx. *2025: desglose de ejemplo que suma el total reportado (₡504,7M). Tendencia anual: crecimiento o caída promedio por año entre 2022 y 2025. Proyección 2026 = 2025 × (1 + tendencia anual).</p>
+      <p class="note">2022–2024: archivo Teleton_Finanzas_2025.xlsx. *2025: desglose de ejemplo que suma el total reportado (₡504,730,000.00). Tendencia anual: crecimiento o caída promedio por año entre 2022 y 2025. Proyección 2026 = 2025 × (1 + tendencia anual).</p>
     </div>
   </section>
 
@@ -550,7 +736,7 @@ window.dash = (() => {
     <div class="card">
       <h3>Cuadro de costos 2026</h3>
       <div class="tbox">
-        <table class="tbl" id="tb-cost">
+        <table class="tbl" id="tb-cost" data-cols="Concepto|Efectivo|Donación en especie|Costo total">
           <thead><tr><th>Concepto</th><th class="g">Efectivo</th><th>Donación en especie</th><th class="g">Costo total</th></tr></thead>
           <tbody></tbody>
         </table>
@@ -575,18 +761,28 @@ window.dash = (() => {
   <section class="sec tabp" id="pizarra" role="tabpanel" aria-labelledby="t-pizarra">
     <div class="board" id="board">
       <div class="board-top"><span class="live"><i></i>EN VIVO</span><span id="pz-upd"></span></div>
-      <p class="board-l">Total pizarra</p>
+      <p class="board-l">Pizarra</p>
+      <p class="board-sub" id="pz-sub"></p>
       <div class="board-v" id="pz-total" aria-live="polite">₡0</div>
       <div class="prog" id="pz-prog" aria-hidden="true"><i id="pz-bar"></i></div>
       <p class="board-meta" id="pz-meta"></p>
+      <p class="chk-badge" id="pz-chk"></p>
       <div class="board-split">
-        <div><span>Donativos de empresas</span><b id="pz-emp">—</b></div>
-        <div><span>Cortes SINPE</span><b id="pz-sinpe">—</b></div>
-        <div><span id="pz-prev-l">Monto previo al evento</span><b id="pz-prev">—</b></div>
+        <div><span id="pz-sum-l">Pizarra registrada</span><b id="pz-sum">—</b></div>
+        <div><span>Pizarra automática (donativos + SINPE)</span><b id="pz-auto">—</b></div>
+        <div><span>Diferencia</span><b id="pz-dif">—</b></div>
       </div>
+      <p class="board-last" id="pz-pend"></p>
       <p class="board-last" id="pz-last"></p>
     </div>
     <div class="pz-tools"><button type="button" class="out" id="pz-xls">⬇ Descargar Excel</button><span class="note" id="pz-xls-msg" role="status"></span></div>
+    <div class="card" id="pz-cmp-card">
+      <h3>Comparativa: pizarra registrada vs automática</h3>
+      <p class="note">La automática suma lo registrado en donativos de empresas y cortes de SINPE; la registrada es la que se presenta en pantalla. Si cuadran, la diferencia es ₡0.00.</p>
+      <div class="tbox"><table class="tbl" id="pz-tcmp" data-cols="Concepto|Automática|Registrada|Diferencia|Estado"><thead><tr><th>Concepto</th><th class="g">Automática</th><th>Registrada</th><th class="g">Diferencia</th><th>Estado</th></tr></thead><tbody></tbody></table></div>
+      <h3 style="margin-top:.6rem">Por bloque (donativos de empresas)</h3>
+      <div class="tbox"><table class="tbl" id="pz-tcmpb" data-cols="Bloque|Automática|Registrada (donativos)|Diferencia|Estado"><thead><tr><th>Bloque</th><th class="g">Automática</th><th>Registrada (donativos)</th><th class="g">Diferencia</th><th>Estado</th></tr></thead><tbody></tbody></table></div>
+    </div>
     <div class="grid">
       <div class="card">
         <h3>Donativos de empresas por bloque</h3>
@@ -596,27 +792,30 @@ window.dash = (() => {
       <div class="card">
         <h3>Cortes de SINPE</h3>
         <p class="note">Monto de cada reporte de SINPE Móvil.</p>
-        <div class="tbox"><table class="tbl" id="pz-tsinpe"><thead><tr><th>Reporte</th><th>Hora</th><th>Monto</th><th>Acumulado</th></tr></thead><tbody></tbody></table></div>
+        <div class="tbox"><table class="tbl" id="pz-tsinpe" data-cols="Reporte|Fecha y hora|Monto|Acumulado"><thead><tr><th>Reporte</th><th>Fecha y hora</th><th>Monto</th><th>Acumulado</th></tr></thead><tbody></tbody></table></div>
       </div>
     </div>
     <div class="card">
-      <h3>Historial de pizarras</h3>
-      <p class="note">Cada vez que se marca la pizarra en la captura, queda guardado el total de ese momento.</p>
+      <h3>Pizarras registradas</h3>
+      <p class="note">Cada pizarra registrada en la captura, por bloque, con su monto y el acumulado que se presenta en pantalla.</p>
       <div class="chart" id="pz-chart"></div>
-      <div class="tbox"><table class="tbl" id="pz-thist"><thead><tr><th>Pizarra</th><th>Marcada</th><th class="g">Empresas</th><th>SINPE</th><th>Previo</th><th class="g">Total</th><th>Aumento</th></tr></thead><tbody></tbody></table></div>
+      <div class="tbox"><table class="tbl" id="pz-thist" data-cols="Pizarra|Bloque|Hora|Donativos|SINPE|Otros|Monto de la pizarra|Acumulado"><thead><tr><th>Pizarra</th><th>Bloque</th><th>Hora</th><th class="g">Donativos</th><th>SINPE</th><th>Otros</th><th class="g">Monto de la pizarra</th><th>Acumulado</th></tr></thead><tbody></tbody></table></div>
     </div>
     <div class="card">
       <h3>Todos los donativos de empresas</h3>
-      <div class="tbox"><table class="tbl" id="pz-tdon"><thead><tr><th>Empresa</th><th>Bloque</th><th>Monto</th></tr></thead><tbody></tbody></table></div>
+      <div class="tbox"><table class="tbl" id="pz-tdon" data-cols="Empresa|Bloque|Monto"><thead><tr><th>Empresa</th><th>Bloque</th><th>Monto</th></tr></thead><tbody></tbody></table></div>
     </div>
   </section>
 </div>
 
 <script>
 (() => {
-  const nf = new Intl.NumberFormat('es-CR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-  const M = (v) => '₡' + nf.format(v) + 'M';
+  const nf = new Intl.NumberFormat('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  // Montos guardados en millones → se muestran completos: ₡1,340,899.99
+  const M = (v) => TL.EV.col((Number(v) || 0) * 1e6);
+  const MI = (v) => TL.EV.colInt((Number(v) || 0) * 1e6);
   const P = (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + nf.format(Math.abs(v * 100)) + '%';
+  const tw = (svg, txt, size, font) => { const t = svg.append('text').style('font-size', size).style('font-family', font || 'var(--f-titulo)').text(txt); const w = t.node().getComputedTextLength(); t.remove(); return w; };
   const $ = (id) => document.getElementById(id);
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
   const C = {
@@ -658,11 +857,12 @@ window.dash = (() => {
     const meas = svg.append('g');
     const lw = d3.max(rows, (r) => meas.append('text').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text(r.label).node().getComputedTextLength()); meas.remove();
     const totals = rows.map((r) => d3.sum(r.parts, (p) => p.value));
-    const m = { l: Math.min(lw + 12, W * 0.42), r: 58 };
+    const endW = d3.max(totals, (v) => tw(svg, M(v), '12px')) || 40;
+    const m = { l: Math.min(lw + 12, W * 0.38), r: Math.min(endW + 12, W * 0.42) };
     const x = d3.scaleLinear([0, d3.max(totals) || 1], [m.l, W - m.r]).nice();
     const y = d3.scaleBand(rows.map((r) => r.label), [2, H - 22]).padding(0.28);
-    svg.append('g').selectAll('line').data(x.ticks(4)).join('line').attr('x1', (v) => x(v)).attr('x2', (v) => x(v)).attr('y1', 0).attr('y2', H - 22).attr('stroke', 'var(--cds-chart-grid)');
-    svg.append('g').selectAll('text').data(x.ticks(4)).join('text').attr('x', (v) => x(v)).attr('y', H - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').style('font-size', '11px').text((v) => v);
+    svg.append('g').selectAll('line').data(x.ticks(Math.max(2, Math.floor((W - m.l - m.r) / 120)))).join('line').attr('x1', (v) => x(v)).attr('x2', (v) => x(v)).attr('y1', 0).attr('y2', H - 22).attr('stroke', 'var(--cds-chart-grid)');
+    svg.append('g').selectAll('text').data(x.ticks(Math.max(2, Math.floor((W - m.l - m.r) / 120)))).join('text').attr('x', (v) => x(v)).attr('y', H - 6).attr('text-anchor', (v, k) => k === 0 ? 'start' : 'middle').attr('fill', 'var(--color-fg-muted)').style('font-size', '10px').text((v) => MI(v));
     const tip = tipper(box);
     rows.forEach((r, i) => {
       const g = svg.append('g').attr('transform', `translate(0,${y(r.label)})`);
@@ -674,7 +874,7 @@ window.dash = (() => {
         g.append('rect').attr('x', x(acc)).attr('y', 0).attr('height', y.bandwidth()).attr('width', Math.max(0, x(acc + p.value) - x(acc) - (p.value ? 1 : 0))).attr('fill', p.color);
         acc += p.value;
       });
-      g.append('text').attr('x', x(acc) + 6).attr('y', y.bandwidth() / 2).attr('dy', '0.35em').attr('fill', 'var(--color-fg)').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text(nf.format(totals[i]));
+      g.append('text').attr('x', x(acc) + 6).attr('y', y.bandwidth() / 2).attr('dy', '0.35em').attr('fill', 'var(--color-fg)').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text(M(totals[i]));
       const hit = g.append('rect').attr('x', 0).attr('width', W).attr('height', y.bandwidth()).attr('fill', 'transparent');
       const show = (ev) => tip.show(ev, r.label, r.parts.map((p) => [p.color, p.name, M(p.value) + (p.extra ? ' · ' + p.extra : '')]).concat([[null, 'Total', M(totals[i])]]));
       hit.on('mousemove', show).on('touchstart', show, { passive: true }).on('mouseleave', () => tip.hide());
@@ -761,24 +961,31 @@ window.dash = (() => {
     (() => {
       const box = $('ch-tot'); box.replaceChildren();
       if (!hist) return;
-      legend($('lg-tot'), [[C.real, 'Real'], [C.ej, 'Ejemplo (2025)'], [C.proy, 'Proyección 2026'], ['#8a6f80', 'Metas ₡500M y ₡650M']]);
+      legend($('lg-tot'), [[C.real, 'Real'], [C.ej, 'Ejemplo (2025)'], [C.proy, 'Proyección 2026'], ['#8a6f80', 'Metas 2026']]);
       const meta = (metas || []).map((r) => Number(r.monto_m));
       const pts = years.map((y, i) => ({ y: String(y), v: totY[i], c: isEj(y) ? C.ej : C.real, k: isEj(y) ? 'Ejemplo' : 'Real' })).concat([{ y: '2026', v: proyT, c: C.proy, k: 'Proyección' }]);
       const W = Math.max(280, box.clientWidth || 600), H = 260; box.style.minHeight = H + 'px';
       const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
       const top = Math.max(d3.max(pts, (p) => p.v), d3.max(meta) || 0) * 1.08;
       const yS = d3.scaleLinear([0, top], [H - 24, 18]).nice();
-      const m = { l: 40, r: 8 };
-      const x = d3.scaleBand(pts.map((p) => p.y), [m.l, W - m.r]).padding(0.35);
-      svg.append('g').selectAll('line').data(yS.ticks(5)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => yS(v)).attr('y2', (v) => yS(v)).attr('stroke', 'var(--cds-chart-grid)');
-      svg.append('g').selectAll('text').data(yS.ticks(5)).join('text').attr('x', m.l - 6).attr('y', (v) => yS(v)).attr('dy', '0.35em').attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').style('font-size', '11px').text((v) => v);
+      const m = { l: tw(svg, MI(yS.ticks(4).slice(-1)[0] || 0), '10px', 'var(--f-apoyo)') + 12, r: 8 };
+      const x = d3.scaleBand(pts.map((p) => p.y), [m.l, W - m.r]).padding(0.3);
+      svg.append('g').selectAll('line').data(yS.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => yS(v)).attr('y2', (v) => yS(v)).attr('stroke', 'var(--cds-chart-grid)');
+      svg.append('g').selectAll('text').data(yS.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => yS(v)).attr('dy', '0.35em').attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').style('font-size', '10px').text((v) => MI(v));
       svg.append('g').selectAll('text').data(pts).join('text').attr('x', (p) => x(p.y) + x.bandwidth() / 2).attr('y', H - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text((p) => p.y);
       const bw = Math.min(x.bandwidth(), 64), off = (x.bandwidth() - bw) / 2;
       const tip = tipper(box);
       svg.append('g').selectAll('rect').data(pts).join('rect').attr('x', (p) => x(p.y) + off).attr('width', bw).attr('y', (p) => yS(p.v)).attr('height', (p) => yS(0) - yS(p.v)).attr('rx', 4)
         .attr('fill', (p) => p.k === 'Proyección' ? 'transparent' : p.c).attr('stroke', (p) => p.k === 'Proyección' ? p.c : 'none').attr('stroke-width', 2).attr('stroke-dasharray', (p) => p.k === 'Proyección' ? '5 4' : null)
         .on('mousemove', (ev, p) => tip.show(ev, p.y + ' · ' + p.k, [[p.c, 'Total', M(p.v)]])).on('mouseleave', () => tip.hide());
-      svg.append('g').selectAll('text').data(pts).join('text').attr('x', (p) => x(p.y) + x.bandwidth() / 2).attr('y', (p) => yS(p.v) - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text((p) => nf.format(p.v));
+      // Montos completos sobre cada barra; si no caben a lo ancho, van en vertical dentro de la barra.
+      const lw = d3.max(pts, (p) => tw(svg, M(p.v), '11px')) || 0;
+      const fits = lw <= x.step() - 4;
+      pts.forEach((p) => {
+        const cx = x(p.y) + x.bandwidth() / 2;
+        if (fits) svg.append('text').attr('x', cx).attr('y', yS(p.v) - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '11px').style('font-family', 'var(--f-titulo)').text(M(p.v));
+        else svg.append('text').attr('transform', `translate(${cx},${yS(p.v) + 8}) rotate(90)`).attr('dy', '0.35em').attr('fill', p.k === 'Proyección' ? 'var(--color-fg)' : '#fff').style('font-size', '10px').style('font-family', 'var(--f-titulo)').text(M(p.v));
+      });
       meta.forEach((v) => svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', yS(v)).attr('y2', yS(v)).attr('stroke', '#8a6f80').attr('stroke-dasharray', '3 4'));
     })();
 
@@ -831,7 +1038,7 @@ window.dash = (() => {
     try { localStorage.setItem('tl-tab', name); } catch (e) {}
     try { history.replaceState(null, '', '#' + name); } catch (e) {}
     if (window.dash) window.dash._redraw();
-    const cur = tabs.find((t) => t.dataset.tab === name); if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest', inline: 'center' });
+    const cur = tabs.find((t) => t.dataset.tab === name); if (cur) { const bar = cur.parentElement; bar.scrollTo({ left: cur.offsetLeft - (bar.clientWidth - cur.offsetWidth) / 2 }); }
     if (window.TL_onTab) window.TL_onTab(name);
   }
   tabs.forEach((t, i) => {
@@ -886,7 +1093,20 @@ window.dash = (() => {
     countTo(E.total);
     $('k-pz').textContent = C(E.total);
     $('k-pz-n').textContent = meta ? Math.round(E.total / meta * 100) + '% de la meta' : '';
-    $('pz-emp').textContent = C(E.empresas); $('pz-sinpe').textContent = C(E.sinpeTotal); $('pz-prev').textContent = C(E.previo);
+    $('pz-sum').textContent = C(E.manual); $('pz-sum-l').textContent = 'Pizarra registrada (' + E.pizarras.length + (E.pizarras.length === 1 ? ' pizarra)' : ' pizarras)');
+    $('pz-auto').textContent = C(E.auto);
+    $('pz-dif').textContent = (E.dif > 0 ? '+' : '') + C(E.dif);
+    $('pz-sub').textContent = 'Pizarra registrada' + (E.previo ? ' + ' + C(E.previo) + ' recaudado antes del evento' : '');
+    const ck = $('pz-chk'); ck.className = 'chk-badge ' + (E.cuadra ? 'ok' : 'bad');
+    ck.textContent = E.cuadra ? '✔ Cuadra con la pizarra automática' : '⚠ Diferencia con la automática: ' + (E.dif > 0 ? '+' : '') + C(E.dif);
+    const pd = $('pz-pend'); pd.replaceChildren();
+    if (Math.abs(E.pendDon) >= 0.005 || Math.abs(E.pendSinpe) >= 0.005) { pd.append('Registrado y aún no incluido en pizarras: donativos '); pd.appendChild(el('b', null, C(E.pendDon))); pd.append(' · SINPE '); pd.appendChild(el('b', null, C(E.pendSinpe))); }
+    else pd.textContent = 'Todo lo registrado en donativos y SINPE está incluido en las pizarras.';
+    // comparativa
+    const state = (d) => Math.abs(d) < 0.005 ? '✔ Cuadra' : (d > 0 ? '▲ Registrada mayor' : '▼ Registrada menor');
+    const crow = (n, a, m, tot) => { const d = TL.EV.r2(m - a); const tr = el('tr', tot ? 'tot' : null); tr.append(el('td', null, n), el('td', 'g', C(a)), el('td', null, C(m)), el('td', 'g ' + (Math.abs(d) < 0.005 ? '' : 'down'), (d > 0 ? '+' : '') + C(d))); const st = el('td', Math.abs(d) < 0.005 ? 'up' : 'down', state(d)); tr.appendChild(st); return tr; };
+    $('pz-tcmp').querySelector('tbody').replaceChildren(crow('Donativos de empresas', E.empresas, E.mDon), crow('SINPE', E.sinpeTotal, E.mSin), crow('Otros', 0, E.mOtr), crow('Total', E.auto, E.manual, true));
+    $('pz-tcmpb').querySelector('tbody').replaceChildren(...E.bloques.map((b) => crow(b.nombre, b.auto, b.manualDon)), ...(E.bloques.length ? [crow('Total', E.empresas, E.bloques.reduce((s, b) => s + b.manualDon, 0), true)] : []));
     // barra de meta
     const top = Math.max(amb || meta || 1, E.total);
     $('pz-bar').style.width = Math.min(100, E.total / top * 100) + '%';
@@ -898,7 +1118,7 @@ window.dash = (() => {
       else { mt.appendChild(el('b', null, Math.round(E.total / meta * 100) + '%')); mt.append(' de la meta de ' + C(meta) + ' · faltan '); mt.appendChild(el('b', null, C(meta - E.total))); }
     }
     const lp = E.pizarras[E.pizarras.length - 1];
-    $('pz-last').textContent = lp ? 'Última pizarra marcada: #' + lp.numero + ' · ' + TL.EV.horaCR(lp.hora) + ' · ' + C(lp.total) : 'Todavía no se ha marcado ninguna pizarra.';
+    $('pz-last').textContent = lp ? 'Última pizarra: #' + lp.numero + ' · ' + TL.EV.horaCR(lp.hora) + ' · ' + C(lp.total) : 'Todavía no se ha presentado ninguna pizarra.';
 
     // bloques
     const bx = $('pz-blocks'); const mx = Math.max(1, ...E.bloques.map((b) => b.total));
@@ -911,29 +1131,30 @@ window.dash = (() => {
 
     // SINPE
     let acc = 0;
-    $('pz-tsinpe').querySelector('tbody').replaceChildren(...E.sinpe.map((r) => { acc += Number(r.monto) || 0; const tr = el('tr'); tr.append(el('td', null, 'Corte ' + r.reporte), el('td', null, r.hora || '—'), el('td', null, C(r.monto)), el('td', null, C(acc))); return tr; }),
+    $('pz-tsinpe').querySelector('tbody').replaceChildren(...E.sinpe.map((r) => { acc += Number(r.monto) || 0; const tr = el('tr'); tr.append(el('td', null, 'Corte ' + r.reporte), el('td', null, r.fecha ? TL.EV.horaCR(r.fecha) : (r.hora || '—')), el('td', null, C(r.monto)), el('td', null, C(acc))); return tr; }),
       ...(E.sinpe.length ? [(() => { const tr = el('tr', 'tot'); tr.append(el('td', null, 'Total'), el('td', null, ''), el('td', null, C(E.sinpeTotal)), el('td', null, '')); return tr; })()] : []));
 
     // historial
-    let prev = null;
     $('pz-thist').querySelector('tbody').replaceChildren(...E.pizarras.map((p) => {
-      const tr = el('tr'); const inc = prev == null ? null : p.total - prev; prev = p.total;
-      tr.append(el('td', null, '#' + p.numero), el('td', null, TL.EV.horaCR(p.hora)), el('td', 'g', C(p.empresas)), el('td', null, C(p.sinpe)), el('td', null, C(p.previo)), el('td', 'g', C(p.total)), el('td', inc == null ? null : (inc >= 0 ? 'up' : 'down'), inc == null ? '—' : (inc >= 0 ? '+' : '−') + C(Math.abs(inc))));
+      const tr = el('tr');
+      tr.append(el('td', null, 'Pizarra #' + p.numero + (p.nota ? ' · ' + p.nota : '')), el('td', null, p.bloque), el('td', null, TL.EV.horaCR(p.hora)), el('td', 'g', C(p.don)), el('td', null, C(p.sin)), el('td', null, C(p.otr)), el('td', 'g', C(p.total)), el('td', null, C(p.acumulado)));
       return tr;
-    }));
+    }), ...(E.pizarras.length ? [(() => { const tr = el('tr', 'tot'); tr.append(el('td', null, 'Total'), el('td', null, ''), el('td', null, ''), el('td', 'g', C(E.mDon)), el('td', null, C(E.mSin)), el('td', null, C(E.mOtr)), el('td', 'g', C(E.manual)), el('td', null, C(E.total))); return tr; })()] : []));
     // gráfico del historial
     const box = $('pz-chart'); box.replaceChildren();
-    const pts = E.pizarras.map((p) => ({ n: '#' + p.numero, v: p.total, h: TL.EV.horaCR(p.hora) }));
+    const pts = E.pizarras.map((p) => ({ n: '#' + p.numero, v: p.acumulado, m: p.total, h: TL.EV.horaCR(p.hora) }));
     if (pts.length) {
       const W = Math.max(280, box.clientWidth || 600), H = 230; box.style.minHeight = H + 'px';
       const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
-      const m = { l: 56, r: 16, t: 22, b: 26 };
+      const tw2 = (t, s) => { const n = svg.append('text').style('font-size', s).style('font-family', 'var(--f-titulo)').text(t); const w = n.node().getComputedTextLength(); n.remove(); return w; };
+      const m = { l: 70, r: 16, t: 26, b: 26 };
       const x = d3.scalePoint(pts.map((p) => p.n), [m.l, W - m.r]).padding(0.4);
       const y = d3.scaleLinear([0, Math.max(d3.max(pts, (p) => p.v), meta || 0) * 1.1], [H - m.b, m.t]).nice();
+      m.l = tw2(TL.EV.colInt(y.ticks(4).slice(-1)[0] || 0), '11px') + 12; x.range([m.l, W - m.r]);
       svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).attr('stroke', 'var(--cds-chart-grid)');
-      svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => y(v)).attr('dy', '0.35em').attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').style('font-size', '11px').text((v) => (v / 1e6) + 'M');
+      svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => y(v)).attr('dy', '0.35em').attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').style('font-size', '11px').text((v) => TL.EV.colInt(v));
       svg.append('g').selectAll('text').data(pts).join('text').attr('x', (p) => x(p.n)).attr('y', H - 6).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '12px').style('font-family', 'var(--f-titulo)').text((p) => p.n);
-      if (meta) { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(meta)).attr('y2', y(meta)).attr('stroke', '#8a6f80').attr('stroke-dasharray', '3 4'); svg.append('text').attr('x', W - m.r).attr('y', y(meta) - 5).attr('text-anchor', 'end').attr('fill', '#8a6f80').style('font-size', '11px').text('Meta ' + (meta / 1e6) + 'M'); }
+      if (meta) { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(meta)).attr('y2', y(meta)).attr('stroke', '#8a6f80').attr('stroke-dasharray', '3 4'); svg.append('text').attr('x', W - m.r).attr('y', y(meta) - 5).attr('text-anchor', 'end').attr('fill', '#8a6f80').style('font-size', '11px').text('Meta ' + TL.EV.colInt(meta)); }
       const gid = 'pzg' + Math.random().toString(36).slice(2, 7);
       const grad = svg.append('defs').append('linearGradient').attr('id', gid).attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y2', 1);
       [[0, .28], [1, 0]].forEach(([o, a]) => grad.append('stop').attr('offset', o).style('stop-color', '#c800a1').style('stop-opacity', a));
@@ -941,9 +1162,9 @@ window.dash = (() => {
       svg.append('path').datum(pts).attr('fill', 'none').attr('stroke', '#c800a1').attr('stroke-width', 3).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', d3.line().x((p) => x(p.n)).y((p) => y(p.v)));
       const tip = tipper(box);
       svg.append('g').selectAll('circle').data(pts).join('circle').attr('cx', (p) => x(p.n)).attr('cy', (p) => y(p.v)).attr('r', 6).attr('fill', '#fff').attr('stroke', '#fe5000').attr('stroke-width', 3)
-        .on('mousemove', (ev, p) => tip.show(ev, 'Pizarra ' + p.n, [['Marcada', p.h], ['Total', C(p.v)]])).on('mouseleave', () => tip.hide());
-      svg.append('g').selectAll('text').data(pts).join('text').attr('x', (p) => x(p.n)).attr('y', (p) => y(p.v) - 12).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '11px').style('font-family', 'var(--f-titulo)').text((p) => (p.v / 1e6).toLocaleString('es-CR', { maximumFractionDigits: 1 }) + 'M');
-    } else box.appendChild(el('p', 'note', 'Cuando se marque la primera pizarra aparece aquí.'));
+        .on('mousemove', (ev, p) => tip.show(ev, 'Pizarra ' + p.n, [['Hora', p.h], ['Monto de la pizarra', C(p.m)], ['Acumulado', C(p.v)]])).on('mouseleave', () => tip.hide());
+      svg.append('g').selectAll('text').data(pts).join('text').attr('x', (p) => x(p.n)).attr('y', (p) => y(p.v) - 12).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').style('font-size', '11px').style('font-family', 'var(--f-titulo)').text((p) => C(p.v));
+    } else box.appendChild(el('p', 'note', 'Cuando se presente la primera pizarra aparece aquí.'));
 
     // todos los donativos
     const all = E.bloques.flatMap((b) => b.rows.map((r) => ({ ...r, bloque: b.nombre }))).sort((a, b) => b.monto - a.monto);
@@ -956,6 +1177,101 @@ window.dash = (() => {
     setTimeout(() => { msg.textContent = ''; }, 5000);
   });
 })();
+</script>
+
+<script>
+// Campana (sonido generado en el navegador, sin archivos)
+window.TL_audio = (() => {
+  let ctx = null;
+  const on = () => { try { return localStorage.getItem('tl-sound') !== 'off'; } catch (e) { return true; } };
+  function init() { try { if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)(); if (ctx.state === 'suspended') ctx.resume(); } catch (e) { ctx = null; } }
+  function strike(t0, f, dur, vol) {
+    const master = ctx.createGain(); master.gain.value = vol; master.connect(ctx.destination);
+    [[1, 1], [2.0, .55], [2.76, .35], [4.07, .2], [5.4, .12]].forEach(([r, a], i) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = f * r;
+      g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(a, t0 + 0.006); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur / (1 + i * 0.6));
+      o.connect(g); g.connect(master); o.start(t0); o.stop(t0 + dur + 0.05);
+    });
+  }
+  function ring(force) {
+    if (!force && !on()) return;
+    init(); if (!ctx) return;
+    const t = ctx.currentTime + 0.02;
+    strike(t, 1318.5, 1.9, 0.22); strike(t + 0.32, 1046.5, 2.4, 0.22);
+  }
+  document.addEventListener('pointerdown', init, { passive: true });
+  document.addEventListener('keydown', init);
+  return { init, ring, on };
+})();
+
+// Zona de notificaciones
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const ICON = { donativo: '🏢', sinpe: '📲', pizarra: '📌', bloque: '🗂️', quitar: '🗑️', seccion: '✏️' };
+  let first = true; const known = new Set(); let list = [];
+  const seen = () => { try { return localStorage.getItem('tl-notif-seen') || ''; } catch (e) { return ''; } };
+  const setSeen = (t) => { try { localStorage.setItem('tl-notif-seen', t); } catch (e) {} };
+  try { $('nt-sound').checked = TL_audio.on(); } catch (e) {}
+  $('nt-sound').addEventListener('change', () => { try { localStorage.setItem('tl-sound', $('nt-sound').checked ? 'on' : 'off'); } catch (e) {} if ($('nt-sound').checked) TL_audio.ring(true); });
+  $('nt-test').addEventListener('click', () => TL_audio.ring(true));
+
+  function totLine(n) {
+    const p = el('div', 'nt-tot'); const d = (n.total || 0) - (n.totalAntes || 0);
+    p.append('Total pizarra: ' + TL.EV.col(n.total));
+    if (d) { const s = el('span', d > 0 ? 'up' : 'down', ' (' + (d > 0 ? '+' : '−') + TL.EV.col(Math.abs(d)) + ')'); p.appendChild(s); }
+    return p;
+  }
+  function itemsOf(n) { const ul = el('ul'); (n.cambios || []).forEach((c) => ul.appendChild(el('li', null, (ICON[c.k] || '•') + ' ' + c.txt))); if (n.mas) ul.appendChild(el('li', null, 'y ' + n.mas + ' cambios más')); return ul; }
+  function renderList() {
+    const ol = $('nt-list'); const s = seen();
+    ol.replaceChildren(...(list.length ? list.map((n) => {
+      const li = el('li', 'nt-item' + (n.t > s ? ' new' : ''));
+      const m = el('div', 'nt-meta'); const who = el('b', null, n.por || 'captura'); m.append(who, el('span', null, TL.EV.horaCR(n.t)));
+      li.append(m, totLine(n), itemsOf(n)); return li;
+    }) : [el('li', 'nt-empty', 'Todavía no hay actualizaciones desde la captura.')]));
+  }
+  function badge() { const s = seen(); const n = list.filter((x) => x.t > s).length; const b = $('nt-badge'); b.hidden = !n; b.textContent = n > 99 ? '99+' : String(n); }
+  function toast(n) {
+    const box = $('nt-toasts'); const t = el('div', 'nt-toast'); t.setAttribute('role', 'status');
+    const tt = el('div', 'tt'); tt.append('🔔 Nueva actualización · '); tt.appendChild(el('b', null, n.por || 'captura'));
+    const c = n.cambios || []; const p = el('p', null, c.slice(0, 2).map((x) => x.txt).join(' · ') + (c.length > 2 ? ' · y ' + (c.length - 2 + (n.mas || 0)) + ' más' : ''));
+    t.append(tt, totLine(n), p); t.addEventListener('click', () => { t.remove(); openPanel(); });
+    box.appendChild(t); while (box.children.length > 3) box.firstChild.remove();
+    setTimeout(() => t.remove(), 9000);
+  }
+  function openPanel() { $('nt-overlay').hidden = false; $('nt-panel').hidden = false; renderList(); $('nt-close').focus(); if (list[0]) setSeen(list[0].t); badge(); }
+  function closePanel() { $('nt-overlay').hidden = true; $('nt-panel').hidden = true; renderList(); $('nt-btn').focus(); }
+  $('nt-btn').addEventListener('click', openPanel);
+  $('nt-close').addEventListener('click', closePanel);
+  $('nt-overlay').addEventListener('click', closePanel);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('nt-panel').hidden) closePanel(); });
+
+  dash.onData(() => {
+    const d = dash.data('notificaciones');
+    list = (d.status === 'ok' ? d.data : []).slice().sort((a, b) => String(b.t).localeCompare(String(a.t)));
+    const fresh = list.filter((n) => !known.has(n.id));
+    fresh.forEach((n) => known.add(n.id));
+    if (!first && fresh.length) {
+      fresh.slice(0, 3).reverse().forEach(toast);
+      TL_audio.ring();
+      const bb = $('nt-btn'); bb.classList.remove('ring'); void bb.offsetWidth; bb.classList.add('ring');
+    }
+    first = false;
+    badge(); if (!$('nt-panel').hidden) renderList();
+  });
+})();
+</script>
+
+<script>
+// Etiquetas por celda para mostrar las tablas como tarjetas en el celular
+dash.onData(() => {
+  document.querySelectorAll('table.tbl[data-cols]').forEach((t) => {
+    const cols = t.dataset.cols.split('|');
+    t.querySelectorAll('tbody tr').forEach((tr) => { [...tr.children].forEach((td, k) => { td.dataset.label = cols[k] || ''; }); });
+  });
+});
 </script>
 
   </div>
@@ -996,15 +1312,15 @@ window.dash = (() => {
       if (r && r.version && r.version > (LATEST ? LATEST.version : '')) LATEST = r;
     } catch (e) {}
     if (LATEST && LATEST.version !== S.version) {
-      // En la pizarra en vivo los datos nuevos se muestran solos.
-      if (window.TL_TAB === 'pizarra') { try { await apply(LATEST); } catch (e) { setPending(true); } }
-      else setPending(true);
+      // Los datos nuevos se muestran solos; la campana y la zona de notificaciones avisan qué cambió.
+      try { await apply(LATEST); } catch (e) { setPending(true); }
     }
   }
   window.TL_onTab = (name) => { if (name === 'pizarra' && S && LATEST && LATEST.version !== S.version) apply(LATEST).catch(() => {}); };
 
   form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
+    try { window.TL_audio && TL_audio.init(); } catch (e) {}
     const user = userEl.value.trim().toLowerCase();
     const pass = passEl.value;
     if (!user || !pass) { err.textContent = 'Escribí tu usuario y tu contraseña.'; return; }
@@ -1027,18 +1343,20 @@ window.dash = (() => {
   });
 
   let msgT;
+  const hhmm = () => { const d = new Date(Date.now() - 6 * 3600 * 1000); return String(d.getUTCHours()).padStart(2, '0') + ':' + String(d.getUTCMinutes()).padStart(2, '0'); };
   $('upd').addEventListener('click', async () => {
     if (!S) return;
-    clearTimeout(msgT);
-    msg.className = 'upd-msg'; msg.textContent = 'Buscando datos nuevos…';
-    await check();
-    if (LATEST && LATEST.version !== S.version) {
-      try { await apply(LATEST); msg.textContent = 'Datos actualizados'; }
-      catch (e) { msg.textContent = 'No se pudieron abrir los datos nuevos. Cerrá sesión y volvé a ingresar.'; }
-    } else {
-      msg.textContent = 'Ya estás viendo los datos más recientes';
-    }
-    msgT = setTimeout(() => { if (dot.hidden) msg.textContent = ''; }, 4000);
+    const ub = $('upd'); clearTimeout(msgT);
+    ub.disabled = true; msg.className = 'upd-msg'; msg.textContent = 'Buscando datos nuevos…';
+    let ok = true;
+    try { const r = await TL.fetchRemote(S.gh); if (r && r.version && r.version > (LATEST ? LATEST.version : '')) LATEST = r; } catch (e) { ok = false; }
+    try {
+      if (LATEST && LATEST.version !== S.version) { await apply(LATEST); msg.textContent = 'Datos actualizados (' + hhmm() + ')'; }
+      else if (ok) { window.dash._load(S.data); msg.textContent = 'Ya tenés los datos más recientes · revisado ' + hhmm(); }
+      else msg.textContent = 'No se pudo revisar ahora. Revisá tu conexión e intentá de nuevo.';
+    } catch (e) { msg.textContent = 'No se pudieron abrir los datos nuevos. Cerrá sesión y volvé a ingresar.'; }
+    ub.disabled = false;
+    msgT = setTimeout(() => { if (dot.hidden) msg.textContent = ''; }, 6000);
   });
 
   $('out').addEventListener('click', () => {
@@ -1049,8 +1367,7 @@ window.dash = (() => {
   });
 
   // Revisa cada 30 s (cada 20 s en la pizarra) si alguien guardó datos nuevos en la captura.
-  setInterval(() => { if (!document.hidden) check(); }, 30000);
-  setInterval(() => { if (!document.hidden && window.TL_TAB === 'pizarra') check(); }, 20000);
+  setInterval(() => { if (!document.hidden) check(); }, 20000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
 
   let t;
