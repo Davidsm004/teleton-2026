@@ -1,0 +1,9 @@
+{
+ "lib/d3.min.js": "d6b03aefc9f6c44c7bc78713679c78c295028fa914319119e5cc4b4954855b1c",
+ "lib/exceljs.min.js": "7e49da68588e250dbb8bba190d2caa8ab3787cc0284bda1d8b2f805c4df742c9",
+ "lib/jspdf.umd.min.js": "98ccf17aa10c20bb1301762618fcc9b6ab3a4e7f26b6071d64d0b41154df3875",
+ "lib/pptxgen.bundle.js": "cd078ca9e91c6f9e061ee0a3c310d6ff157c3a71b1dea7f40fd53818017266ff",
+ "lib/xlsx.full.min.js": "c9506197caf809a075b6dee1da0d36fb19da7158ffe8a88e7b0c96c5d8623c99",
+ "informes/teleton-informes-recursos.js": "b8fe388172c11a43ceff5788df844e75485c6e7505610e89ffebcec9502de2da",
+ "informes/teleton-informes.js": "6966cd6d212773b4c2f36e3e52f6fceeb3ae65b9c274d412bbf0a48d5293a04c"
+}

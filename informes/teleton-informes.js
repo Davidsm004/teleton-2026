@@ -60,7 +60,9 @@
   };
 
   // ===== Carga de librerías =====
-  const CDN = { pptx: 'https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js', pdf: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js' };
+  // Librerías alojadas en el mismo sitio (sin depender de servidores externos)
+  const LIB = () => (typeof window !== 'undefined' && window.TL_LIB_BASE) || 'lib/';
+  const CDN = { get pptx() { return LIB() + 'pptxgen.bundle.js'; }, get pdf() { return LIB() + 'jspdf.umd.min.js'; } };
   function cargarScript(src) {
     return new Promise((ok, mal) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => mal(new Error('No se pudo cargar ' + src)); document.head.appendChild(s); });
   }

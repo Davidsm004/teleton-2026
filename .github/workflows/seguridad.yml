@@ -1,0 +1,65 @@
+name: Seguridad Teletón 2026
+# Revisa el sitio en cada cambio y cada 3 horas. Si encuentra algo sospechoso: abre un aviso (llega por correo),
+# manda un correo con el respaldo adjunto (si MAIL_USER y MAIL_PASS están configurados) y marca la ejecución como fallida.
+on:
+  push:
+    branches: ['**']
+  delete:
+  create:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: seguridad
+  cancel-in-progress: false
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Revisar el sitio y los datos
+        id: rev
+        env:
+          EVENT: ${{ github.event_name }}
+          FORCED: ${{ github.event.forced }}
+          REF: ${{ github.ref }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+          DESDE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/datos' && github.event.before || '' }}
+          REF_TYPE: ${{ github.event.ref_type }}
+          DREF: ${{ github.event.ref }}
+        run: python3 .github/seguridad/revisar.py
+      - name: Armar respaldo
+        if: always()
+        env:
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+          BEFORE: ${{ github.event.before }}
+        run: python3 .github/seguridad/respaldo.py
+      - name: Guardar respaldo (90 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: respaldo-teleton-2026-${{ github.run_number }}
+          path: respaldo/*.zip
+          retention-days: 90
+      - name: Avisar
+        if: steps.rev.outputs.alerta == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAIL_USER: ${{ secrets.MAIL_USER }}
+          MAIL_PASS: ${{ secrets.MAIL_PASS }}
+          MAIL_TO: Davidsm004@gmail.com
+        run: python3 .github/seguridad/avisar.py
+      - name: Marcar la alerta
+        if: steps.rev.outputs.alerta == '1'
+        run: |
+          echo "::error::Alerta de seguridad. Revisá el aviso abierto en Issues."
+          exit 1
