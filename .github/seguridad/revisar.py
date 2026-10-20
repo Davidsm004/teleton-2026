@@ -27,7 +27,7 @@ if ev == 'push' and os.environ.get('FORCED') == 'true':
     alerta(f'Se reescribió el historial de «{ref}» (push forzado). Puede borrar o esconder cambios.')
 
 # 3. Archivos permitidos en cada rama
-PERM_MAIN = re.compile(r'^(index\.html|captura/index\.html|informes/[^/]+\.(js|md)|informes/fuentes/[^/]+\.ttf|lib/[^/]+\.js|README\.md|RESTAURAR\.md|\.nojekyll|\.github/.*)$')
+PERM_MAIN = re.compile(r'^(index\.html|(captura|finanzas|accesos|produccion)/index\.html|informes/[^/]+\.(js|md)|informes/fuentes/[^/]+\.ttf|lib/[^/]+\.js|README\.md|RESTAURAR\.md|\.nojekyll|\.github/.*)$')
 PERM_DATOS = re.compile(r'^(datos\.json|usuarios\.json|README\.md)$')
 for rama, perm in (('main', PERM_MAIN), ('datos', PERM_DATOS)):
     if rama not in ramas: continue
@@ -44,7 +44,7 @@ if ev == 'push' and ref == 'refs/heads/main':
 
 # 5. Integridad de las páginas: sin scripts ni conexiones a sitios externos, y con la política de seguridad activa
 HOSTS_OK = {'api.github.com', 'raw.githubusercontent.com', 'formspree.io'}
-for pag in ('index.html', 'captura/index.html'):
+for pag in ('index.html', 'finanzas/index.html', 'captura/index.html', 'accesos/index.html', 'produccion/index.html'):
     try: html = sh('git', 'show', f'origin/main:{pag}')
     except Exception: html = ''
     if not html: alerta(f'Falta la página {pag}.'); continue
@@ -89,7 +89,8 @@ if 'datos' in ramas:
 if ev in ('schedule', 'workflow_dispatch'):
     ult = int(sh('git', 'log', '-1', '--format=%ct', 'origin/main') or 0)
     if ult and datetime.datetime.now().timestamp() - ult > 1800:
-        for pag, url in (('index.html', 'https://davidsm004.github.io/teleton-2026/'), ('captura/index.html', 'https://davidsm004.github.io/teleton-2026/captura/')):
+        for pag in ('index.html', 'finanzas/index.html', 'captura/index.html', 'accesos/index.html', 'produccion/index.html'):
+            url = 'https://davidsm004.github.io/teleton-2026/' + pag.replace('index.html', '')
             try:
                 vivo = urllib.request.urlopen(url, timeout=30).read()
                 repo = subprocess.run(['git', 'show', f'origin/main:{pag}'], capture_output=True).stdout
