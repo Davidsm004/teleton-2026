@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-1vqqXp+qdbDAR1bV4odMGVIFeugLtbw3HY9gjoSqUGQ=' 'sha256-6IcaOpaIhZx0YeOlZLcpE8bNvRNRXGr0Fkz4cjMDU+o=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-uKY9TDt7DfXPYBm0r3hJw6r957IgcZ+Zpaz15C03E1Y='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3j8vlBagZYMDl1RP3xQW15wl9e3NzyjTKhHnp+GE724=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-Td0VUR8Bh16UY1SDEHPEHuVzty0sXrLFjr6pJ7gZ0M8=' 'sha256-tkTXgAyv6LGmSK02JBfy+QEY2KGW/kihrSM4uEEzb+c='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -128,7 +128,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 @keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "c208010954e01702", "iv": "68hsSZm3x7cwuFy6", "ct": "EvSKQQYUt7+hYGuDnT2Jvcff/H1lnTfJjCRM/8P+WE5my1qeiaKKxj1eK4Xuh9U78z6lf4uy8nYemrh4uLmUwfrjmZtldrrLuJawM3W1eHAnsqKrTpxM4DLi6hY4zeyzUn6X02QRyIdPLPRAlG6O6eoTPVBkkKIBUPEt0Xt5ADN/7AmqV54ISwVeNGOqVXMrHrpy0MyMDkSYBkIj3F8D4iEnQn35vvLc+hjvljj+s2HaHvpW8q890qirQu9Nr40Ju0KIFErgxaZIT69wXRfjW9f+1Z/cCRROv9hZ3X77bu+1xuPhhYK03j0f7Pu7Np2HxJe9/WOl3MxsSxwl6vWsbPKyC/i4ON4cmBvH4WAXjOo0weBy5wE3tsLs2XhwtS1QlNhg/fzLTjwt8Ei5h6mqYc2JcXx9I1Tug9EKtNLSdxNIIf8UtsMgr+YXel5keAD8ycq82dXD2fciBiXFehY02CV2FZTZlfnOivRnM+xwvIPXgao4+HHRjcemtX9DKlZyRe8EPGGPWYp8CDgFQFzC9ycOV9VbvyAOqymzqjwlCBEWXfWhiTKqs9vQq7R80aIcMU5OyVjVFa7Ds0cmnrbWliJR8B45df/8iaaqcLxnBGeyidKcNMuVoocb03qfPXHTRKZPTBuSHPqIJHr8mbfGtql0RKS4nGhYkbM9P8QtPPi9mPTaEvReAoaWUjD+5C1tZ0CgigZGMc4WBx66syuKifBSVBHKfX/836pZEJyiQoeh8UxDPs5RdcFUplvhLw0jVcvE4dE//OvsdfXVT0YmBGjCCj+sXC55E2Krqg/iPkXujX31AG6TqsrRzfuG+zLIY2KjL7gFwNDAShVwONlEXf/JQlHatxfR6QEiUvwEhgzWiZeEnMqI+d2HvQnqv3Tvh+nzbXG2FdiDmUTuAAVDk/lMJCUdX/Jhe03dmn4FZurcfJHmz8fbZLtWxCrPyQd6BrOkGDEgnzD7ESE0G/sKaTv/9+uhBv3bHYBmmLbIJ1cLHs0pVTcbvLuJAfSItXQIN0sxvhWUSjgfKnLGYpif+n8Kqd2s6QTdqR8bW19zGotjmFhKVxwCNjSCP0Hj/BunXFP87NznoSqTldBLnZEZZyLR1RACu8fEqjljtl4Mcp/CJ925doIoENndASfHQ8CjSuPpUmASwZ7Z7B+A7z50MC8UQEUUEep2rYZX7dgNr6HrCPt5E13YxSgxfdDEXM+4GQVvOl60XLAesnC0DIj4ZscnDwoTKBWfiZuLeo1kglQT+Olm/Nq9bhjM5rw6T4GC/65XyxGv0NX6cj8o/DqRA3FnpX5EJDyHmH/eGICaw1rnmV/bst6lKlx71xmvKiLGihdfHV1+PnCtbsBBACcLvlwk2YbATVUhmcTkz5Ew+bLUrSGH1bHOVn5cIKycST3eiGJy/hbtxPu3CqLoXH2wGVPVUVHtbkmgHPhnGJKny6Kh0kfaOSEdrGSSp7cyXnkvn6VdHfWuAVIYEgnPR5JDk6Ot2qCbZnf5CXoCtV6ZC5/3RX6VBOXW7szhH6eb2FtxPu49RdudW693SF11888VkwyXRCyeq3XeYvPnSEnSQHzKmNz1wipNcLxPNpEgTKk57Qr1M5m/uj2o6620bv6naJcUpKgW6fEu/By92VDDVBN15C6QyTMy03Q5Gm4EN9LEHMViUtQQj1LE6BxDV0SbUR+aDtaOs2b/5zJKBKIr0ZxXzf+gte3xzWcwLVOeAB0HrrU+8gj1yzvNEVW8Z6iaB6ZR9ANNbyTVc2voB+z45GwHgxbSinYkq5AMDEd21/lHUhiu/9QF9vfi+EUcrgEtRCTCPn3OtxiNr32pILTq/udGoS2NtYLaoRHkCj9rfOa+YucZui8mvOP/P/xLLHw+jiRuQ32fx0ypJNFc9LedghkH7hEGOZF7PeP8Bsrnn90LemJ2RPj+iALwLM0z5N94Sb++qmGT01/dYsp/BgUN6f6nR8euPiB6khkgRWUfSQ2tSCMTe9LDYHDSCr9O8/lshiEaiWbPBma+02bvg3fYbjAYs1bqXvvc2OxesWoEefas4ADzOuDPNCiUwTkIH9wwj3msMXvlLU8yE/ph6fcmjSd9b8aNT4wAd3tfhT2DnU5qImgomF9x5tRreuCHzOO5mokK3iZuvx9ErZ59GoCRSo0+R88t7x/UHN7U+s0aBPu7b83m7X9ZeBaXWg8LnJS4akHgsKBQjmuLH+iqWGP++uTVGc55e8Wq5/4BGnbPekwrA3XkPSMTPp7YyseoMrFj229dlXE53S6xutSIE8o/rMSUkr9GhFQ28yFjlDmN4NE8+29cEN2xlWy3svLK2rFrOGJb/kbmkYBKzlrCd5t5zhXqCGTuyRZMOJ1rc9ECdA+WOi1lWjrp0Tcx1Rd2DyrNz+wcT+ZkfYtcK9D5FZSaYSl6Kue1PIeH3YDxtlP+yWPPZR48Umdr97adIBAeLVAAdPPIPLtwjdM96K3EGCkaW+mq188DNgqF3kt9YfchAQMVw7YAi+zEIXxlnRGmD0qHxzDZtcqm8l3IBBJ4Ih7kQDEICJCV+l5bbfdU+7za1DQs2hwIYGHWVMWy7konU/J4zRIxZvrtZbUwmL02cWS7KiPHg2GydDCueBvBpfQeMkmTWZ/4QebO+P750gfKI27k0OhpCbICC2DKJInZxMKmUvgpJKRGfvPpXEpn14R3F8Xk9Rk4zwEYFViKiQkQYED2Gw7GjeMBDqz0nKtTzuhx2mW2jGh7UxAV33ay4GFus/ZUkA14GzrJVMXESsxyXXHBQulDP8tbqI6c7bMgm6FU5NFpTeQAp2iIx4dMvXIKBdDH5J8KnM+I8Uap2a6jrG3Rl4hTX9g5bO7l3U1fJWVh8AFVdNMg3+rBr1ebUc/FMWrM9mW94QP2rLXnd5c5CBplkJrg/e3Lxj4RblEmSVI4iITh2bVxCrlDuPpkL8axEwkLbCL+a7OF4vRlkojJRtEjnUBe4bDldZYSee15E4ru4gwRyOs2Hr9d7KiZc1aFPkCmARebom8cCrKbZ2wdqtlTnnDEf9ice2znqmLMa8bLKc0Zfk0scb2CzBbrGx/vxOgJ5DL3LDnj6AD7Ya5BM1c9xFumc6ysInIdn/JmHBHViWSKpzT9byHt/incPcNjFpEFknm49m9rzBwGq/+J+yVfh4q190RUiELzLlRMQK1fKilSk6KJV4htTTAn9HqQPwNYWbIm3lVDBR13JA4=", "users": [{"id": "16ae07a9b28f80fce05f9f9914e187db8b84fad99e12e5fdfa512064eae77b77", "salt": "9FzhpTt0t1M9650i5RPsiQ==", "iv": "fyVsW0i5NaQ2bv4H", "wrapped": "nkLcJ+ceMDFkdWAdgNcbYvHw8wqpjRXESRyEdBcra0PM6+E4hFQDrR0mwcZw8koS", "giv": "v4qgT+dUKSpvfE04", "gw": "7ZO+2lsqRnfe0VnM3ZTFxQ2pADF4P3UuvsLCC9Bc4IFvzm5UYIYSsJZi5TwAu8sSzo1OU2/ynNuHjehH2h1M0h64//Xx1zARJr9BT3wNImPJdiXyw83uNDXp4rmvl16LweqkjiSLoeS78ndX0g=="}, {"id": "4cd623acf74ada12f4542ef242fb25d9540ab927fa09e3470c5cd875157c022d", "salt": "Add6ncf7NAOG0F0K2cHeqg==", "iv": "OLsIsJO0n0hqyTbq", "wrapped": "CJLimxyjDVvmBJEi6iwDAW7nFacT4jazNQTlx90PfKiweKaZd2si6fwtZ7X+l+ou", "giv": "c2QySENfZZr1m7j+", "gw": "enioSkwrNQM10tRjzOe86DSIWb3Znzb2ho13lJBMo51yjPpgvYxyJM4yxH+O261Lqsg21GRYw+zXwaGiKJHu7j0QHgqC4IR0boGNP/2zaXaXmjqSob0lNr7zSx2nMM0nWbEZoXT2W1a/O19TnQ=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "1a7c60e52ffe9425", "iv": "hywD4U6GsxnnbwQw", "ct": "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", "users": [{"id": "e2c28f7638eb966e859c3cf3114c48ece584fb9e9df38db2557a7c8eba478096", "salt": "q/8TgkkFW38HojchGE+oBw==", "iv": "KGpiui8crRVGkMIB", "wrapped": "IPVTAPLJf+tEkaO+YxGFq2fMl5iazKGYAv95Uj++FuhNLFPqc4SqcCOBABharZRk", "giv": "+BlHXkY4cXxWjRLG", "gw": "LiMdaz9fLn1+Vn+3SZCCoRpsAzftlzDA+8UO6n1B7tA9NTw+1cxDCgC/9c+YhzAY+nA6DMJWPMN9HoltV8fFV17vKpbXaZ13TG28zMiEKZE2yhhINVqNlfp+fNsD8YPiLdyvzWe26wXVmIU2Ag=="}, {"id": "7467220378eeb8f783581a54d7a7e1b6732c52cfae933e68d274540b67bb8692", "salt": "qltpv/DAWAta8RDlZikqLg==", "iv": "eCCH97qksW6ZblbP", "wrapped": "cIer2d78gmnbgG/qX4cQFzE/yyKPFGF5p8bW1S03g5jhdzRML14FXoqkkN0D792K", "giv": "y6lSLMkc44WIPb38", "gw": "ZNJD3a7ZcUiSeqNLasTCchAl0nKo0aeQnXAI75kKooFW6ffiqtJ4d3Jp+omHLDhn+ol9Dipnol7ZxXOg8hxxMoESO6eOTduAFkMaG/1gaMjWmmDX21Bgrxkmh50ulj19mxU9KqoY7p9g1CNWpg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -199,6 +199,25 @@ window.TL = (() => {
       return { version, fecha, data };
     }
     throw new Error('conflicto');
+  }
+  // ---------- Adjuntos cifrados (rama "datos", carpeta adjuntos/) ----------
+  async function putBin(sess, path, bytes) {
+    if (!sess.gh) throw new Error('sin_permiso');
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, sess.key, bytes));
+    const all = new Uint8Array(12 + ct.length); all.set(iv, 0); all.set(ct, 12);
+    const { fecha } = stamp();
+    const r = await fetch(url(path), { method: 'PUT', headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + sess.gh, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'Datos ' + fecha + ' (adjunto)', content: tob64(all), branch: ST().branch || 'datos' }) });
+    if (r.status === 401 || r.status === 403) throw new Error('token');
+    if (!r.ok) throw new Error('guardar_' + r.status);
+    return true;
+  }
+  async function getBin(sess, path) {
+    const h = { Accept: 'application/vnd.github.raw' }; if (sess.gh) h.Authorization = 'Bearer ' + sess.gh;
+    const r = await fetch(url(path) + '?ref=' + encodeURIComponent(ST().branch || 'datos'), { headers: h, cache: 'force-cache' });
+    if (!r.ok) throw new Error('lectura_' + r.status);
+    const all = new Uint8Array(await r.arrayBuffer());
+    return new Uint8Array(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: all.slice(0, 12) }, sess.key, all.slice(12)));
   }
   // ---------- Día del evento ----------
   const act = (a) => (a || []).filter((r) => !r.del);
@@ -284,7 +303,7 @@ window.TL = (() => {
     [...(a || []), ...(b || [])].forEach((r) => { const o = m.get(r.id); if (!o || String(r.t || '') > String(o.t || '')) m.set(r.id, r); });
     return [...m.values()];
   }
-  const EV_KEYS = ['evento_bloques', 'evento_donativos', 'evento_sinpe', 'evento_pizarras', 'evento_config', 'evento_rubros', 'prod_compromisos', 'prod_unidades'];
+  const EV_KEYS = ['evento_bloques', 'evento_donativos', 'evento_sinpe', 'evento_pizarras', 'evento_config', 'evento_rubros', 'prod_compromisos', 'prod_unidades', 'prod_eventos'];
   const nowIso = () => new Date().toISOString();
   const uid = () => Array.from(crypto.getRandomValues(new Uint8Array(6)), (b) => b.toString(16).padStart(2, '0')).join('');
   // Excel (se carga solo cuando se usa)
@@ -839,7 +858,7 @@ window.TL = (() => {
     }
     return { espera, texto, fallo, ok, avisar, inactividad };
   })();
-  return { SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
+  return { putBin, getBin, SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
 })();
 </script>
 </head>
@@ -1090,7 +1109,7 @@ window.TL = (() => {
 .pe-panel[hidden] { display: none !important; }
 .pe-panel { display: grid; gap: 1rem; }
 .pe-card { background: #fff; border: 1px solid var(--linea); border-radius: 22px; padding: clamp(.9rem, 2.5vw, 1.25rem); box-shadow: 0 10px 28px rgba(90,0,73,.07); display: grid; gap: .8rem; min-width: 0; }
-.pe-card > h2 { margin: 0; font-family: var(--f-titulo); font-weight: 900; font-size: clamp(1.1rem, 3vw, 1.35rem); background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
+.pe-card h2 { margin: 0; font-family: var(--f-titulo); font-weight: 900; font-size: clamp(1.1rem, 3vw, 1.35rem); background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
 .pe-filt { display: grid; grid-template-columns: minmax(12rem, 2fr) repeat(2, minmax(9rem, 1fr)) auto; gap: .5rem; align-items: end; }
 @media (max-width: 48rem) { .pe-filt { grid-template-columns: 1fr 1fr; } .pe-filt > :first-child { grid-column: 1 / -1; } }
 .pe input, .pe select, .pe textarea { font-family: var(--f-apoyo); font-size: .92rem; color: var(--tinta); width: 100%; box-sizing: border-box; padding: .55rem .7rem; border: 1.5px solid var(--linea); border-radius: 12px; background: #fff; min-width: 0; }
@@ -1192,6 +1211,33 @@ window.TL = (() => {
 .pe-drop small { font-family: var(--f-apoyo); color: var(--gris); font-size: .8rem; }
 .pe-msg { font-size: .88rem; color: var(--gris); }
 .pe-msg.ok { color: #1d7a4a; font-family: var(--f-titulo); } .pe-msg.err { color: var(--color-bad); font-family: var(--f-titulo); }
+/* Línea de una sola unidad: el cumplimiento va en la misma línea */
+.pe-one { grid-column: 2 / -1; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.pe-one input { flex: 1 1 14rem; width: auto; }
+.pe-tog.ed { font-size: .85rem; }
+@media (max-width: 60rem) { .pe-row > .pe-one { grid-column: 1 / -1; } }
+/* Eventualidades (bitácora) */
+.ev-form { display: grid; gap: .6rem; }
+.ev-auto { font-size: .8rem; color: var(--gris); }
+.ev-adj { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.ev-pend { display: flex; gap: .5rem; flex-wrap: wrap; }
+.ev-chip { position: relative; display: inline-flex; align-items: center; gap: .4rem; border: 1px solid var(--linea); background: var(--crema); border-radius: 12px; padding: .3rem .5rem; font-size: .78rem; max-width: 100%; }
+.ev-chip img { width: 3rem; height: 3rem; object-fit: cover; border-radius: 8px; }
+.ev-chip button { border: 0; background: transparent; color: var(--gris); cursor: pointer; font-size: .9rem; }
+.ev-drop { border: 2px dashed var(--linea); border-radius: 14px; padding: .55rem .8rem; font-size: .8rem; color: var(--gris); text-align: center; }
+.ev-drop.over { border-color: var(--vino); background: #ffe9f8; }
+.ev-list { display: grid; gap: .8rem; }
+.ev-card { border: 1px solid var(--linea); border-left: 5px solid var(--naranja); border-radius: 18px; background: #fff; padding: .85rem 1rem; display: grid; gap: .5rem; min-width: 0; }
+.ev-card h3 { margin: 0; font-family: var(--f-titulo); color: var(--vino-osc); font-size: 1.05rem; overflow-wrap: anywhere; }
+.ev-meta { font-size: .78rem; color: var(--gris); }
+.ev-meta b { font-family: var(--f-titulo); color: var(--vino); font-weight: 400; }
+.ev-txt { margin: 0; font-size: .92rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ev-gal { display: flex; gap: .5rem; flex-wrap: wrap; align-items: flex-start; }
+.ev-gal a.img { display: block; width: 7.5rem; height: 7.5rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--linea); background: var(--crema) center / cover no-repeat; }
+.ev-gal a.img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ev-file { font-family: var(--f-titulo); font-size: .78rem; border: 1.5px solid var(--linea); background: #fff; color: var(--vino); border-radius: 999px; padding: .4rem .8rem; cursor: pointer; }
+.ev-replies { display: grid; gap: .45rem; margin-left: clamp(.4rem, 3vw, 1.4rem); border-left: 3px solid #ffe9f8; padding-left: .7rem; }
+.ev-rep { display: grid; gap: .3rem; background: #fff8fc; border-radius: 12px; padding: .55rem .7rem; }
 /* Diálogo de Inicio */
 .pe-dlg { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 16px; background: rgba(34,0,28,.55); }
 .pe-dlg[hidden] { display: none; }
@@ -1251,6 +1297,7 @@ window.TL = (() => {
     <nav class="pe-tabs" role="tablist" aria-label="Secciones de producción">
       <button type="button" role="tab" data-p="comp" aria-selected="true">📋 Compromisos</button>
       <button type="button" role="tab" data-p="pend">⚠ Pendientes<span class="cnt" id="cnt-pend">0</span></button>
+      <button type="button" role="tab" data-p="even">📝 Eventualidades</button>
       <button type="button" role="tab" data-p="graf">📊 Cumplimiento</button>
       <button type="button" role="tab" data-p="arch">⇅ Archivos</button>
     </nav>
@@ -1279,6 +1326,18 @@ window.TL = (() => {
       <div class="pe-card">
         <h2>✘ No cumplidos</h2>
         <div class="pe-pend" id="pe-nocump"></div>
+      </div>
+    </section>
+
+    <section class="pe-panel" id="p-even" role="tabpanel" hidden>
+      <div class="pe-card">
+        <h2>📝 Nueva eventualidad</h2>
+        <div id="ev-nueva"></div>
+      </div>
+      <div class="pe-card">
+        <div class="pe-acts" style="justify-content: space-between"><h2 style="margin:0">Bitácora</h2><button type="button" class="pe-sec" id="ev-xls">⬇ Excel de eventualidades</button></div>
+        <p class="pe-msg" id="ev-msg" role="status"></p>
+        <div class="ev-list" id="ev-list"></div>
       </div>
     </section>
 
@@ -1375,7 +1434,7 @@ window.TL_INFORMES_BASE = '../informes/';
   }
 
   const C = { si: '#2e9e62', no: '#e5484d', pe: '#ffb020' };
-  const PK = ['prod_compromisos', 'prod_unidades'];
+  const PK = ['prod_compromisos', 'prod_unidades', 'prod_eventos'];
   let D = null, BASE = '', saving = false, timer = null, pendRender = false;
   const abiertos = new Set();
   const norm = (d) => { const o = { ...d }; PK.forEach((k) => { if (!Array.isArray(o[k])) o[k] = []; }); return o; };
@@ -1469,10 +1528,19 @@ window.TL_INFORMES_BASE = '../informes/';
     const e = est(c);
     const it = el('div', 'pe-item' + (abiertos.has(c.id) ? ' open' : '') + (e.no ? ' no' : e.total && e.si === e.total ? ' ok' : '')); it.dataset.id = c.id;
     const row = el('div', 'pe-row');
-    const tg = el('button', 'pe-tog', '▶'); tg.type = 'button'; tg.setAttribute('aria-expanded', String(abiertos.has(c.id))); tg.setAttribute('aria-label', 'Ver las ' + e.total + ' líneas de ' + c.cliente);
+    const una = frec(c) <= 1;
+    const tg = el('button', 'pe-tog' + (una ? ' ed' : ''), una ? '✎' : '▶'); tg.type = 'button'; tg.setAttribute('aria-expanded', String(abiertos.has(c.id))); tg.setAttribute('aria-label', una ? 'Editar ' + c.cliente : 'Ver las ' + e.total + ' líneas de ' + c.cliente);
     const pw = el('span', 'pe-patw'); pw.appendChild(el('span', 'pe-pat', c.patrocinio || '—'));
     row.append(tg, el('span', 'pe-cli', c.cliente || '—'), pw, el('span', 'pe-fr', String(frec(c))), el('span', 'pe-det', c.detalle || ''), el('span', 'pe-x', X(c.mencion)), el('span', 'pe-x', X(c.grafica)), prog(e));
-    row.addEventListener('click', (ev) => { if (ev.target.closest('input,select,textarea')) return; if (abiertos.has(c.id)) abiertos.delete(c.id); else abiertos.add(c.id); repintar(c); });
+    if (una && frec(c) === 1) {
+      const u = unidades(c)[0]; const one = el('div', 'pe-one');
+      const sw = el('div', 'pe-sw'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Cumplimiento');
+      [['si', '✔ Cumplió'], ['no', '✘ No cumplió']].forEach(([v, t]) => { const bt = el('button', v, t); bt.type = 'button'; bt.setAttribute('aria-pressed', String(u.estado === v)); bt.addEventListener('click', () => { setUnidad(c, 1, { estado: u.estado === v ? '' : v }); repintar(c); }); sw.appendChild(bt); });
+      const ci = el('input'); ci.type = 'text'; ci.value = u.comentario || ''; ci.placeholder = 'Comentario'; ci.setAttribute('aria-label', 'Comentario de ' + c.cliente); ci.addEventListener('change', () => setUnidad(c, 1, { comentario: ci.value }));
+      one.append(sw, ci); if (u.cuando) one.appendChild(el('span', 'pe-quien', (u.estado === 'si' ? '✔ ' : u.estado === 'no' ? '✘ ' : '') + (u.por || '') + ' · ' + hora(u.cuando)));
+      row.appendChild(one);
+    }
+    row.addEventListener('click', (ev) => { if (ev.target.closest('input,select,textarea,.pe-sw,.pe-one')) return; if (abiertos.has(c.id)) abiertos.delete(c.id); else abiertos.add(c.id); repintar(c); });
     it.appendChild(row);
     if (abiertos.has(c.id)) it.appendChild(cuerpo(c));
     return it;
@@ -1481,8 +1549,9 @@ window.TL_INFORMES_BASE = '../informes/';
   function cuerpo(c) {
     const b = el('div', 'pe-body');
     if (c.texto) b.appendChild(el('div', 'pe-texto', '🎙 ' + c.texto));
-    const h = el('div', 'pe-sub-h'); ['N°', 'CLIENTE', 'FREC.', 'DETALLE GRÁFICOS', 'CUMPLIMIENTO', 'COMENTARIOS'].forEach((t) => h.appendChild(el('span', null, t))); b.appendChild(h);
-    unidades(c).forEach((u) => {
+    const varias = frec(c) > 1;
+    if (varias) { const h = el('div', 'pe-sub-h'); ['N°', 'CLIENTE', 'FREC.', 'DETALLE GRÁFICOS', 'CUMPLIMIENTO', 'COMENTARIOS'].forEach((t) => h.appendChild(el('span', null, t))); b.appendChild(h); }
+    (varias ? unidades(c) : []).forEach((u) => {
       const r = el('div', 'pe-sub' + (u.estado ? ' ' + u.estado : ''));
       const sw = el('div', 'pe-sw'); sw.setAttribute('role', 'group'); sw.setAttribute('aria-label', 'Cumplimiento de la línea ' + u.n);
       [['si', '✔ Cumplió'], ['no', '✘ No cumplió']].forEach(([v, t]) => { const bt = el('button', v, t); bt.type = 'button'; bt.setAttribute('aria-pressed', String(u.estado === v)); bt.addEventListener('click', () => { setUnidad(c, u.n, { estado: u.estado === v ? '' : v }); repintar(c); }); sw.appendChild(bt); });
@@ -1495,7 +1564,7 @@ window.TL_INFORMES_BASE = '../informes/';
     if (!frec(c)) b.appendChild(el('p', 'pe-cnt', 'Este compromiso tiene frecuencia 0.'));
     const gc = el('div', 'f'); const gi = el('textarea'); gi.value = c.comentario || ''; gi.placeholder = 'Comentario general del compromiso'; gi.addEventListener('change', () => setComp(c, { comentario: gi.value })); gc.append(el('span', 'lab', 'Comentario general'), gi); b.appendChild(gc);
     const acts = el('div', 'pe-acts');
-    const todo = el('button', 'pe-sec', '✔ Marcar todas como cumplidas'); todo.type = 'button';
+    const todo = el('button', 'pe-sec', '✔ Marcar todas como cumplidas'); todo.type = 'button'; todo.hidden = !varias;
     todo.addEventListener('click', () => { unidades(c).forEach((u) => { if (u.estado !== 'si') setUnidad(c, u.n, { estado: 'si' }); }); repintar(c); });
     const ed = el('button', 'pe-sec', '✎ Editar compromiso'); ed.type = 'button';
     ed.addEventListener('click', () => { const f = formulario(c, (v) => { setComp(c, v); abiertos.add(c.id); pintar(); }, () => repintar(c)); b.replaceChildren(f); });
@@ -1571,11 +1640,11 @@ window.TL_INFORMES_BASE = '../informes/';
 
   // ---------- Pestañas ----------
   let TAB = 'comp';
-  function tab(p) { TAB = p; document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.p === p))); ['comp', 'pend', 'graf', 'arch'].forEach((x) => { $('p-' + x).hidden = x !== p; }); if (p === 'pend') pendientes(); if (p === 'graf') graficas(); }
+  function tab(p) { TAB = p; document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.p === p))); ['comp', 'pend', 'even', 'graf', 'arch'].forEach((x) => { $('p-' + x).hidden = x !== p; }); if (p === 'pend') pendientes(); if (p === 'graf') graficas(); if (p === 'even') eventos(); }
   document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.addEventListener('click', () => tab(b.dataset.p)));
   function pintar() {
     const a = document.activeElement; if (a && a.closest && a.closest('#app') && /INPUT|TEXTAREA|SELECT/.test(a.tagName) && a.id !== 'f-q') { pendRender = true; resumen(); return; }
-    pendRender = false; resumen(); lista(); if (TAB === 'pend') pendientes(); if (TAB === 'graf') graficas();
+    pendRender = false; resumen(); lista(); if (TAB === 'pend') pendientes(); if (TAB === 'graf') graficas(); if (TAB === 'even') eventos();
   }
   document.addEventListener('focusout', () => setTimeout(() => { if (pendRender) pintar(); }, 60));
 
@@ -1697,6 +1766,109 @@ window.TL_INFORMES_BASE = '../informes/';
     no.addEventListener('click', () => { pv.replaceChildren(); });
     const acts = el('div', 'pe-acts'); acts.append(go, no); box.append(res, chk, acts); pv.appendChild(box);
   }
+
+  // ---------- Eventualidades (bitácora) ----------
+  const MAXB = 15 * 1024 * 1024;
+  const tam = (n) => n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB';
+  // Las imágenes grandes se reducen (máx. 2000 px) para que suban rápido
+  async function preparar(f) {
+    let blob = f, nombre = f.name || ('captura-' + EV.sello() + '.png'), tipo = f.type || 'application/octet-stream';
+    if (/^image\/(png|jpeg|webp)$/.test(tipo)) {
+      try {
+        const bmp = await createImageBitmap(f); const k = Math.min(1, 2000 / Math.max(bmp.width, bmp.height));
+        if (k < 1 || f.size > 1.5e6) { const cv = document.createElement('canvas'); cv.width = Math.round(bmp.width * k); cv.height = Math.round(bmp.height * k); cv.getContext('2d').drawImage(bmp, 0, 0, cv.width, cv.height); blob = await new Promise((r) => cv.toBlob(r, 'image/jpeg', 0.85)); tipo = 'image/jpeg'; nombre = nombre.replace(/\.\w+$/, '') + '.jpg'; }
+      } catch (e) {}
+    }
+    if (blob.size > MAXB) throw new Error('El archivo ' + nombre + ' pesa más de 15 MB.');
+    return { blob, nombre, tipo };
+  }
+  const urls = new Map();
+  function verAdjunto(a) { if (!urls.has(a.path)) urls.set(a.path, TL.getBin(SESS, a.path).then((b) => URL.createObjectURL(new Blob([b], { type: a.tipo })))); return urls.get(a.path); }
+  function galeria(adj) {
+    const g = el('div', 'ev-gal');
+    (adj || []).forEach((a) => {
+      if (/^image\//.test(a.tipo)) { const l = el('a', 'img'); l.target = '_blank'; l.rel = 'noopener'; l.title = a.nombre; l.setAttribute('aria-label', 'Abrir ' + a.nombre); verAdjunto(a).then((u) => { l.href = u; const i = el('img'); i.src = u; i.alt = a.nombre; l.appendChild(i); }).catch(() => { l.textContent = '⚠'; }); g.appendChild(l); }
+      else { const b = el('button', 'ev-file', '📄 ' + a.nombre + ' · ' + tam(a.tam || 0)); b.type = 'button'; b.addEventListener('click', async () => { b.disabled = true; try { const u = await verAdjunto(a); const x = el('a'); x.href = u; x.download = a.nombre; document.body.appendChild(x); x.click(); x.remove(); } catch (e) { $('ev-msg').textContent = 'No se pudo abrir ' + a.nombre + '.'; } b.disabled = false; }); g.appendChild(b); }
+    });
+    return g;
+  }
+  // Formulario reutilizable: título (opcional), comentario y adjuntos (pegar con Ctrl+V, galería o archivos)
+  const borradores = new Map();
+  function compositor(clave, conTitulo, onOk) {
+    const dr = borradores.get(clave) || { titulo: '', texto: '', files: [] }; borradores.set(clave, dr);
+    const w = el('div', 'ev-form'); w.dataset.comp = clave;
+    let ti = null;
+    if (conTitulo) { ti = el('input'); ti.type = 'text'; ti.placeholder = 'Título'; ti.value = dr.titulo; ti.setAttribute('aria-label', 'Título'); ti.addEventListener('input', () => { dr.titulo = ti.value; }); w.appendChild(ti); }
+    const tx = el('textarea'); tx.placeholder = conTitulo ? 'Comentario (podés pegar capturas con Ctrl+V)' : 'Respuesta (podés pegar capturas con Ctrl+V)'; tx.value = dr.texto; tx.setAttribute('aria-label', conTitulo ? 'Comentario' : 'Respuesta'); tx.addEventListener('input', () => { dr.texto = tx.value; });
+    const pend = el('div', 'ev-pend');
+    const pintarPend = () => pend.replaceChildren(...dr.files.map((f, i) => { const c = el('span', 'ev-chip'); if (/^image\//.test(f.tipo)) { const im = el('img'); im.src = f.url; im.alt = ''; c.appendChild(im); } c.append(f.nombre + ' · ' + tam(f.blob.size)); const x = el('button', null, '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Quitar ' + f.nombre); x.addEventListener('click', () => { URL.revokeObjectURL(f.url); dr.files.splice(i, 1); pintarPend(); }); c.appendChild(x); return c; }));
+    const agregar = async (list) => { for (const f of list) { try { const p = await preparar(f); p.url = URL.createObjectURL(p.blob); dr.files.push(p); } catch (e) { $('ev-msg').textContent = e.message; } } pintarPend(); };
+    w.addEventListener('paste', (e) => { const fs = [...(e.clipboardData ? e.clipboardData.files : [])]; if (fs.length) { e.preventDefault(); agregar(fs); } });
+    w._agregar = agregar;
+    const fi = el('input'); fi.type = 'file'; fi.multiple = true; fi.hidden = true; fi.accept = 'image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip';
+    fi.addEventListener('change', () => { agregar([...fi.files]); fi.value = ''; });
+    const bA = el('button', 'pe-sec', '📎 Adjuntar (galería o archivo)'); bA.type = 'button'; bA.addEventListener('click', () => fi.click());
+    const drop = el('div', 'ev-drop', 'Arrastrá archivos aquí o pegá una captura con Ctrl+V');
+    ['dragenter', 'dragover'].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.remove('over'); }));
+    drop.addEventListener('drop', (e) => agregar([...e.dataTransfer.files]));
+    const pub = el('button', 'pe-go', conTitulo ? 'Publicar eventualidad' : 'Responder'); pub.type = 'button';
+    const auto = el('span', 'ev-auto', 'Se registra a nombre de ' + (SESS.nombre || USER) + ' con la fecha y hora actuales.');
+    pub.addEventListener('click', async () => {
+      const titulo = conTitulo ? dr.titulo.trim() : '', texto = dr.texto.trim();
+      if (conTitulo && !titulo) { $('ev-msg').textContent = 'Escribí el título de la eventualidad.'; ti.focus(); return; }
+      if (!texto && !dr.files.length) { $('ev-msg').textContent = 'Escribí un comentario o adjuntá algo.'; tx.focus(); return; }
+      pub.disabled = true; const adj = [];
+      try {
+        for (let i = 0; i < dr.files.length; i++) { const f = dr.files[i]; $('ev-msg').textContent = 'Subiendo adjunto ' + (i + 1) + ' de ' + dr.files.length + '…'; const path = 'adjuntos/' + EV.uid() + EV.uid() + '.bin'; await TL.putBin(SESS, path, new Uint8Array(await f.blob.arrayBuffer())); adj.push({ path, nombre: f.nombre, tipo: f.tipo, tam: f.blob.size }); }
+      } catch (e) { $('ev-msg').textContent = 'No se pudo subir un adjunto. Revisá tu conexión e intentá de nuevo.'; pub.disabled = false; return; }
+      onOk(titulo, texto, adj);
+      dr.files.forEach((f) => URL.revokeObjectURL(f.url)); borradores.delete(clave);
+      $('ev-msg').textContent = conTitulo ? '✔ Eventualidad publicada.' : '✔ Respuesta publicada.';
+    });
+    const acts = el('div', 'ev-adj'); acts.append(bA, pub);
+    w.append(tx, pend, drop, fi, acts, auto); pintarPend();
+    return w;
+  }
+  const nuevaFila = (titulo, texto, adj, parent) => { D.prod_eventos.push({ id: EV.uid(), parent: parent || '', titulo, comentario: texto, adjuntos: adj, autor: SESS.nombre || USER, autor_usuario: USER, fecha: EV.nowIso(), t: EV.nowIso() }); cambio(); };
+  function nuevoForm() { $('ev-nueva').replaceChildren(compositor('nueva', true, (t, x, a) => { nuevaFila(t, x, a, ''); nuevoForm(); eventos(); })); }
+  const abiertasR = new Set();
+  function eventos() {
+    if (!$('ev-nueva').firstChild) nuevoForm();
+    const a = document.activeElement; if (a && a.closest && a.closest('#ev-list [data-comp]')) return;
+    const todos = EV.act(D.prod_eventos), raiz = todos.filter((e) => !e.parent).sort((x, y) => String(y.fecha).localeCompare(String(x.fecha)));
+    $('ev-list').replaceChildren(...(raiz.length ? raiz.map((e) => {
+      const c = el('article', 'ev-card'); c.append(el('h3', null, e.titulo || 'Sin título'));
+      const m = el('div', 'ev-meta'); m.append('👤 '); m.appendChild(el('b', null, e.autor || '—')); m.append(' · ' + hora(e.fecha)); c.appendChild(m);
+      if (e.comentario) c.appendChild(el('p', 'ev-txt', e.comentario));
+      if ((e.adjuntos || []).length) c.appendChild(galeria(e.adjuntos));
+      const reps = todos.filter((r) => r.parent === e.id).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha)));
+      if (reps.length) { const rl = el('div', 'ev-replies'); reps.forEach((r) => { const d = el('div', 'ev-rep'); const mm = el('div', 'ev-meta'); mm.append('↳ '); mm.appendChild(el('b', null, r.autor || '—')); mm.append(' · ' + hora(r.fecha)); d.appendChild(mm); if (r.comentario) d.appendChild(el('p', 'ev-txt', r.comentario)); if ((r.adjuntos || []).length) d.appendChild(galeria(r.adjuntos)); rl.appendChild(d); }); c.appendChild(rl); }
+      const rb = el('button', 'pe-sec', abiertasR.has(e.id) ? 'Cerrar respuesta' : '💬 Responder (' + reps.length + ')'); rb.type = 'button';
+      rb.addEventListener('click', () => { if (abiertasR.has(e.id)) abiertasR.delete(e.id); else abiertasR.add(e.id); eventos(); });
+      const ra = el('div', 'pe-acts'); ra.appendChild(rb); c.appendChild(ra);
+      if (abiertasR.has(e.id)) c.appendChild(compositor('r-' + e.id, false, (t, x, adj) => { nuevaFila('', x, adj, e.id); abiertasR.delete(e.id); eventos(); }));
+      return c;
+    }) : [el('p', 'pe-empty', 'Todavía no hay eventualidades registradas.')]));
+  }
+  // Ctrl+V en cualquier parte de la pestaña: la captura va a la eventualidad nueva
+  document.addEventListener('paste', (e) => { if (TAB !== 'even' || !SESS) return; if (e.target.closest && e.target.closest('[data-comp]')) return; const fs = [...(e.clipboardData ? e.clipboardData.files : [])]; const w = $('ev-nueva').querySelector('[data-comp]'); if (fs.length && w) { e.preventDefault(); w._agregar(fs); } });
+  $('ev-xls').addEventListener('click', async () => {
+    const b = $('ev-xls'), m = $('ev-msg'); b.disabled = true; m.textContent = 'Preparando Excel…';
+    try {
+      const XL = await EV.loadScript((window.TL_LIB_BASE || '../lib/') + 'exceljs.min.js', 'ExcelJS');
+      const wb = new XL.Workbook(); const ws = wb.addWorksheet('Eventualidades', { views: [{ state: 'frozen', ySplit: 1 }] });
+      ws.columns = [{ header: 'FECHA', width: 12 }, { header: 'HORA', width: 9 }, { header: 'TIPO', width: 13 }, { header: 'TÍTULO', width: 34 }, { header: 'COMENTARIO', width: 70 }, { header: 'CREADO POR', width: 24 }, { header: 'ADJUNTOS', width: 40 }, { header: 'RESPUESTA A', width: 30 }, { header: 'ID', width: 14 }];
+      ws.getRow(1).eachCell((c) => { c.font = { bold: true, color: { argb: 'FF111111' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF2C300' } }; c.alignment = { vertical: 'middle', horizontal: 'center' }; });
+      const todos = EV.act(D.prod_eventos), raiz = todos.filter((e) => !e.parent).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha)));
+      const fila = (e, tipo, padre) => { const f = EV.localStr(e.fecha); const r = ws.addRow([f.slice(0, 10), f.slice(11), tipo, e.titulo || '', e.comentario || '', e.autor || '', (e.adjuntos || []).map((a) => a.nombre).join(', '), padre ? padre.titulo : '', e.id]); r.alignment = { vertical: 'top', wrapText: true }; if (tipo === 'Respuesta') r.font = { color: { argb: 'FF5A0049' } }; };
+      raiz.forEach((e) => { fila(e, 'Eventualidad'); todos.filter((r) => r.parent === e.id).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha))).forEach((r) => fila(r, 'Respuesta', e)); });
+      const buf = await wb.xlsx.writeBuffer();
+      EV.guardarArchivo(new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), 'Teleton-2026-eventualidades-' + EV.sello() + '.xlsx');
+      m.textContent = 'Excel descargado.';
+    } catch (e) { m.textContent = 'No se pudo generar el Excel.'; }
+    b.disabled = false;
+  });
 
   // ---------- Ingreso ----------
   ingreso('produccion', 'Producción ejecutiva', async () => {
