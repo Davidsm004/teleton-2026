@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3+y3CkDoDRNpDMAzTlzG+w4Qqf67DdY2dUYi4SLgdHM=' 'sha256-3j8vlBagZYMDl1RP3xQW15wl9e3NzyjTKhHnp+GE724=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-wFt3l8xuqoy5y9JrlTUcFuL5qoTkIvFpSnGvtRcQX+g='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-4I6gWMCoqTB0bizP0y8eKdtLPvL4ovyuAKJgpVfEZk8=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-Yrb4FvLGV9/npUneMccwMfBAits68I7Gp3dLMYm2Nfw=' 'sha256-p6iLhIUo53jMaWhbZh5uka+q+J4ff4OAcURLqKsHUgc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -128,7 +128,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 @keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "58c6b6da655bdaf5", "iv": "dmsOTA+SMAnQZaIl", "ct": "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", "users": [{"id": "45dbb404b1125d9b60f89f0c14c651094a366a50f3780d6a9092e41bb0b6b865", "salt": "paiOIBQUneavSmsRfAObWA==", "iv": "Y767pW+rz83cKOcl", "wrapped": "PzgRHGx4sekTUPqcUmc1ZL+FFztr92/JqbPw0YSfLjhxd0EsrcxVpCClJawhzxoE", "giv": "VPShllTJAKjoKm34", "gw": "mFXZtzu2NkAqoZgTURp0qZ8BUPIZK3de0mdNEtJXYsIXw9PNv97lcUuv/0XpLEtnTbjo30fyGrKGrrqKLXPWTZUBuy9vOCF7lcVH6suZsooi2W4VbePtc1o3rI1nZOfxqbE6aIkq3vUbgCTeAA=="}, {"id": "3d4708e3546a3c80fa468da9fc7b5cd8861da405ca33d7e0545bf5476df80693", "salt": "vu02K7kTLaEKrQnXle9iPQ==", "iv": "KcLi2HBCWOCHxloz", "wrapped": "RGSHP3o+fuNBw6VVl/grPmNmr8V40z0pJxN3bbsltiN4dqdqmvvONRc2e2V1ci2g", "giv": "6GNoKHeqnNKl6vsT", "gw": "5TM8Y555k0/drcRolWxqNKIHb15UUMzARRpwRy5OkrrbUZdC3G6m3PNPmvlbS92dv9EPFcUAz5+Gtm4mxwN8RHWGjPTp3TDXBLmdcES38jX7QOl8i22p5i2d9qztn7NgBsmGWHALVJmYMmKMfg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "9f81d3762d5cef4c", "iv": "vXPM0rpTMT0b58+q", "ct": "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", "users": [{"id": "39118738d268c0590c755de182c631a7cf612dadf317a1b0bf628c53c9e6380e", "salt": "BdDPxtYxcPkh7CYGPhDBaw==", "iv": "nLmcUgK1I289WjtW", "wrapped": "AM5YyQ/lwVuE5I3aYZWJatRJQRZOdsJcEIGEO5lN4wcYCFBL9vjuBqta9l8Afmyp", "giv": "5JEFcNMrGG5737eb", "gw": "QHwmG77ui3wk3ntuK0HR+NgnYbUZDooxU+J6L+9RB62yXFXe+mLr2SpoShsvR9U73n+ASAsI99nqia8QJ/Xk+AKp4IZIGucM6qxtt2fy/PtS+J9R2OiF7gYm6BLgppDIW9S2bbviDNNVBH7uqg=="}, {"id": "4a048a311eeca195e3e170eedf78fc54c3490a768a8c1c562e784ace1f8be4f9", "salt": "CCOuqpk5FbiOV7aereWe5g==", "iv": "xlVHAibIU/adzuPp", "wrapped": "cmBFJi2JuNLNjuDOHAn59o03f3sOirUVNgU9lvxk3zySOfpetLE3k+BMwEBkeL8+", "giv": "rOQbQCeqnNcEv4Xi", "gw": "JoVmPrDrHmhgUOu9LELt/iPHX0viVRxU1NPQj765OFwJotwv8S8UMucOk9j96bwoZCcpa8i+wdR7qr9KBBUohx+QFZMp9N0U7uQiMir9EIiDMkDvTfKUlyJkmI+42mzEm8DZXjJkf6dfS0d6Yg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -858,7 +858,44 @@ window.TL = (() => {
     }
     return { espera, texto, fallo, ok, avisar, inactividad };
   })();
-  return { putBin, getBin, SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
+  // ---------- Una sola sesión por usuario (sesiones.json cifrado en la rama "datos") ----------
+  // Gana la sesión más reciente: si el usuario entra en otro lugar, la sesión anterior se cierra sola.
+  const SES_PATH = 'sesiones.json';
+  let sesEtag = null, sesCache = null;
+  async function sesLeer(sess, fresco) {
+    const h = { Accept: 'application/vnd.github+json' }; if (sess.gh) h.Authorization = 'Bearer ' + sess.gh;
+    if (sesEtag && sesCache && !fresco) h['If-None-Match'] = sesEtag;
+    const r = await fetch(url(SES_PATH) + '?ref=' + encodeURIComponent(ST().branch || 'datos'), { headers: h, cache: 'no-store' });
+    if (r.status === 304 && sesCache) return sesCache;
+    if (r.status === 404) { sesEtag = null; sesCache = { map: {}, sha: null }; return sesCache; }
+    if (!r.ok) throw new Error('lectura_' + r.status);
+    sesEtag = r.headers.get('ETag'); const j = await r.json(); const pkg = JSON.parse(fromB64Utf8(j.content));
+    sesCache = { map: pkg && pkg.ct ? await open(sess.key, pkg) : {}, sha: j.sha }; return sesCache;
+  }
+  async function sesEscribir(sess, fn) {
+    for (let i = 0; i < 5; i++) {
+      const cur = await sesLeer(sess, true); const map = { ...cur.map }; fn(map);
+      const body = { message: 'Datos ' + stamp().fecha + ' sesión (' + (sess.nombre || sess.usuario || '') + ')', content: toB64Utf8(JSON.stringify(await seal(sess.key, map))), branch: ST().branch || 'datos' };
+      if (cur.sha) body.sha = cur.sha;
+      const r = await fetch(url(SES_PATH), { method: 'PUT', headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + sess.gh, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      if (r.ok) { sesEtag = null; return; }
+      if (r.status === 409 || r.status === 422) { await new Promise((ok) => setTimeout(ok, 300 + Math.random() * 700)); continue; }
+      throw new Error('sesion_' + r.status);
+    }
+  }
+  const SES = {
+    sid: null,
+    async abrir(sess, unidad) {
+      SES.sid = uid() + uid();
+      if (!sess.gh || !sess.id) return;
+      try { await sesEscribir(sess, (m) => { m[sess.id] = { sid: SES.sid, unidad, desde: nowIso() }; }); } catch (e) {}
+    },
+    async vigente(sess) { if (!sess || !sess.id || !SES.sid) return true; try { const c = await sesLeer(sess); const x = c.map[sess.id]; return !x || x.sid === SES.sid; } catch (e) { return true; } },
+    async cerrar(sess) { if (!sess || !sess.gh || !sess.id || !SES.sid) return; try { await sesEscribir(sess, (m) => { if (m[sess.id] && m[sess.id].sid === SES.sid) delete m[sess.id]; }); } catch (e) {} },
+    // Revisa cada 25 s si esta sigue siendo la sesión vigente
+    vigilar(getSess, alCerrar) { setInterval(async () => { const s = getSess(); if (!s || document.hidden) return; if (!(await SES.vigente(s))) alCerrar('Se cerró tu sesión porque tu usuario entró en otro equipo o pestaña. Solo se permite una sesión abierta por usuario.'); }, 25000); document.addEventListener('visibilitychange', async () => { const s = getSess(); if (s && !document.hidden && !(await SES.vigente(s))) alCerrar('Se cerró tu sesión porque tu usuario entró en otro equipo o pestaña. Solo se permite una sesión abierta por usuario.'); }); },
+  };
+  return { SES, putBin, getBin, SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
 })();
 </script>
 </head>
@@ -1481,6 +1518,7 @@ window.TL_INFORMES_BASE = '../informes/';
         try { localStorage.setItem('tl-user', user); } catch (e) {}
         if (!s.acc[unidad]) { err.textContent = unidad === 'accesos' ? 'Solo el administrador principal puede entrar a ' + nombreUnidad + '.' : 'Tu usuario no tiene acceso a ' + nombreUnidad + '. Pedile acceso al administrador.'; return; }
         SESS = s; USER = user;
+        await TL.SES.abrir(SESS, nombreUnidad);
         $('login').hidden = true; $('app').hidden = false;
         $('st').textContent = 'Sesión: ' + (s.nombre || user);
         await alEntrar();
@@ -1489,7 +1527,8 @@ window.TL_INFORMES_BASE = '../informes/';
         if (bad) { const m = TL.SEG.fallo(user, nombreUnidad); if (m) err.textContent = m; }
       } finally { btn.disabled = false; btn.textContent = 'Ingresar'; }
     });
-    $('out').addEventListener('click', () => cerrarPor(''));
+    $('out').addEventListener('click', async () => { await TL.SES.cerrar(SESS); cerrarPor(''); });
+    TL.SES.vigilar(() => SESS, (m) => cerrarPor(m));
     TL.SEG.inactividad(() => 30, () => { if (SESS) cerrarPor('La sesión se cerró por inactividad. Volvé a ingresar.'); });
     // Si le quitan el acceso o eliminan el usuario, la sesión se cierra
     setInterval(async () => {
@@ -1786,7 +1825,7 @@ window.TL_INFORMES_BASE = '../informes/';
   $('dlg-no').addEventListener('click', () => { dlg.hidden = true; $('pe-ini').focus(); });
   dlg.addEventListener('click', (e) => { if (e.target === dlg) { dlg.hidden = true; } });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !dlg.hidden) { dlg.hidden = true; $('pe-ini').focus(); } });
-  $('dlg-si').addEventListener('click', async () => { if (timer) { clearTimeout(timer); await guardar(); } SESS = null; try { location.href = '../'; } catch (e) {} });
+  $('dlg-si').addEventListener('click', async () => { if (timer) { clearTimeout(timer); await guardar(); } await TL.SES.cerrar(SESS); SESS = null; try { location.href = '../'; } catch (e) {} });
   $('pe-ref').addEventListener('click', () => refrescar(true));
 
   // ---------- Excel, PDF y PowerPoint ----------
