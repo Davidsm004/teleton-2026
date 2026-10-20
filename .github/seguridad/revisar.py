@@ -98,6 +98,15 @@ if ev in ('schedule', 'workflow_dispatch'):
             except Exception as e:
                 print('No se pudo revisar', url, e)
 
+# 9. Recordatorio: renovar el token de GitHub del sitio («Captura Teletón», vence el 18/10/2027). Avisa 2 días antes.
+VENCE = datetime.date(2027, 10, 18)
+falta = (VENCE - datetime.date.today()).days
+if falta <= 2:
+    titulo = 'Recordatorio: renovar el token de GitHub «Captura Teletón»'
+    abiertos = sh('gh', 'issue', 'list', '--state', 'open', '--search', titulo, '--json', 'title', '--jq', '.[].title')
+    if titulo not in abiertos:
+        subprocess.run(['gh', 'issue', 'create', '--title', titulo, '--body', f'El token vence el 18/10/2027 (faltan {max(falta, 0)} días). Regeneralo en https://github.com/settings/personal-access-tokens y pasáselo a quien administra el sitio para publicarlo. Si vence, el sitio se puede ver pero no guardar.'], check=False)
+
 open('alerta.txt', 'w').write('\n'.join(alertas))
 with open(os.environ['GITHUB_OUTPUT'], 'a') as o: o.write(f"alerta={'1' if alertas else '0'}\n")
 print('Revisión terminada:', len(alertas), 'alertas')

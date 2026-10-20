@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-RRIKoDeqsrRZ4VsiZPgpQzvpl9FNIULKlBaj304rRto='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3lSP9kaZM8l23ndhym5zxNY9xkgD3CpOKYBg7gdJshs=' 'sha256-RRIKoDeqsrRZ4VsiZPgpQzvpl9FNIULKlBaj304rRto='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -154,6 +154,9 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 .uc-go { font-family: var(--f-titulo); font-size: .9rem; color: #fff; background: var(--degradado); border-radius: 999px; padding: .5rem 1rem; box-shadow: 0 8px 18px rgba(254,80,0,.25); }
 .ini-foot { display: grid; justify-items: center; gap: .5rem; text-align: center; color: var(--gris); font-size: .85rem; }
 .ini-foot img { height: 3rem; width: auto; }
+.aviso { display: grid; gap: .3rem; background: #fff4dc; color: #6b4300; border: 2px solid #f3b33d; border-radius: 18px; padding: 1rem 1.15rem; font-size: .95rem; line-height: 1.45; }
+.aviso b { font-family: var(--f-titulo); font-size: 1.05rem; }
+.aviso[hidden] { display: none; }
 </style>
 <main class="wrap"><div class="ini">
   <header class="ini-head">
@@ -162,6 +165,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
     <h1>Teletón Costa Rica 2026</h1>
     <p class="sub">Elegí la unidad a la que querés entrar</p>
   </header>
+  <div class="aviso" id="aviso-token" role="alert" hidden></div>
   <nav class="cards" aria-label="Unidades de la plataforma">
     <a class="uc" href="finanzas/">
       <span class="uc-ic" aria-hidden="true">💰</span>
@@ -193,6 +197,18 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
     <p>Este es un sitio del <strong>Club Activo 20-30 de San José</strong>. Su uso es interno.</p>
   </footer>
 </div></main>
+<script>
+// Recordatorio: renovar el token de GitHub (aparece 3 días antes de que venza)
+(() => {
+  const VENCE = new Date('2027-10-18T00:00:00-06:00');
+  const dias = Math.ceil((VENCE - Date.now()) / 86400000);
+  if (dias > 3) return;
+  const a = document.getElementById('aviso-token');
+  const b = document.createElement('b'); b.textContent = dias > 0 ? '⚠ Renovar el token de GitHub: vence en ' + dias + (dias === 1 ? ' día' : ' días') + ' (18 de octubre de 2027)' : '⚠ El token de GitHub venció el 18 de octubre de 2027: no se puede guardar';
+  const t = document.createElement('span'); t.textContent = 'Entrá a github.com/settings/personal-access-tokens, regenerá el token «Captura Teletón» y pasáselo a quien administra el sitio para publicarlo. Mientras no se cambie, los datos se pueden ver pero no guardar.';
+  a.append(b, t); a.hidden = false;
+})();
+</script>
 
 </body>
 </html>

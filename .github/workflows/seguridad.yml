@@ -34,6 +34,7 @@ jobs:
           AFTER: ${{ github.event.after }}
           DESDE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/datos' && github.event.before || '' }}
           REF_TYPE: ${{ github.event.ref_type }}
+          GH_TOKEN: ${{ github.token }}
           DREF: ${{ github.event.ref }}
         run: python3 .github/seguridad/revisar.py
       - name: Armar respaldo
