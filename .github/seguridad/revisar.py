@@ -27,7 +27,7 @@ if ev == 'push' and os.environ.get('FORCED') == 'true':
     alerta(f'Se reescribió el historial de «{ref}» (push forzado). Puede borrar o esconder cambios.')
 
 # 3. Archivos permitidos en cada rama
-PERM_MAIN = re.compile(r'^(index\.html|(captura|finanzas|accesos|produccion)/index\.html|informes/[^/]+\.(js|md)|informes/fuentes/[^/]+\.ttf|lib/[^/]+\.js|README\.md|RESTAURAR\.md|\.nojekyll|\.github/.*)$')
+PERM_MAIN = re.compile(r'^(index\.html|(captura|finanzas|accesos|produccion)/index\.html|informes/[^/]+\.(js|md)|informes/fuentes/[^/]+\.ttf|lib/[^/]+\.js|lib/avatares/(a\d{2}\.png|LICENCIA\.txt)|README\.md|RESTAURAR\.md|\.nojekyll|\.github/.*)$')
 PERM_DATOS = re.compile(r'^(datos\.json|usuarios\.json|sesiones\.json|chat\.json|README\.md|adjuntos/[0-9a-f]{24}\.bin)$')
 for rama, perm in (('main', PERM_MAIN), ('datos', PERM_DATOS)):
     if rama not in ramas: continue

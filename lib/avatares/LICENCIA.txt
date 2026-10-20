@@ -1,0 +1,2 @@
+Avatares: Microsoft Fluent Emoji (3D), licencia MIT.
+https://github.com/microsoft/fluentui-emoji
