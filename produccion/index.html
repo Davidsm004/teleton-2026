@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-HSBUc9mqk7JD4437vZdyFLPcyHTOLgsUlDZJ6PiN5eM=' 'sha256-dxmmt3+vTRZ5hbJg5rHU7SRepTL8ldxbmQB9z8OHfBY=' 'sha256-sgVzBQ+Us7pWL94D/CHTR74m26247sL+RE+y+a0a13U=' 'sha256-tuBHBrWLomNO9eHvos1P9c9K9D8SziRLE6978DI3Neo='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-gDJRvxqitwXVOshhidYRTjEzDOOtWjwArtFBHMVR7cU=' 'sha256-sgVzBQ+Us7pWL94D/CHTR74m26247sL+RE+y+a0a13U=' 'sha256-tuBHBrWLomNO9eHvos1P9c9K9D8SziRLE6978DI3Neo=' 'sha256-v7WaBp2utCPZa//vNFl5E9pQmxQ/0ippmwrEMxw4wC0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -128,7 +128,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 @keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "2431bc6dd7b2fcec", "iv": "u/iK+GpDFxz6YzZ9", "ct": "hDjb/HZDdCAD6JMW9KRbGxHO6EyKhceTuMjJ/jzc6fI1tvaKzUVx5VYZwJoj/EuU2xgQuo7HnFY7oq6C/ZusPUO3Nruui+oAIfQJNj/oS7seG+9FWzUWthkzGi9uR6aDSSY6uVOGFTzhoE5N8CsXtW6Ds2pX9ALlj3IbXyQSZoaa7VyQPpWf3/Ljg9UIIEW+T/tIqi0/T/h6zvoAeDoxQwaifRuh7nOzHQ1CFRP5J29DQVBa6th0TO4DLQR0lxWr8aOsmuodbseP3tsFB0bwvnXfV28EQ9j72mq0Chsg4DFBl42eKb00D1o9VFiPzpRMNtd5D98nUZsdixF/LMPB5aP1g8pC+r/W4eC6w0USRbheAzI/p3oasKgmwRJWqPNanM4fwLV5px/mkN5Okg7sB+sAFJ0o56GId7gdII5k2/Cv0z+M8vquY/qGEDvdOYKO+qViHrxvbgwdPOINpAmpSeNDOMLjAQJrm2hvEz9jqU5RAFy5Z112TXD/bmD6MBu8FVBhjBSxTQLMxvWqijuaH6n133gIjdWG27pv02o5ucaTdF7NUsNKuGOjMxPwEaRFDtf4Xjwi1ZnxSab6WHi5wQyOyeulwGy5tQNqtp26ECUr7J6FOLzW+ARUE4AUoUGXawr+w3n/eFmUiZ/n9o59tfRkD4fX/E536RW8RLKSok6YkYQOfD+Pi7AOs33YuyaxC/S6e6JZG+sk1xvGbBWCCct5EPN5YwhhhMg/TAyn5TFTrCPZOdjYXHyLYu48WkobFuomVCiDYC8wr5rstACT0GWKovizFVbEpyGmDmK//0Gq/yIX+X5IpnWVY4P70U+25C/00wX32cgt1HBHHQQ1TdeSjwzG1h/WeoI33VC9DQLGzLj0W792S/fleA0Fqol4o4GOOT/j2LCsIfzXpWbbKgDuI29oGDas8v/mf5gz0mecIhz4zjz8FuyvYwTqWx6jWfQHn5QB0aAMFdTMwyAS8HG+8LMAWGJpiyleuVDrDaFe1r1LG+8JAqoj93/04ZEtMMbyPfKRrzl5d1XT9uV/IO0OnecqljHoCjbVu+sWH/MUTnuH1ZvsDHgiPPGTlEqzJM/f/PtrCPlZTQCN06cxVCthbhQRet2ho2RlP7mighjNyAVbJZdfwvYDvxjpeMSu8lqJN7uzIvXgLk6K2EOumqWsLSFPZYAcCbW0T0MiBmdhDckREZf7G1WO/0XTxBy7b/aFYhY/y9dFRzd3Yknpb7Nf2KtOsiPdqxz1152A6SPb2KXA2ZAyUyidrnK7PfGCQO+7bHwMyY7CbEvUsCr0T+YRX2X/vQOKi3JIZmhVtaIROijwy2pIpqMzmovzRWygW4B+V7mkynB8eJth1PR3KIUJHMhEzOWo4jhP8k5seUM46kapAoLTg1ZevQeAT0kdG0UyUkgXTZKWN5Aj/hP41JwDVT3pHy5vpVzajCRZ21tiylCCGRae8eFESR/ob198wT6ejrteM7cyUMoiI3GgvkZZCdsw4av5jItbZXvT4e/IX13OfFPofaeWYUQ31VTQlCyJvKLW38gAZ9+fh4RJr17DGb3hvSBQKJeEBToPK4bqOa/GaI3ybuRYfjz9AAg3ejtFSOLgFV3uokIa8kBuq+A9wZc4kNFnl3xuS2laWliZx2FJOCiZnh+NuhZsVBncSDCy5uXK4Pqa0QLgy5K/Ab1Fn+YZwiGKXnpAhk6/N4XCIFDCiuJ+H5pNgJAhogJs9PN8FvIhr4m56UkC2muf3LjdmhyMwNeuiCCFCCvMqLaYYv08Er8b5ch7jbVB7YzNRV00LZgQtCXwUxgaixDxc1mkw/6+ihESh6LVwscqZFeVmPntWmZnGVK5gJsBtwzXZIugdjeMyQX95S4aSdAwMIMn+pTzlYJRmJAR3nUlixLlvF6e4Nr17xgnvcekvOnGgcaBkDTS9mXHZOLLlH2h6+hmDd2yWYbGjukwW4tX4alsaHExuR8CjI8dj/RVMtjceB7+aRKLVLSPB/+6xqyA4nbrl789GLPqqerpnL7yEsaByvLtuKWkpl2LGcMpfp1nr4HF833aSb2/PQLvWwBjHhi1JzFo6bfmklGoQThP+YDIf2VHjArzK2NxMJ4lFvHqkdgvBbHtluxpbNQxcW7H/YJKKE8NXPiJmmUM3jIHNrC0vSV91F4D5OKVYeAS3sQ0DY02TP/tP4lfJS4ruO3sWDLYSUs1mhqdHwaVjD0kJ5MRj77BoVfqPrt6RcqRyTD/zyliqehFquK52A0JGR3iUB7ovIPI+IScMMzazXkGR2aYItmJREJZAdLqa6dhF3yNEww2OB8eYvRmYDLkIyEr1pkXO4ktq4y5/KAw32pMFMYW7uQG1zKzTkyOfiV8KO2xSuDy+do4Nv2YcrbgCJ9otd9qW0LVi8CNOI3Ov6x2FPf2KoqegueNBRDwjKMh8ZC2VLjfFoziBQNPDQXj4uiSWbx6CtAuluUp+RAF0iUI/I9hIbUw0ufywhVGNbqFo4XpDX9vrFiiJ9aduXm1k/hVQcfIrl3UNMFcat6Ew+v6W2uzsypeSfkBWFteaYu8vFB9Maap6PCahirjtN0IctcNz/hE8Xwso8vEChPHP5JIALaCvr/99Si9CCIEa1hFd4KOyyQ3FCKe+9KJyOFqGYvaFbk2aW/88UlmKSYGhzDvnbKw3DN7WfN1ieX9UppwVNt0KQ3jdk8g/xNk3f21INGczZBE5FAVVaZnNvlyt+dxm0ejKpkwfH1myjZXW7g3YMv+K4BRIcLlWtfuarIgRv9Bws8oFxeucnobtnHta2wfUqB/omNJhA/Y+0GVp1ReVV9W2KoALJjCJGkE4y297sFXL2DMe6pNw4r6pBUMuPaD+tTjLLxuOkpNzGNHZtul6XFlnogqyVLldo2lK/xYErw9be6Oax5RLc9wYMafFgBSdhjox6yufjOCgSzoorUlFYbtFRLCnNufBiQNcWfKJBoK90GueelSVw48h3YsUpl3zdpYA2BVLLNIA2dtDhFq1tXkpRsQJADzAnPac026mPdOKlt6CWBYlv3fvRxEj8xCRRfKWkNf/FUx3ILIL04W4Go9N22TDDcTlUBb+BhPUpnyOYFmMkISk+GMOuuKBc+qswau3TMcaTu6P6OaQwCAlZMIU42qBp+sqB1TpMKECN9g84qKmAHrg/hmDrwQzVa4Vfb68ICB5xH/zgM2O9SE+WytHcu+KCHSD2LCDnY=", "users": [{"id": "6a0b500ae1da33429da5c61064c2b8527f46e6888469c723c0348958cf054131", "salt": "E+aCQgRfYCuu3z4cDiM4Qw==", "iv": "G3IZbnqJPLfn+wSG", "wrapped": "f+vpUpuPg0APbFDSr/bcvkUqqizA3JLvEoZJdacLE/bwZDLpDFBozfSqg9rVVdC+", "giv": "KFFIiXTTk+mm4w23", "gw": "SFc5/iiI9AkiQOcjubR5vBpt840zJrAYiO52GZ4UH7kj+dX2smOMoTp8cOB1Y5lsxSUpGs4l5+tJEsy169l/iIfBjhbTmgQSWMHQGb65NdGP1GrJ8hSNjMW05AK9tIw/dOF+mtZcVceVU8zsBw=="}, {"id": "3c08d91f328a2f517a8fbac8d44e4f30b095582c08d296bfa42ab77bc5471c4d", "salt": "774M4PVW1fd9nbmL80CHsQ==", "iv": "GuNjsU+km2KoAbjp", "wrapped": "ZAfZ7f1hppTXtVzcekhRm6MgE2LwVUrBxOO6S4gypEdvNGH1bUPn/crhgSMFyKDV", "giv": "qzUSQgzd50iwhJsb", "gw": "lEuHHDxu+FtGOJ0DaSV815NNvirhkIsttoseBhVnMf+5ct44l29+gdKk+DbBo/pqSj91YuTJ3wHBUEiWSPKIgIO8EnArf8k3p4iQSkrXqzc5Bsne5QGFLRQYkGAtSExRG9XaS7lSy7XBeEyrVQ=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "6a4a6aaaa12f7df2", "iv": "Vx31WCwHsqVmV3/8", "ct": "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", "users": [{"id": "a229ee024c84d3b47db2fdfa0c08bbe3837addfe9e06f6da64eda07e2b79963a", "salt": "Zkl3+uA/tHOk2AW1C5kZLA==", "iv": "DiX33l20Vf7bcNic", "wrapped": "Cq15uPN6A4jkMizBlHRxrnLDbbk1kl/Iuit+S9SaLOhYxo6+QHxlFgtsefnNUT9G", "giv": "7hq7a7ca0ONxVGeY", "gw": "nrFp3SzKHsPcUwQ9s/xpVFvi9ec8WYEdm6OKFv0sPD4KnpGAqvoYWXhamPXBRsNuMn79dyLBmapiL+V7ifiJ3/3N0D9oeXBqYXmNC6wonIVVG6eDQmT5VAkYzWkWECdlk8DK4N8CTTHZRGxnSQ=="}, {"id": "ea60c902ceec577374da08591a10a2dc75de74d50a0c0d11011d6306d355ad22", "salt": "r6PlhZ63/6jwbmKnTN0irw==", "iv": "3Qs4SYuK5I52HUCv", "wrapped": "WW4isTmAngnXKW+elqxTNv8gnGVAlvuFvFuzV1LWyV/WEGhRJaGtN4bU4yhKDlI7", "giv": "MoXE9+x9r3evr/8Q", "gw": "nX19mJz3Mn/oza18AZYFl5yYAz1Z5WlDFLsjMJIbwmjlIpMH6HoA71F2FqJEybxGJO+7kZhPqMotFqE8Yc1C0pwISvPgzVfdgE2JViMHzH1+Gd1RJP8v54+iPJWkcLy8riDrB/FXtl4IcJ2Xxg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -942,17 +942,22 @@ window.TL.CHAT = (() => {
   const marcar = (id) => { const l = leidos(); const m = C.msgs.filter((x) => x.c === id); l[id] = m.length ? m[m.length - 1].f : nowIso(); try { localStorage.setItem(LK(), JSON.stringify(l)); } catch (e) {} };
   const persona = (id) => DIR.find((u) => u.id === id);
   const comite = (u) => { if (!u) return ''; if (u.rol === 'admin') return 'Administración'; const a = u.accesos || {}; const r = []; if (a.finanzas) r.push('Finanzas'); if (a.captura) r.push('Captura'); if (a.produccion) r.push('Producción'); return r.join(' · ') || 'Organización'; };
-  const visibles = () => [{ id: 'general', tipo: 'grupo', nombre: 'General', miembros: [] }].concat(C.conv.filter((c) => c.miembros.includes(S.id)));
-  const titulo = (c) => { if (c.tipo === 'dm') { const o = persona(c.miembros.find((m) => m !== S.id)); return o ? o.nombre || o.usuario : (c.nombres || {})[c.miembros.find((m) => m !== S.id)] || 'Chat'; } return c.nombre; };
+  let hist = false; const esAdm = () => S && S.rol === 'admin' && /\/accesos\//.test(location.pathname);
+  const visibles = () => [{ id: 'general', tipo: 'grupo', nombre: 'General', miembros: [] }].concat(C.conv.filter((c) => c.miembros.includes(S.id) || (hist && esAdm())));
+  const nom = (id) => { const u = persona(id); return u ? u.nombre || u.usuario : '¿?'; };
+  const titulo = (c) => { if (c.tipo === 'dm' && !c.miembros.includes(S.id)) return c.miembros.map(nom).join(' ↔ '); if (c.tipo === 'dm') { const o = persona(c.miembros.find((m) => m !== S.id)); return o ? o.nombre || o.usuario : (c.nombres || {})[c.miembros.find((m) => m !== S.id)] || 'Chat'; } return c.nombre; };
   const sinLeer = (c) => { const l = leidos()[c.id] || ''; return C.msgs.filter((m) => m.c === c.id && m.f > l && m.de !== S.id).length; };
 
   // ---------- Sonido de burbuja ----------
   document.addEventListener('pointerdown', () => { if (!ctx) try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} }, { once: true, capture: true });
-  function burbuja() {
-    if (!ctx) return; const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
-    o.type = 'sine'; o.frequency.setValueAtTime(380, t); o.frequency.exponentialRampToValueAtTime(950, t + .09);
-    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.35, t + .02); g.gain.exponentialRampToValueAtTime(.0001, t + .18);
-    o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + .2);
+  const nota = (f, t0, d, tipo, vol) => { const t = ctx.currentTime + t0, o = ctx.createOscillator(), g = ctx.createGain(); o.type = tipo || 'sine'; o.frequency.setValueAtTime(f, t); g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(vol || .3, t + .015); g.gain.exponentialRampToValueAtTime(.0001, t + d); o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + d + .02); };
+  // Timbre de mensaje al estilo del Messenger antiguo (ding-dong de dos tonos)
+  function burbuja() { if (!ctx) return; nota(1318.5, 0, .35, 'sine', .28); nota(1318.5 * 2, 0, .2, 'sine', .05); nota(987.8, .13, .5, 'sine', .28); nota(987.8 * 2, .13, .25, 'sine', .05); }
+  // Zumbido: vibración grave + la ventana tiembla
+  function zumbar() {
+    if (ctx) for (let i = 0; i < 6; i++) nota(i % 2 ? 140 : 110, i * .09, .09, 'sawtooth', .18);
+    try { navigator.vibrate && navigator.vibrate([120, 60, 120, 60, 200]); } catch (e) {}
+    P.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(-9px,4px)' }, { transform: 'translate(9px,-4px)' }, { transform: 'translate(-7px,-3px)' }, { transform: 'translate(7px,3px)' }, { transform: 'translate(0,0)' }], { duration: 120, iterations: 5 });
   }
 
   // ---------- Estilos ----------
@@ -1000,7 +1005,6 @@ window.TL.CHAT = (() => {
   const badge = $('b'); badge.hidden = true; fab.append(badge);
   const P = $('div'); P.id = 'ch-p'; P.hidden = true;
   fab.onclick = () => { P.hidden = !P.hidden; if (!P.hidden) pintar(); };
-  document.body.append(fab, P);
 
   // ---------- Datos ----------
   async function leer() {
@@ -1028,11 +1032,13 @@ window.TL.CHAT = (() => {
       const ult = C.msgs.length ? C.msgs[C.msgs.length - 1].f : '';
       const vis = new Set(visibles().map((c) => c.id));
       const nuevos = C.msgs.filter((m) => vis.has(m.c) && m.f > ultimoT && m.de !== S.id);
-      if (!primera && nuevos.length && !(abierta && !P.hidden && !document.hidden && nuevos.every((m) => m.c === abierta.id))) burbuja();
+      const zz = primera ? null : nuevos.find((m) => m.zumbido);
+      if (zz) { abierta = visibles().find((c) => c.id === zz.c); vista = 'conv'; P.hidden = false; }
+      else if (!primera && nuevos.length && !(abierta && !P.hidden && !document.hidden && nuevos.every((m) => m.c === abierta.id))) burbuja();
       if (ult > ultimoT) ultimoT = ult;
       primera = false;
       if (abierta && !P.hidden) marcar(abierta.id);
-      pintar(true);
+      pintar(!zz); if (zz) setTimeout(zumbar, 50);
     } catch (e) {}
   }
   function contador() { const n = visibles().reduce((t, c) => t + sinLeer(c), 0); badge.hidden = !n; badge.textContent = n > 99 ? '99+' : n; }
@@ -1053,11 +1059,12 @@ window.TL.CHAT = (() => {
   }
   function lista() {
     const b = $('div', 'ch-b'); const nb = $('button', 'ch-new', '＋ Nuevo chat (individual o grupal)'); nb.type = 'button'; nb.onclick = () => { vista = 'nuevo'; pintar(); }; b.append(nb);
+    if (esAdm()) { const hb = $('button', 'ch-new', hist ? '← Solo mis chats' : '🗂 Ver historial completo de todos los chats'); hb.type = 'button'; hb.style.background = '#b0003a'; hb.onclick = () => { hist = !hist; pintar(); }; b.append(hb); }
     const last = (id) => { const m = C.msgs.filter((x) => x.c === id); return m[m.length - 1]; };
     visibles().map((c) => ({ c, m: last(c.id) })).sort((a, b) => (a.c.id === 'general' ? -1 : b.c.id === 'general' ? 1 : ((b.m || {}).f || b.c.t || '') > ((a.m || {}).f || a.c.t || '') ? 1 : -1)).forEach(({ c, m }) => {
       const it = $('button', 'ch-it'); it.type = 'button';
       it.append($('span', 'ch-av', c.id === 'general' ? '📣' : c.tipo === 'dm' ? '👤' : '👥'));
-      const d = $('div'); d.append($('strong', '', titulo(c)), $('span', '', m ? (m.de === S.id ? 'Vos: ' : (m.nombre.split(' ')[0] + ': ')) + (m.texto || '📎 Adjunto') : c.id === 'general' ? 'Toda la organización' : 'Sin mensajes todavía')); it.append(d);
+      const d = $('div'); d.append($('strong', '', titulo(c)), $('span', '', m ? (m.de === S.id ? 'Vos: ' : (m.nombre.split(' ')[0] + ': ')) + (m.zumbido ? '📳 Zumbido' : m.texto || '📎 Adjunto') : c.id === 'general' ? 'Toda la organización' : 'Sin mensajes todavía')); it.append(d);
       const n = sinLeer(c); if (n) it.append($('span', 'ch-n', n));
       it.onclick = () => { abierta = c; vista = 'conv'; marcar(c.id); pintar(); }; b.append(it);
     });
@@ -1111,6 +1118,7 @@ window.TL.CHAT = (() => {
     ms.concat(pend.filter((m) => m.c === c.id)).forEach((m) => {
       const yo = m.de === S.id, d = $('div', 'ch-m' + (yo ? ' yo' : ''));
       if (!yo && c.tipo !== 'dm') d.append($('em', '', m.nombre));
+      if (m.zumbido) d.append($('strong', '', '📳 ' + (yo ? 'Enviaste un zumbido' : m.nombre + ' te envió un zumbido')));
       if (m.texto) d.append(document.createTextNode(m.texto));
       (m.adj || []).forEach((a) => d.append(adjunto(a)));
       d.append($('time', '', m.envio ? 'Enviando…' : hora(m.f))); b.append(d);
@@ -1138,7 +1146,11 @@ window.TL.CHAT = (() => {
         pend.splice(pend.indexOf(m), 1); marcar(c.id); if (fin.f > ultimoT) ultimoT = fin.f; pintar(true);
       } catch (e) { pend.splice(pend.indexOf(m), 1); ta.value = borrador = texto; adjs.push(...files); pintarPd(); pintar(true); alert('No se pudo enviar el mensaje. Revisá tu conexión e intentá de nuevo.'); }
     };
-    comp.append(fi, clip, ta, env);
+    const zb = $('button', '', '📳'); zb.type = 'button'; zb.title = 'Enviar zumbido (llama la atención)';
+    let ultZ = 0; zb.onclick = async () => { if (Date.now() - ultZ < 10000) return; ultZ = Date.now(); zumbar(); try { await escribir((d) => d.msgs.push({ id: hex(8), c: c.id, de: S.id, nombre: S.nombre || S.usuario, texto: '', zumbido: true, adj: [], f: nowIso() })); marcar(c.id); pintar(true); } catch (e) {} };
+    comp.append(fi, clip, zb, ta, env);
+    if (c.id === 'general') zb.hidden = true;
+    if (c.id !== 'general' && !c.miembros.includes(S.id)) comp.hidden = true;
     P.replaceChildren(cabeza((c.id === 'general' ? '📣 ' : c.tipo === 'dm' ? '👤 ' : '👥 ') + titulo(c), sub, () => { vista = 'lista'; abierta = null; caja = null; pintar(); }), b, pd, comp);
     caja = b; b.scrollTop = b.scrollHeight;
     if (window.matchMedia('(pointer:fine)').matches) ta.focus();
@@ -1160,7 +1172,7 @@ window.TL.CHAT = (() => {
   return {
     async iniciar(sess) {
       if (!sess || !sess.id || !sess.key) return;
-      S = sess; fab.hidden = false; await cargarDir(); await revisar();
+      S = sess; if (!fab.isConnected) document.body.append(fab, P); fab.hidden = false; await cargarDir(); await revisar();
       clearInterval(timer); let n = 0; timer = setInterval(() => { n++; if (!document.hidden || n % 5 === 0) revisar(); }, 3000);
       document.addEventListener('visibilitychange', () => { if (!document.hidden) revisar(); });
     },
