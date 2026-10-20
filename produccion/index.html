@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-2N7Y0/z/Lv42zO4Nv9E/tDA5BQoKTm+k22qbcDyJkYY=' 'sha256-3j8vlBagZYMDl1RP3xQW15wl9e3NzyjTKhHnp+GE724=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-pjtTV53U7IQtyhrrGDZqNL4XjrBUs6coayCQS8FhTx0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3j8vlBagZYMDl1RP3xQW15wl9e3NzyjTKhHnp+GE724=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-CjVNU50bTy+42BKtJSovXVgtb4yR9CnHRQ/zhTbyoJE=' 'sha256-N3AoPqslo15b4yO+X+NMpXszd38558S8UnguLa2QICI='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -128,7 +128,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 @keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "f5f5255f86561e4b", "iv": "btcNrgWeTnvJH7w2", "ct": "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", "users": [{"id": "90bcfee17a1c3da57aa11ea02790900156b70a064cb4f92537300e9938229251", "salt": "snwG2WDVXPwl6P3LO0f7xg==", "iv": "ykh4N0rI5gZb1Msf", "wrapped": "34ko24G2NgXAO2ddxnQ7VElOk1QZSWYAOlsO2emL6PXcgqA/8WaoQ0L4LVMMt8eF", "giv": "gI7YlbRm790kNIMF", "gw": "19QBU67Ybtjt9IZSvX6J4T3zSnK3iCRnLF+1HK5mkeMjxp/ZGv3CpemaDQ5AQkZd2swaby40cqMy1UFmY7iRPAvWSIjXp8Tqu7YPvzxf7BkHTQcCs5k5Q78+D0+7TSUgxndKAN2eCmZpN9JlTg=="}, {"id": "7840b55cc0eb4580d7162bdb17d4bf0325073413108174081b6922b9c98bfd34", "salt": "M3ln24Oa/VdBz2LvZpUNkQ==", "iv": "mqnwpC8jDDE5GvNw", "wrapped": "FH3Guok5PlXZdB/yEqmB4n4SH6/nTtDceJyGsq4GVfXHtFNk0H8y1edi9vgQlC6e", "giv": "yr9FYbMLVmeyNj53", "gw": "48hBoJBnlc6zEubuuEw5AIxBG55vFdjqDCOrwibokEU+NdyvIcRXTY5gd6jkIp4BpyvMk/PyQZyMIEAJd9WK0/VdknGGZx9JV9/uHJzuEdwOJTiME3RrYFMnmAA43+EFqL1OG0eM6Niai4T8IA=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "81350d96f723a87a", "iv": "fISsh4gDSVBp8Z/z", "ct": "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", "users": [{"id": "7def5c762482ab4394162322cca28b82e9fb72f206b212b78bed6dbc17a21cbe", "salt": "Nrw9TTOO6DTG+/CEXAI1VA==", "iv": "d+vv34hsW3ynGppz", "wrapped": "FeY/lt9jrVYFDF2A52569VOAeQehVYWJjoybOFrjzC9oPanz5TaxajAZVe532WCT", "giv": "4WKyIHvuGettjg2O", "gw": "nHXsIpcAakUup8mKnYyUggOimE74hhhkGzI+s7uHIXEHhZTKv5DNVKC8MzfXwYC9Mr08Qp2IVBn0tRhCd/C4NmrPj1D/XXJFgCpcmM2ScDKxdxzEUnLUi7iKx7NzdP6Zog9TzTHptLds3QWKCw=="}, {"id": "0a9f9bb955243c9bd7edd6a2393a673c4b219349c28f7b07f29ddef247a16c2a", "salt": "VthsiVDktWcXjs19ChHJpQ==", "iv": "MdECIUnE8NU4gTxw", "wrapped": "0K1FGyUdyQ5ESJ2diUqWZBoVJvyJlCrfY9g2FsafyCHQmVvOvOsITDyH2zmsbsDZ", "giv": "UxclgGmGA8ghPsfx", "gw": "QMpYL5tw/G30Pdu/ik8MP2CG/2f6ovgAVmHkOHhmNDsSoCCqFRnEUM5IPSkjSzmnNFLfkTb0HAl3g7XJYf2R0ey13V9mLJyT/I+ZsxOX9xmPkEnhjg7de51D+FtUNwybdRxx6jxa4rv1zeiGYg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -1099,6 +1099,16 @@ window.TL = (() => {
 @keyframes latir { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 .pe-alerta b { font-family: var(--f-titulo); color: var(--vino-osc); font-size: 1.02rem; }
 .pe-alerta small { display: block; color: var(--gris); }
+.pe-main { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.pe-main button { display: flex; align-items: center; gap: .8rem; text-align: left; border: 2px solid var(--vino); background: #fff; color: var(--vino-osc); border-radius: 22px; padding: 1rem 1.1rem; cursor: pointer; box-shadow: 0 10px 24px rgba(90,0,73,.08); transition: transform .15s; }
+.pe-main button:hover { transform: translateY(-2px); }
+.pe-main button[aria-pressed="true"] { background: var(--degradado); border-color: transparent; color: #fff; box-shadow: 0 14px 30px rgba(254,80,0,.28); }
+.pe-main .ic { font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1; }
+.pe-main b { display: block; font-family: var(--f-titulo); font-weight: 900; font-size: clamp(1.05rem, 3.4vw, 1.4rem); }
+.pe-main small { display: block; font-size: .8rem; opacity: .85; }
+.pe-main button:focus-visible { outline: 3px solid #ffe08a; outline-offset: 2px; }
+@media (max-width: 30rem) { .pe-main button { flex-direction: column; text-align: center; padding: .85rem .5rem; gap: .35rem; } .pe-main small { display: none; } }
+.pe-tabs[hidden], .pe-alerta[hidden], .pe-kpis[hidden] { display: none !important; }
 .pe-tabs { display: flex; gap: .4rem; overflow-x: auto; scrollbar-width: none; padding: .45rem; background: #fff; border: 1px solid var(--linea); border-radius: 999px; box-shadow: 0 8px 22px rgba(90,0,73,.08); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 15; }
 .pe-tabs::-webkit-scrollbar { display: none; }
 .pe-tabs button { flex: none; font-family: var(--f-titulo); font-size: .88rem; color: var(--vino); background: transparent; border: 0; border-radius: 999px; padding: .55rem 1rem; cursor: pointer; white-space: nowrap; }
@@ -1230,6 +1240,9 @@ window.TL = (() => {
 .ev-card { border: 1px solid var(--linea); border-left: 5px solid var(--naranja); border-radius: 18px; background: #fff; padding: .85rem 1rem; display: grid; gap: .5rem; min-width: 0; }
 .ev-card h3 { margin: 0; font-family: var(--f-titulo); color: var(--vino-osc); font-size: 1.05rem; overflow-wrap: anywhere; }
 .ev-meta { font-size: .78rem; color: var(--gris); }
+.ev-adm { display: flex; gap: .4rem; flex-wrap: wrap; }
+.ev-adm .pe-sec { font-size: .74rem; padding: .3rem .7rem; }
+.ev-edit { display: grid; gap: .55rem; border: 1.5px dashed var(--vino); border-radius: 14px; padding: .7rem; background: #fff8fc; }
 .ev-meta b { font-family: var(--f-titulo); color: var(--vino); font-weight: 400; }
 .ev-txt { margin: 0; font-size: .92rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 .ev-gal { display: flex; gap: .5rem; flex-wrap: wrap; align-items: flex-start; }
@@ -1292,12 +1305,16 @@ window.TL = (() => {
       <div class="pe-kpis" id="pe-kpis"></div>
     </header>
 
+    <div class="pe-main" role="group" aria-label="Visual">
+      <button type="button" data-v="comp" aria-pressed="true"><span class="ic" aria-hidden="true">📋</span><span><b>Compromisos</b><small>Cumplimiento de la guía comercial</small></span></button>
+      <button type="button" data-v="even" aria-pressed="false"><span class="ic" aria-hidden="true">📝</span><span><b>Eventualidades</b><small>Bitácora del evento</small></span></button>
+    </div>
+
     <div class="pe-alerta" id="pe-alerta" role="status"></div>
 
     <nav class="pe-tabs" role="tablist" aria-label="Secciones de producción">
-      <button type="button" role="tab" data-p="comp" aria-selected="true">📋 Compromisos</button>
+      <button type="button" role="tab" data-p="comp" aria-selected="true">📋 Lista</button>
       <button type="button" role="tab" data-p="pend">⚠ Pendientes<span class="cnt" id="cnt-pend">0</span></button>
-      <button type="button" role="tab" data-p="even">📝 Eventualidades</button>
       <button type="button" role="tab" data-p="graf">📊 Cumplimiento</button>
       <button type="button" role="tab" data-p="arch">⇅ Archivos</button>
     </nav>
@@ -1331,8 +1348,8 @@ window.TL = (() => {
 
     <section class="pe-panel" id="p-even" role="tabpanel" hidden>
       <div class="pe-card">
-        <h2>📝 Nueva eventualidad</h2>
-        <div id="ev-nueva"></div>
+        <div class="pe-acts" style="justify-content: space-between"><h2 style="margin:0">📝 Eventualidades</h2><button type="button" class="pe-go" id="ev-crear">＋ Crear nueva eventualidad</button></div>
+        <div id="ev-nueva" hidden></div>
       </div>
       <div class="pe-card">
         <div class="pe-acts" style="justify-content: space-between"><h2 style="margin:0">Bitácora</h2><button type="button" class="pe-sec" id="ev-xls">⬇ Excel de eventualidades</button></div>
@@ -1493,7 +1510,7 @@ window.TL_INFORMES_BASE = '../informes/';
     if ('estado' in patch) { u.por = SESS.nombre || USER; u.cuando = EV.nowIso(); }
     reindex(); cambio();
   }
-  function setComp(c, patch) { Object.assign(c, patch, { t: EV.nowIso() }); cambio(); }
+  function setComp(c, patch) { const x = D.prod_compromisos.find((y) => y.id === c.id) || c; Object.assign(x, patch, { t: EV.nowIso() }); if (x !== c) Object.assign(c, patch); cambio(); }
 
   // ---------- Resumen y alerta ----------
   function resumen() {
@@ -1640,7 +1657,15 @@ window.TL_INFORMES_BASE = '../informes/';
 
   // ---------- Pestañas ----------
   let TAB = 'comp';
-  function tab(p) { TAB = p; document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.p === p))); ['comp', 'pend', 'even', 'graf', 'arch'].forEach((x) => { $('p-' + x).hidden = x !== p; }); if (p === 'pend') pendientes(); if (p === 'graf') graficas(); if (p === 'even') eventos(); }
+  // Dos visuales: Compromisos (Lista, Pendientes, Cumplimiento, Archivos) y Eventualidades (bitácora)
+  let ultimaComp = 'comp';
+  function vista(p) {
+    const ev = p === 'even'; if (!ev) ultimaComp = p;
+    document.querySelectorAll('.pe-main [data-v]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === (ev ? 'even' : 'comp'))));
+    document.querySelector('.pe-tabs').hidden = ev; $('pe-alerta').hidden = ev; $('pe-kpis').hidden = ev;
+  }
+  document.querySelectorAll('.pe-main [data-v]').forEach((b) => b.addEventListener('click', () => tab(b.dataset.v === 'even' ? 'even' : ultimaComp)));
+  function tab(p) { vista(p); TAB = p; document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.p === p))); ['comp', 'pend', 'even', 'graf', 'arch'].forEach((x) => { $('p-' + x).hidden = x !== p; }); if (p === 'pend') pendientes(); if (p === 'graf') graficas(); if (p === 'even') eventos(); }
   document.querySelectorAll('.pe-tabs [role=tab]').forEach((b) => b.addEventListener('click', () => tab(b.dataset.p)));
   function pintar() {
     const a = document.activeElement; if (a && a.closest && a.closest('#app') && /INPUT|TEXTAREA|SELECT/.test(a.tagName) && a.id !== 'f-q') { pendRender = true; resumen(); return; }
@@ -1832,19 +1857,67 @@ window.TL_INFORMES_BASE = '../informes/';
     return w;
   }
   const nuevaFila = (titulo, texto, adj, parent) => { D.prod_eventos.push({ id: EV.uid(), parent: parent || '', titulo, comentario: texto, adjuntos: adj, autor: SESS.nombre || USER, autor_usuario: USER, fecha: EV.nowIso(), t: EV.nowIso() }); cambio(); };
-  function nuevoForm() { $('ev-nueva').replaceChildren(compositor('nueva', true, (t, x, a) => { nuevaFila(t, x, a, ''); nuevoForm(); eventos(); })); }
+  // La eventualidad nueva se abre con el botón «Crear nueva eventualidad»; al publicarla se cierra
+  function abrirNueva(abrir) {
+    const box = $('ev-nueva'), b = $('ev-crear');
+    if (abrir) { box.replaceChildren(compositor('nueva', true, (t, x, a) => { nuevaFila(t, x, a, ''); abrirNueva(false); eventos(); })); box.hidden = false; b.textContent = 'Cancelar'; b.className = 'pe-sec'; const i = box.querySelector('input'); if (i) i.focus(); }
+    else { box.hidden = true; box.replaceChildren(); b.textContent = '＋ Crear nueva eventualidad'; b.className = 'pe-go'; }
+  }
+  $('ev-crear').addEventListener('click', () => abrirNueva($('ev-nueva').hidden));
+  const esAdm = () => !!(SESS && SESS.rol === 'admin');
+  // Siempre sobre el dato vigente (después de guardar, los datos se recargan)
+  const vivo = (id) => D.prod_eventos.find((x) => x.id === id);
+  // Edición (solo el administrador principal): título, comentario y adjuntos
+  function editor(e, cerrar) {
+    const w = el('div', 'ev-edit'); w.dataset.comp = 'ed-' + e.id;
+    const v = { titulo: e.titulo || '', comentario: e.comentario || '', adjuntos: [...(e.adjuntos || [])], nuevos: [] };
+    let ti = null;
+    if (!e.parent) { ti = el('input'); ti.type = 'text'; ti.value = v.titulo; ti.setAttribute('aria-label', 'Título'); ti.addEventListener('input', () => { v.titulo = ti.value; }); w.appendChild(ti); }
+    const tx = el('textarea'); tx.value = v.comentario; tx.setAttribute('aria-label', 'Comentario'); tx.addEventListener('input', () => { v.comentario = tx.value; }); w.appendChild(tx);
+    const lst = el('div', 'ev-pend');
+    const pintar_ = () => lst.replaceChildren(...v.adjuntos.map((a, i) => { const c = el('span', 'ev-chip'); c.append('📎 ' + a.nombre); const x = el('button', null, '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Quitar ' + a.nombre); x.addEventListener('click', () => { v.adjuntos.splice(i, 1); pintar_(); }); c.appendChild(x); return c; }), ...v.nuevos.map((f, i) => { const c = el('span', 'ev-chip'); if (/^image\//.test(f.tipo)) { const im = el('img'); im.src = f.url; im.alt = ''; c.appendChild(im); } c.append(f.nombre); const x = el('button', null, '✕'); x.type = 'button'; x.addEventListener('click', () => { v.nuevos.splice(i, 1); pintar_(); }); c.appendChild(x); return c; }));
+    const agregar = async (fs) => { for (const f of fs) { try { const p = await preparar(f); p.url = URL.createObjectURL(p.blob); v.nuevos.push(p); } catch (er) { $('ev-msg').textContent = er.message; } } pintar_(); };
+    w.addEventListener('paste', (ev) => { const fs = [...(ev.clipboardData ? ev.clipboardData.files : [])]; if (fs.length) { ev.preventDefault(); agregar(fs); } });
+    const fi = el('input'); fi.type = 'file'; fi.multiple = true; fi.hidden = true; fi.addEventListener('change', () => { agregar([...fi.files]); fi.value = ''; });
+    const ba = el('button', 'pe-sec', '📎 Agregar adjuntos'); ba.type = 'button'; ba.addEventListener('click', () => fi.click());
+    const g = el('button', 'pe-go', 'Guardar cambios'); g.type = 'button'; const x = el('button', 'pe-sec', 'Cancelar'); x.type = 'button';
+    x.addEventListener('click', cerrar);
+    g.addEventListener('click', async () => {
+      if (!e.parent && !v.titulo.trim()) { $('ev-msg').textContent = 'El título no puede quedar vacío.'; return; }
+      g.disabled = true;
+      try { for (let i = 0; i < v.nuevos.length; i++) { const f = v.nuevos[i]; $('ev-msg').textContent = 'Subiendo adjunto ' + (i + 1) + ' de ' + v.nuevos.length + '…'; const path = 'adjuntos/' + EV.uid() + EV.uid() + '.bin'; await TL.putBin(SESS, path, new Uint8Array(await f.blob.arrayBuffer())); v.adjuntos.push({ path, nombre: f.nombre, tipo: f.tipo, tam: f.blob.size }); } }
+      catch (er) { $('ev-msg').textContent = 'No se pudo subir un adjunto. Intentá de nuevo.'; g.disabled = false; return; }
+      Object.assign(vivo(e.id) || e, { titulo: e.parent ? '' : v.titulo.trim(), comentario: v.comentario.trim(), adjuntos: v.adjuntos, editado: EV.nowIso(), editado_por: SESS.nombre || USER, t: EV.nowIso() });
+      v.nuevos.forEach((f) => URL.revokeObjectURL(f.url)); cambio(); $('ev-msg').textContent = '✔ Cambios guardados.'; cerrar();
+    });
+    const acts = el('div', 'pe-acts'); acts.append(ba, g, x); w.append(lst, fi, acts); pintar_();
+    return w;
+  }
+  const editando = new Set();
+  function botonesAdm(e, cont) {
+    if (!esAdm()) return null;
+    const d = el('div', 'ev-adm');
+    const ed = el('button', 'pe-sec', '✎ Editar'); ed.type = 'button'; ed.addEventListener('click', () => { editando.add(e.id); eventos(); });
+    const del = el('button', 'pe-sec danger', '🗑 Eliminar'); del.type = 'button';
+    confirmBtn(del, e.parent ? '¿Eliminar la respuesta?' : '¿Eliminar la eventualidad y sus respuestas?', () => { const ahora = EV.nowIso(); const x = vivo(e.id); if (x) { x.del = true; x.t = ahora; } if (!e.parent) EV.act(D.prod_eventos).filter((r) => r.parent === e.id).forEach((r) => { r.del = true; r.t = ahora; }); cambio(); $('ev-msg').textContent = e.parent ? '✔ Respuesta eliminada.' : '✔ Eventualidad eliminada.'; eventos(); });
+    d.append(ed, del); return d;
+  }
+  const editadoTxt = (e) => e.editado ? ' · editado ' + hora(e.editado) + (e.editado_por ? ' por ' + e.editado_por : '') : '';
   const abiertasR = new Set();
   function eventos() {
-    if (!$('ev-nueva').firstChild) nuevoForm();
     const a = document.activeElement; if (a && a.closest && a.closest('#ev-list [data-comp]')) return;
     const todos = EV.act(D.prod_eventos), raiz = todos.filter((e) => !e.parent).sort((x, y) => String(y.fecha).localeCompare(String(x.fecha)));
     $('ev-list').replaceChildren(...(raiz.length ? raiz.map((e) => {
       const c = el('article', 'ev-card'); c.append(el('h3', null, e.titulo || 'Sin título'));
-      const m = el('div', 'ev-meta'); m.append('👤 '); m.appendChild(el('b', null, e.autor || '—')); m.append(' · ' + hora(e.fecha)); c.appendChild(m);
-      if (e.comentario) c.appendChild(el('p', 'ev-txt', e.comentario));
-      if ((e.adjuntos || []).length) c.appendChild(galeria(e.adjuntos));
+      const m = el('div', 'ev-meta'); m.append('👤 '); m.appendChild(el('b', null, e.autor || '—')); m.append(' · ' + hora(e.fecha) + editadoTxt(e)); c.appendChild(m);
+      if (editando.has(e.id)) c.appendChild(editor(e, () => { editando.delete(e.id); eventos(); }));
+      else {
+        if (e.comentario) c.appendChild(el('p', 'ev-txt', e.comentario));
+        if ((e.adjuntos || []).length) c.appendChild(galeria(e.adjuntos));
+        const ad = botonesAdm(e); if (ad) c.appendChild(ad);
+      }
       const reps = todos.filter((r) => r.parent === e.id).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha)));
-      if (reps.length) { const rl = el('div', 'ev-replies'); reps.forEach((r) => { const d = el('div', 'ev-rep'); const mm = el('div', 'ev-meta'); mm.append('↳ '); mm.appendChild(el('b', null, r.autor || '—')); mm.append(' · ' + hora(r.fecha)); d.appendChild(mm); if (r.comentario) d.appendChild(el('p', 'ev-txt', r.comentario)); if ((r.adjuntos || []).length) d.appendChild(galeria(r.adjuntos)); rl.appendChild(d); }); c.appendChild(rl); }
+      if (reps.length) { const rl = el('div', 'ev-replies'); reps.forEach((r) => { const d = el('div', 'ev-rep'); const mm = el('div', 'ev-meta'); mm.append('↳ '); mm.appendChild(el('b', null, r.autor || '—')); mm.append(' · ' + hora(r.fecha) + editadoTxt(r)); d.appendChild(mm); if (editando.has(r.id)) d.appendChild(editor(r, () => { editando.delete(r.id); eventos(); })); else { if (r.comentario) d.appendChild(el('p', 'ev-txt', r.comentario)); if ((r.adjuntos || []).length) d.appendChild(galeria(r.adjuntos)); const ad = botonesAdm(r); if (ad) d.appendChild(ad); } rl.appendChild(d); }); c.appendChild(rl); }
       const rb = el('button', 'pe-sec', abiertasR.has(e.id) ? 'Cerrar respuesta' : '💬 Responder (' + reps.length + ')'); rb.type = 'button';
       rb.addEventListener('click', () => { if (abiertasR.has(e.id)) abiertasR.delete(e.id); else abiertasR.add(e.id); eventos(); });
       const ra = el('div', 'pe-acts'); ra.appendChild(rb); c.appendChild(ra);
@@ -1853,21 +1926,65 @@ window.TL_INFORMES_BASE = '../informes/';
     }) : [el('p', 'pe-empty', 'Todavía no hay eventualidades registradas.')]));
   }
   // Ctrl+V en cualquier parte de la pestaña: la captura va a la eventualidad nueva
-  document.addEventListener('paste', (e) => { if (TAB !== 'even' || !SESS) return; if (e.target.closest && e.target.closest('[data-comp]')) return; const fs = [...(e.clipboardData ? e.clipboardData.files : [])]; const w = $('ev-nueva').querySelector('[data-comp]'); if (fs.length && w) { e.preventDefault(); w._agregar(fs); } });
+  document.addEventListener('paste', (e) => { if (TAB !== 'even' || !SESS) return; if (e.target.closest && e.target.closest('[data-comp]')) return; const fs = [...(e.clipboardData ? e.clipboardData.files : [])]; if (!fs.length) return; e.preventDefault(); if ($('ev-nueva').hidden) abrirNueva(true); const w = $('ev-nueva').querySelector('[data-comp]'); if (w) w._agregar(fs); });
+  // ZIP sin compresión (los adjuntos ya vienen comprimidos), nombres en UTF-8
+  const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  const crc32 = (u) => { let c = 0xFFFFFFFF; for (let i = 0; i < u.length; i++) c = CRC[(c ^ u[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+  function zipBlob(files) {
+    const te = new TextEncoder(), partes = [], central = []; let off = 0;
+    const d = new Date(), T = (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1), F = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+    files.forEach((f) => {
+      const n = te.encode(f.nombre), crc = crc32(f.datos), sz = f.datos.length;
+      const h = new DataView(new ArrayBuffer(30)); [[0, 0x04034b50, 4], [4, 20, 2], [6, 0x0800, 2], [8, 0, 2], [10, T, 2], [12, F, 2], [14, crc, 4], [18, sz, 4], [22, sz, 4], [26, n.length, 2], [28, 0, 2]].forEach(([o, v, b]) => (b === 4 ? h.setUint32(o, v, true) : h.setUint16(o, v, true)));
+      partes.push(new Uint8Array(h.buffer), n, f.datos);
+      const c = new DataView(new ArrayBuffer(46)); [[0, 0x02014b50, 4], [4, 20, 2], [6, 20, 2], [8, 0x0800, 2], [10, 0, 2], [12, T, 2], [14, F, 2], [16, crc, 4], [20, sz, 4], [24, sz, 4], [28, n.length, 2], [30, 0, 2], [32, 0, 2], [34, 0, 2], [36, 0, 2], [38, 0, 4], [42, off, 4]].forEach(([o, v, b]) => (b === 4 ? c.setUint32(o, v, true) : c.setUint16(o, v, true)));
+      central.push(new Uint8Array(c.buffer), n); off += 30 + n.length + sz;
+    });
+    const cs = central.reduce((t, x) => t + x.length, 0);
+    const e = new DataView(new ArrayBuffer(22)); e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true); e.setUint32(12, cs, true); e.setUint32(16, off, true);
+    return new Blob([...partes, ...central, new Uint8Array(e.buffer)], { type: 'application/zip' });
+  }
+  // Imagen lista para Excel (PNG o JPEG; las demás se convierten a PNG)
+  async function imgExcel(bytes, tipo) {
+    if (tipo === 'image/png' || tipo === 'image/jpeg') return { b64: 'data:' + tipo + ';base64,' + TL.tob64(bytes), ext: tipo === 'image/png' ? 'png' : 'jpeg' };
+    const bmp = await createImageBitmap(new Blob([bytes], { type: tipo })); const cv = document.createElement('canvas'); cv.width = bmp.width; cv.height = bmp.height; cv.getContext('2d').drawImage(bmp, 0, 0);
+    return { b64: cv.toDataURL('image/png'), ext: 'png' };
+  }
   $('ev-xls').addEventListener('click', async () => {
     const b = $('ev-xls'), m = $('ev-msg'); b.disabled = true; m.textContent = 'Preparando Excel…';
     try {
       const XL = await EV.loadScript((window.TL_LIB_BASE || '../lib/') + 'exceljs.min.js', 'ExcelJS');
-      const wb = new XL.Workbook(); const ws = wb.addWorksheet('Eventualidades', { views: [{ state: 'frozen', ySplit: 1 }] });
-      ws.columns = [{ header: 'FECHA', width: 12 }, { header: 'HORA', width: 9 }, { header: 'TIPO', width: 13 }, { header: 'TÍTULO', width: 34 }, { header: 'COMENTARIO', width: 70 }, { header: 'CREADO POR', width: 24 }, { header: 'ADJUNTOS', width: 40 }, { header: 'RESPUESTA A', width: 30 }, { header: 'ID', width: 14 }];
-      ws.getRow(1).eachCell((c) => { c.font = { bold: true, color: { argb: 'FF111111' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF2C300' } }; c.alignment = { vertical: 'middle', horizontal: 'center' }; });
       const todos = EV.act(D.prod_eventos), raiz = todos.filter((e) => !e.parent).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha)));
-      const fila = (e, tipo, padre) => { const f = EV.localStr(e.fecha); const r = ws.addRow([f.slice(0, 10), f.slice(11), tipo, e.titulo || '', e.comentario || '', e.autor || '', (e.adjuntos || []).map((a) => a.nombre).join(', '), padre ? padre.titulo : '', e.id]); r.alignment = { vertical: 'top', wrapText: true }; if (tipo === 'Respuesta') r.font = { color: { argb: 'FF5A0049' } }; };
-      raiz.forEach((e) => { fila(e, 'Eventualidad'); todos.filter((r) => r.parent === e.id).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha))).forEach((r) => fila(r, 'Respuesta', e)); });
-      const buf = await wb.xlsx.writeBuffer();
-      EV.guardarArchivo(new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), 'Teleton-2026-eventualidades-' + EV.sello() + '.xlsx');
-      m.textContent = 'Excel descargado.';
-    } catch (e) { m.textContent = 'No se pudo generar el Excel.'; }
+      const filas = []; raiz.forEach((e) => { filas.push([e, 'Eventualidad', null]); todos.filter((r) => r.parent === e.id).sort((x, y) => String(x.fecha).localeCompare(String(y.fecha))).forEach((r) => filas.push([r, 'Respuesta', e])); });
+      const maxImg = Math.max(0, ...filas.map(([e]) => (e.adjuntos || []).filter((a) => /^image\//.test(a.tipo)).length));
+      const wb = new XL.Workbook(); const ws = wb.addWorksheet('Eventualidades', { views: [{ state: 'frozen', ySplit: 1 }] });
+      ws.columns = [{ header: 'FECHA', width: 12 }, { header: 'HORA', width: 9 }, { header: 'TIPO', width: 13 }, { header: 'TÍTULO', width: 34 }, { header: 'COMENTARIO', width: 60 }, { header: 'CREADO POR', width: 24 }, { header: 'ARCHIVOS (en el ZIP)', width: 34 }, { header: 'RESPUESTA A', width: 30 }, { header: 'ID', width: 14 }]
+        .concat(Array.from({ length: maxImg }, (_, k) => ({ header: maxImg > 1 ? 'IMAGEN ' + (k + 1) : 'IMAGEN', width: 22 })));
+      ws.getRow(1).eachCell((c) => { c.font = { bold: true, color: { argb: 'FF111111' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF2C300' } }; c.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true }; });
+      const zipF = [], usados = new Set(); let nImg = 0, hechos = 0;
+      const total = filas.reduce((t, [e]) => t + (e.adjuntos || []).length, 0);
+      const limpio = (t) => String(t || '').replace(/[\\/:*?"<>|]+/g, '-').trim().slice(0, 60) || 'sin-titulo';
+      for (const [e, tipo, padre] of filas) {
+        const f = EV.localStr(e.fecha), adj = e.adjuntos || [], imgs = adj.filter((a) => /^image\//.test(a.tipo)), otros = adj.filter((a) => !/^image\//.test(a.tipo));
+        const r = ws.addRow([f.slice(0, 10), f.slice(11), tipo, e.titulo || '', e.comentario || '', e.autor || '', otros.map((a) => a.nombre).join('\n'), padre ? padre.titulo : '', e.id]);
+        r.alignment = { vertical: 'top', wrapText: true }; r.getCell(9).font = { color: { argb: 'FF9A8A96' } };
+        if (imgs.length) r.height = 100;
+        for (let k = 0; k < adj.length; k++) {
+          const a = adj[k]; hechos++; m.textContent = 'Preparando adjuntos ' + hechos + ' de ' + total + '…';
+          let bytes; try { bytes = await TL.getBin(SESS, a.path); } catch (er) { continue; }
+          if (/^image\//.test(a.tipo)) {
+            try { const im = await imgExcel(bytes, a.tipo); const id = wb.addImage({ base64: im.b64, extension: im.ext }); const ix = imgs.indexOf(a); ws.addImage(id, { tl: { col: 9 + ix + 0.05, row: r.number - 1 + 0.05 }, ext: { width: 150, height: 125 } }); nImg++; } catch (er) {}
+          } else {
+            let nom = limpio((padre ? padre.titulo : e.titulo) || 'eventualidad') + '/' + limpio(a.nombre); let i = 2; while (usados.has(nom)) nom = nom.replace(/(\.[^.]*)?$/, ' (' + (i++) + ')$1'); usados.add(nom);
+            zipF.push({ nombre: nom, datos: bytes });
+          }
+        }
+      }
+      const buf = await wb.xlsx.writeBuffer(); const sello = EV.sello();
+      EV.guardarArchivo(new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), 'Teleton-2026-eventualidades-' + sello + '.xlsx');
+      if (zipF.length) { await new Promise((ok) => setTimeout(ok, 700)); EV.guardarArchivo(zipBlob(zipF), 'Teleton-2026-eventualidades-archivos-' + sello + '.zip'); }
+      m.textContent = 'Excel descargado' + (nImg ? ' con ' + nImg + (nImg === 1 ? ' imagen' : ' imágenes') : '') + (zipF.length ? ' y ZIP con ' + zipF.length + (zipF.length === 1 ? ' archivo' : ' archivos') : '') + '.';
+    } catch (e) { console.error(e); m.textContent = 'No se pudo generar el Excel.'; }
     b.disabled = false;
   });
 
