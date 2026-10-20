@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-4I6gWMCoqTB0bizP0y8eKdtLPvL4ovyuAKJgpVfEZk8=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-Yrb4FvLGV9/npUneMccwMfBAits68I7Gp3dLMYm2Nfw=' 'sha256-zSLHObBvB2QZ4yPg6zjesBUjZP9Znt4LFHRvn7VesG0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-WXJlE8iyfO4OFIwrwCKXv3/h/wy8NdFT1BIk3sbXqU8=' 'sha256-XTM2/Af8uYbmQ64lguMZmQJoJwnqUH/p09zYzMQQRa0=' 'sha256-tuBHBrWLomNO9eHvos1P9c9K9D8SziRLE6978DI3Neo='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -129,7 +129,7 @@ body:has(#login:not([hidden]))::before { content: ""; position: fixed; inset: 0;
 @keyframes tin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
 </style>
 <script>
-window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "9f81d3762d5cef4c", "iv": "vXPM0rpTMT0b58+q", "ct": "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", "users": [{"id": "39118738d268c0590c755de182c631a7cf612dadf317a1b0bf628c53c9e6380e", "salt": "BdDPxtYxcPkh7CYGPhDBaw==", "iv": "nLmcUgK1I289WjtW", "wrapped": "AM5YyQ/lwVuE5I3aYZWJatRJQRZOdsJcEIGEO5lN4wcYCFBL9vjuBqta9l8Afmyp", "giv": "5JEFcNMrGG5737eb", "gw": "QHwmG77ui3wk3ntuK0HR+NgnYbUZDooxU+J6L+9RB62yXFXe+mLr2SpoShsvR9U73n+ASAsI99nqia8QJ/Xk+AKp4IZIGucM6qxtt2fy/PtS+J9R2OiF7gYm6BLgppDIW9S2bbviDNNVBH7uqg=="}, {"id": "4a048a311eeca195e3e170eedf78fc54c3490a768a8c1c562e784ace1f8be4f9", "salt": "CCOuqpk5FbiOV7aereWe5g==", "iv": "xlVHAibIU/adzuPp", "wrapped": "cmBFJi2JuNLNjuDOHAn59o03f3sOirUVNgU9lvxk3zySOfpetLE3k+BMwEBkeL8+", "giv": "rOQbQCeqnNcEv4Xi", "gw": "JoVmPrDrHmhgUOu9LELt/iPHX0viVRxU1NPQj765OFwJotwv8S8UMucOk9j96bwoZCcpa8i+wdR7qr9KBBUohx+QFZMp9N0U7uQiMir9EIiDMkDvTfKUlyJkmI+42mzEm8DZXjJkf6dfS0d6Yg=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
+window.VAULT = {"v": 2, "version": "2026-10-18T01:14:35-06:00", "fecha": "18 oct 2026, 01:14", "iter": 600000, "pepper": "8121e2d6268dc233", "iv": "L7ua0ifQJZ8lvDfh", "ct": "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", "users": [{"id": "a73c3f1e68d0b6bac075d4f2e5f3c1efb91b5694e287705403d3fa73d20425a4", "salt": "FVAgMD8lE+D6g1T7F/HZ8w==", "iv": "yywpA3v+QlUEuIeG", "wrapped": "hhmDpphOCJRZTSobCUClU6kRkERgywnylnGLygYR6RbDSgFws7PvSji0cSRtPc3N", "giv": "XYmTE40SXxt5XkDi", "gw": "8CWW0nJ8PbiS38VlKmg/zW6bxRG2hip/dzlhen2G4qO4APGuODy3bxE/i0l/lejTBBtL5JNYhEbvH/sUq/EjpsjM7JT0UGa1eMvzNADSr1mYX1EA4v+hdCjEakHagYTKju5gAmYeZy0aQ2acvg=="}, {"id": "003f45c35355c4530157b6a5304b1596858ac6e42716c47148a754646eb00b97", "salt": "pWy1D5tPh5AHqzoqJxafDQ==", "iv": "gIdiV0vO272BaYI7", "wrapped": "HHkKVUMiMQuPXqUrpYr7d/YGH2uBvdEbAOEWZadHAp6QZSfEAtWc+LqexFz18uCg", "giv": "tT77c7dmigbbaVa7", "gw": "OVoG7wKIuZScfC6pR9ug97f3g6zwEE/64DJx4vBzjzMkn3t2NqJILFFsC4x1zb/OhWANshBY0EXbIR6Ls4V4lcT52yoo+Pp7/gSE4UqAqH5eM4ghMPOqXhyqOPGWckbuQYdEkCrBJzVMKj89IQ=="}], "store": {"owner": "Davidsm004", "repo": "teleton-2026", "branch": "datos", "path": "datos.json"}};
 </script>
 <script>
 window.TL = (() => {
@@ -157,15 +157,22 @@ window.TL = (() => {
   const url = (path) => 'https://api.github.com/repos/' + ST().owner + '/' + ST().repo + '/contents/' + (path || ST().path || 'datos.json');
   const fromB64Utf8 = (s) => new TextDecoder().decode(b64(String(s).replace(/\s/g, '')));
   const toB64Utf8 = (s) => tob64(enc.encode(s));
+  // Lectura con «¿cambió algo?» (ETag): si no cambió, GitHub responde 304, es instantáneo y no gasta cupo.
+  const etags = new Map();
   async function fetchRemoteFull(gh, path) {
     if (!hasStore()) return null;
+    const k = path || '';
     const h = { Accept: 'application/vnd.github+json' };
     if (gh) h.Authorization = 'Bearer ' + gh;
-    const r = await fetch(url(path) + '?ref=' + encodeURIComponent(ST().branch || 'datos') + '&_=' + Date.now(), { headers: h, cache: 'no-store' });
-    if (r.status === 404) return { pkg: null, sha: null };
+    const prev = etags.get(k); if (prev) h['If-None-Match'] = prev.etag;
+    const r = await fetch(url(path) + '?ref=' + encodeURIComponent(ST().branch || 'datos'), { headers: h, cache: 'no-store' });
+    if (r.status === 304 && prev) return prev.val;
+    if (r.status === 404) { etags.delete(k); return { pkg: null, sha: null }; }
     if (!r.ok) throw new Error('lectura_' + r.status);
     const j = await r.json();
-    return { pkg: JSON.parse(fromB64Utf8(j.content)), sha: j.sha };
+    const val = { pkg: JSON.parse(fromB64Utf8(j.content)), sha: j.sha };
+    const et = r.headers.get('ETag'); if (et) etags.set(k, { etag: et, val }); else etags.delete(k);
+    return val;
   }
   async function fetchRemote(gh) { const f = await fetchRemoteFull(gh); return f ? f.pkg : null; }
   // Devuelve el paquete más reciente entre el incluido en la página y el guardado.
@@ -884,10 +891,21 @@ window.TL = (() => {
       throw new Error('sesion_' + r.status);
     }
   }
+  // Cupo de GitHub (consultarlo no gasta cupo). Se anota para mostrarlo en el inicio.
+  let cupoT = null;
+  async function cupo(sess) {
+    if (!sess || !sess.gh) return;
+    try {
+      const r = await fetch('https://api.github.com/rate_limit', { headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + sess.gh }, cache: 'no-store' });
+      if (!r.ok) return; const c = (await r.json()).resources.core;
+      localStorage.setItem('tl-cupo', JSON.stringify({ limit: c.limit, remaining: c.remaining, reset: c.reset * 1000, revisado: Date.now() }));
+    } catch (e) {}
+  }
   const SES = {
     sid: null,
     async abrir(sess, unidad) {
       SES.sid = uid() + uid();
+      cupo(sess); clearInterval(cupoT); cupoT = setInterval(() => cupo(sess), 120000);
       if (!sess.gh || !sess.id) return;
       try { await sesEscribir(sess, (m) => { m[sess.id] = { sid: SES.sid, unidad, desde: nowIso() }; }); } catch (e) {}
     },
@@ -896,7 +914,17 @@ window.TL = (() => {
     // Revisa cada 25 s si esta sigue siendo la sesión vigente
     vigilar(getSess, alCerrar) { setInterval(async () => { const s = getSess(); if (!s || document.hidden) return; if (!(await SES.vigente(s))) alCerrar('Se cerró tu sesión porque tu usuario entró en otro equipo o pestaña. Solo se permite una sesión abierta por usuario.'); }, 25000); document.addEventListener('visibilitychange', async () => { const s = getSess(); if (s && !document.hidden && !(await SES.vigente(s))) alCerrar('Se cerró tu sesión porque tu usuario entró en otro equipo o pestaña. Solo se permite una sesión abierta por usuario.'); }); },
   };
-  return { SES, putBin, getBin, SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
+  // Archivo JSON genérico en la rama "datos" (lo usa el chat). Devuelve el sha nuevo, o null si otra persona guardó antes.
+  async function putJson(sess, path, obj, sha, msg) {
+    if (!sess.gh) throw new Error('sin_permiso');
+    const body = { message: msg, content: toB64Utf8(JSON.stringify(obj)), branch: ST().branch || 'datos' }; if (sha) body.sha = sha;
+    const r = await fetch(url(path), { method: 'PUT', headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + sess.gh, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    if (r.status === 409 || r.status === 422) return null;
+    if (r.status === 401 || r.status === 403) throw new Error('token');
+    if (!r.ok) throw new Error('guardar_' + r.status);
+    return (await r.json()).content.sha;
+  }
+  return { leerJson: fetchRemoteFull, putJson, stamp, SES, putBin, getBin, SEG, USR, unlock, importKey, open, seal, latest, fetchRemote, save, hasApi, embedded, b64, tob64, EV };
 })();
 </script>
 </head>
@@ -1944,7 +1972,7 @@ window.TL_INFORMES_BASE = '../informes/';
       rerender();
     } catch (e) {}
   }
-  setInterval(poll, 20000);
+  setInterval(poll, 6000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) poll(); });
 
   form.addEventListener('submit', async (ev) => {
