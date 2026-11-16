@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-YHm75Jg5qK7IMVXWVW+XmBlpxHvPg7GMT/VUZ8MDFmE=' 'sha256-dx9CIfCyEAkvzaFVK4vO3G9GuB5Ph/jRASxQYPJhBog=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-6VeTxieQ/mGwsA/1TkXxhW/eOfdiBIClbVSaO+9grj0=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-APSqcV+/bsHlTXP0fpJXKV20BNR9xeOTd45kiJadnWM=' 'sha256-FjpZGgsbtZIYO0GEi0wj21w1oct66B20j1+KGxdlEuw=' 'sha256-PdRprVoyDwFfHym5jiVKwVKzhRw0tFZ/yLOjQ+ukyI4=' 'sha256-SRYW54lgna5OooaqEVwyxVISIboPpohOnSeznOYAd2M=' 'sha256-b9hj3bxnPg3vLXro1GPfdUV/XrYdPSgj3rR+I+y7KZI=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-Jtt9k4DP/8o7HeIxQMwoFShPh1lqMNTvY4Hgt9tgVWo=' 'sha256-YHm75Jg5qK7IMVXWVW+XmBlpxHvPg7GMT/VUZ8MDFmE=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-6VeTxieQ/mGwsA/1TkXxhW/eOfdiBIClbVSaO+9grj0=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-APSqcV+/bsHlTXP0fpJXKV20BNR9xeOTd45kiJadnWM=' 'sha256-FjpZGgsbtZIYO0GEi0wj21w1oct66B20j1+KGxdlEuw=' 'sha256-PdRprVoyDwFfHym5jiVKwVKzhRw0tFZ/yLOjQ+ukyI4=' 'sha256-SRYW54lgna5OooaqEVwyxVISIboPpohOnSeznOYAd2M=' 'sha256-b9hj3bxnPg3vLXro1GPfdUV/XrYdPSgj3rR+I+y7KZI=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -1982,13 +1982,14 @@ window.dash = (() => {
         if (!window.__infDoc) { window.__infDoc = 1; document.addEventListener('click', () => document.querySelectorAll('.inf-tip').forEach((t) => { t.hidden = true; })); }
         c.append(el('p', 'lead', lead));
         const dl = el('dl');
-        (e.canales ? Object.entries(e.canales).concat([['Total', e.ingresos], ['Costos 2026 (efectivo)', e.costos]]) : [['Ingresos', e.ingresos], ['Costos', e.costos], ['Diferencia', e.diferencia]]).forEach(([n, v]) => { const d = el('div'); d.append(el('dt', null, n), el('dd', null, M(v))); dl.appendChild(d); });
+        (e.canales ? Object.entries(e.canales).concat([['Total', e.ingresos]]) : [['Ingresos', e.ingresos], ['Costos', e.costos], ['Diferencia', e.diferencia]]).forEach(([n, v]) => { const d = el('div'); d.append(el('dt', null, n), el('dd', null, M(v))); dl.appendChild(d); });
         c.appendChild(dl);
         const r = el('div', 'res ' + (e.superavit ? 'ok' : 'bad')); r.append(el('span', null, e.superavit ? 'Superávit' : 'Déficit'), el('b', null, (e.superavit ? '▲ ' : '▼ ') + M(Math.abs(e.diferencia)))); c.appendChild(r);
         const mx = Math.max(e.ingresos, e.costos) || 1; const bal = el('div', 'bal');
         [['Ingresos', e.ingresos, '#c800a1'], ['Costos', e.costos, '#5a0049']].forEach(([n, v, col]) => { const rr = el('div', 'bal-row'); const bb = el('div', 'bb'); const f = el('i'); f.style.width = (v / mx * 100) + '%'; f.style.background = col; bb.appendChild(f); rr.append(el('span', 'lbl', n), bb, el('span', 'val', M(v))); bal.appendChild(rr); });
         c.appendChild(bal);
         if (foot) c.appendChild(el('p', 'note', foot));
+        if (e.canales) c.querySelectorAll('.res, .bal, .note').forEach((x) => x.remove());
         return c;
       };
       const chs = (e) => e.canales ? Object.entries(e.canales).map(([k, v]) => k + ' ' + M(v)).join(' · ') + '.' : '';
