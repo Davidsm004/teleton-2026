@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-TVGUQgEl7Vxng1Yh/tPXFdUFrGq0ByFIpxBgqR0gNVM=' 'sha256-UcmLPzCMHGN0OENQkSJK9Xf3/cXfh97g3IhkOOwUpu0=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-L+rOO6kQp00X5KvkavhBI3uKwGvV7FHdmRBWDvInKck=' 'sha256-YHm75Jg5qK7IMVXWVW+XmBlpxHvPg7GMT/VUZ8MDFmE=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -594,9 +594,9 @@ window.TL = (() => {
       filas: costos.map((r) => [r.concepto, mm(r.efectivo_m), mm(r.donacion_m), r.fijo !== false ? 'Fijo' : 'Variable']), totales: ['Total 2026', mm(P.efectivo), mm(P.especie), 'Fijos ' + col(mm(P.fijos))] });
     const cev = (d.costos_evento || []).filter((r) => Number(r.efectivo_m));
     if (cev.length) sec.push({ tipo: 'grafico', titulo: 'Costo del evento por rubro (solo efectivo)', grafico: 'barra', formato: 'colones', etiquetas: cev.map((r) => r.rubro || 'Rubro'), series: [{ nombre: 'Efectivo', valores: cev.map((r) => mm(r.efectivo_m)) }] });
-    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Real', 'Base', 'Optimista', 'Pesimista'], series: [{ nombre: 'Ingresos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
+    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Base', 'Optimista', 'Pesimista'], series: [{ nombre: 'Ingresos', valores: [S.base, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.base, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
     sec.push({ tipo: 'tabla', titulo: 'Escenarios financieros', columnas: ['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado'], formatos: [null, 'colones', 'colones', 'colones', null],
-      filas: [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
+      filas: [['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
       nota: 'Real: total asegurado + pizarra vs. costos en efectivo. Base, Optimista y Pesimista: proyecciones 2026 por canales frente a los costos en efectivo.' });
     sec.push({ tipo: 'seccion', numero: '02', titulo: 'Teletón 2026', texto: 'Pizarra del evento · 20 y 21 de noviembre · Gimnasio Nacional' });
     if (P.meta) sec.push({ tipo: 'progreso', titulo: 'Pizarra frente a la Meta 2026', meta: mm(P.meta), recaudado: E.total });
@@ -705,7 +705,7 @@ window.TL = (() => {
       .forEach((r) => { rs.addRow(r).getCell(2).numFmt = MON; });
     rs.addRow([]);
     head(rs.addRow(['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado']));
-    [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
+    [['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
     // Datos editables
     const ej = []; (d.patrocinios || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Patrocinio', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) })); (d.donaciones || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Donación', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) }));
     hoja('Ejecutivos', [{ h: 'Ejecutivo' }, { h: 'Tipo' }, { h: 'Estado' }, { h: 'Cantidad' }, { h: 'Monto', m: 1 }], ej, 'Tipo: Patrocinio (Firmado, Sin firmar, Prospectado) o Donación (Confirmada, Prospectada).');
@@ -1928,7 +1928,6 @@ window.TL_INFORMES_BASE = '../informes/';
       return c;
     };
     box.replaceChildren(
-      card('Real', S.real, S.real.meta ? (S.real.faltaMeta > 0 ? 'Faltan ' + M(S.real.faltaMeta) + ' para la Meta 2026 (' + Math.round(S.real.avance * 100) + '%)' : 'Meta 2026 alcanzada') : ''),
       card('Base', S.base, S.base.porDefecto ? 'Ingresos = proyección por tendencia' : ''),
       card('Optimista', S.deseado, 'Meta mínima para cubrir todo: ' + M(S.deseado.metaMinima)),
       card('Pesimista', S.caotico, 'Cubre solo costos fijos: ' + M(P.fijos)));

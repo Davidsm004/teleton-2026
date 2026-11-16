@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-YpZrUba+jtKyc0bQdFazqJ3fnhk+aa1m3ChT2FXKftc=' 'sha256-UcmLPzCMHGN0OENQkSJK9Xf3/cXfh97g3IhkOOwUpu0=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-6VeTxieQ/mGwsA/1TkXxhW/eOfdiBIClbVSaO+9grj0=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-APSqcV+/bsHlTXP0fpJXKV20BNR9xeOTd45kiJadnWM=' 'sha256-FjpZGgsbtZIYO0GEi0wj21w1oct66B20j1+KGxdlEuw=' 'sha256-PdRprVoyDwFfHym5jiVKwVKzhRw0tFZ/yLOjQ+ukyI4=' 'sha256-SRYW54lgna5OooaqEVwyxVISIboPpohOnSeznOYAd2M=' 'sha256-b9hj3bxnPg3vLXro1GPfdUV/XrYdPSgj3rR+I+y7KZI=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-YHm75Jg5qK7IMVXWVW+XmBlpxHvPg7GMT/VUZ8MDFmE=' 'sha256-dx9CIfCyEAkvzaFVK4vO3G9GuB5Ph/jRASxQYPJhBog=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-6VeTxieQ/mGwsA/1TkXxhW/eOfdiBIClbVSaO+9grj0=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-APSqcV+/bsHlTXP0fpJXKV20BNR9xeOTd45kiJadnWM=' 'sha256-FjpZGgsbtZIYO0GEi0wj21w1oct66B20j1+KGxdlEuw=' 'sha256-PdRprVoyDwFfHym5jiVKwVKzhRw0tFZ/yLOjQ+ukyI4=' 'sha256-SRYW54lgna5OooaqEVwyxVISIboPpohOnSeznOYAd2M=' 'sha256-b9hj3bxnPg3vLXro1GPfdUV/XrYdPSgj3rR+I+y7KZI=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -595,9 +595,9 @@ window.TL = (() => {
       filas: costos.map((r) => [r.concepto, mm(r.efectivo_m), mm(r.donacion_m), r.fijo !== false ? 'Fijo' : 'Variable']), totales: ['Total 2026', mm(P.efectivo), mm(P.especie), 'Fijos ' + col(mm(P.fijos))] });
     const cev = (d.costos_evento || []).filter((r) => Number(r.efectivo_m));
     if (cev.length) sec.push({ tipo: 'grafico', titulo: 'Costo del evento por rubro (solo efectivo)', grafico: 'barra', formato: 'colones', etiquetas: cev.map((r) => r.rubro || 'Rubro'), series: [{ nombre: 'Efectivo', valores: cev.map((r) => mm(r.efectivo_m)) }] });
-    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Real', 'Base', 'Optimista', 'Pesimista'], series: [{ nombre: 'Ingresos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
+    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Base', 'Optimista', 'Pesimista'], series: [{ nombre: 'Ingresos', valores: [S.base, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.base, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
     sec.push({ tipo: 'tabla', titulo: 'Escenarios financieros', columnas: ['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado'], formatos: [null, 'colones', 'colones', 'colones', null],
-      filas: [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
+      filas: [['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
       nota: 'Real: total asegurado + pizarra vs. costos en efectivo. Base, Optimista y Pesimista: proyecciones 2026 por canales frente a los costos en efectivo.' });
     sec.push({ tipo: 'seccion', numero: '02', titulo: 'Teletón 2026', texto: 'Pizarra del evento · 20 y 21 de noviembre · Gimnasio Nacional' });
     if (P.meta) sec.push({ tipo: 'progreso', titulo: 'Pizarra frente a la Meta 2026', meta: mm(P.meta), recaudado: E.total });
@@ -706,7 +706,7 @@ window.TL = (() => {
       .forEach((r) => { rs.addRow(r).getCell(2).numFmt = MON; });
     rs.addRow([]);
     head(rs.addRow(['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado']));
-    [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
+    [['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
     // Datos editables
     const ej = []; (d.patrocinios || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Patrocinio', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) })); (d.donaciones || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Donación', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) }));
     hoja('Ejecutivos', [{ h: 'Ejecutivo' }, { h: 'Tipo' }, { h: 'Estado' }, { h: 'Cantidad' }, { h: 'Monto', m: 1 }], ej, 'Tipo: Patrocinio (Firmado, Sin firmar, Prospectado) o Donación (Confirmada, Prospectada).');
@@ -1982,7 +1982,7 @@ window.dash = (() => {
         if (!window.__infDoc) { window.__infDoc = 1; document.addEventListener('click', () => document.querySelectorAll('.inf-tip').forEach((t) => { t.hidden = true; })); }
         c.append(el('p', 'lead', lead));
         const dl = el('dl');
-        [['Ingresos', e.ingresos], ['Costos', e.costos], ['Diferencia', e.diferencia]].forEach(([n, v]) => { const d = el('div'); d.append(el('dt', null, n), el('dd', null, M(v))); dl.appendChild(d); });
+        (e.canales ? Object.entries(e.canales).concat([['Total', e.ingresos], ['Costos 2026 (efectivo)', e.costos]]) : [['Ingresos', e.ingresos], ['Costos', e.costos], ['Diferencia', e.diferencia]]).forEach(([n, v]) => { const d = el('div'); d.append(el('dt', null, n), el('dd', null, M(v))); dl.appendChild(d); });
         c.appendChild(dl);
         const r = el('div', 'res ' + (e.superavit ? 'ok' : 'bad')); r.append(el('span', null, e.superavit ? 'Superávit' : 'Déficit'), el('b', null, (e.superavit ? '▲ ' : '▼ ') + M(Math.abs(e.diferencia)))); c.appendChild(r);
         const mx = Math.max(e.ingresos, e.costos) || 1; const bal = el('div', 'bal');
@@ -1993,10 +1993,9 @@ window.dash = (() => {
       };
       const chs = (e) => e.canales ? Object.entries(e.canales).map(([k, v]) => k + ' ' + M(v)).join(' · ') + '.' : '';
       $('esc-grid').replaceChildren(
-        card('e-re', 'Real', 'Situación actual frente a la meta: ingresos = total asegurado + total de la pizarra; costos = Costos 2026 en efectivo.', S.real, S.real.meta ? (S.real.faltaMeta > 0 ? 'Frente a la Meta 2026 (' + M(S.real.meta) + '): llevamos ' + Math.round(S.real.avance * 100) + '% y faltan ' + M(S.real.faltaMeta) + '.' : 'Meta 2026 (' + M(S.real.meta) + ') alcanzada.') : ''),
-        card('e-ba', 'Base', 'Proyección base 2026 por canales frente a los costos 2026 en efectivo.', S.base, (S.base.porDefecto ? 'Ingresos = proyección por tendencia del histórico. ' : '') + chs(S.base)),
-        card('e-de', 'Optimista', 'Proyección optimista 2026 frente a los costos del evento, del proyecto, de la operativa del club y los rubros adicionales.', S.deseado, (S.deseado.porDefecto ? 'Ingresos = Meta 2026 (no se definió el escenario optimista). ' : '') + chs(S.deseado) + ' Meta mínima para cubrir todo: ' + M(S.deseado.metaMinima) + '.'),
-        card('e-ca', 'Pesimista', 'Proyección pesimista 2026: no se alcanza la meta, pero hay que cubrir los costos fijos del evento, del proyecto y de la operativa.', S.caotico, (S.caotico.porDefecto ? 'Ingresos = peor año del histórico. ' : '') + chs(S.caotico) + ' Monto mínimo a recaudar: ' + M(PL.fijos) + '.'));
+        card('e-ba', 'Base', 'Proyección base 2026 por canales frente a los costos 2026 en efectivo.', S.base, (S.base.porDefecto ? 'Ingresos = proyección por tendencia del histórico. ' : '') ),
+        card('e-de', 'Optimista', 'Proyección optimista 2026 frente a los costos del evento, del proyecto, de la operativa del club y los rubros adicionales.', S.deseado, (S.deseado.porDefecto ? 'Ingresos = Meta 2026 (no se definió el escenario optimista). ' : '') + 'Meta mínima para cubrir todo: ' + M(S.deseado.metaMinima) + '.'),
+        card('e-ca', 'Pesimista', 'Proyección pesimista 2026: no se alcanza la meta, pero hay que cubrir los costos fijos del evento, del proyecto y de la operativa.', S.caotico, (S.caotico.porDefecto ? 'Ingresos = peor año del histórico. ' : '') + 'Monto mínimo a recaudar: ' + M(PL.fijos) + '.'));
       const trow = (n, v, tot, sub) => { const tr = el('tr', tot ? 'tot' : null); const td = el('td', null, n); if (sub) td.appendChild(el('span', 'sub', sub)); tr.append(td, el('td', null, M(v))); return tr; };
       $('esc-tde').querySelector('tbody').replaceChildren(trow('Costos 2026 (efectivo)', S.deseado.base, false, 'Evento, proyecto, operativa y demás variables'), ...S.deseado.rubros.map((r) => trow(r.nombre || 'Rubro', r.total, false, r.lineas.map((l) => (l.concepto || 'Línea') + ': ' + M(l.monto_m)).join(' · '))), trow('Meta mínima', S.deseado.metaMinima, true));
       $('esc-tca').querySelector('tbody').replaceChildren(...S.caotico.fijosRows.map((r) => trow(r.concepto, Number(r.efectivo_m) || 0)), trow('Total costos fijos', PL.fijos, true));
