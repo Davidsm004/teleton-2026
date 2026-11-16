@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-0LDbqo/u1LCmAsjV4xX2NEEsqvaoBNK+13Oj1fL05jo=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-HU9tukWCkt8UrAfQm6go5/rsSke+ZTLEFe1wBjZBz4w=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-TVGUQgEl7Vxng1Yh/tPXFdUFrGq0ByFIpxBgqR0gNVM=' 'sha256-UcmLPzCMHGN0OENQkSJK9Xf3/cXfh97g3IhkOOwUpu0=' 'sha256-3Hrvr/by9Z0HPS45VPHxaCuJoeDpfXeFWqizaayypWk=' 'sha256-8ICWEL0Mshsq7FH5QCVOl9nnDkbtHE4kDGPK98RwTx8=' 'sha256-dyH7zHRTlhoVQ6W7QEOS9KFgrrYi6Z+3hNlrtfnTGUE=' 'sha256-yLUpk7DEUoc1mFFHdMrjCtR+pzn2/vXWL+x3fQbBEvQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com; worker-src 'self' blob:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
@@ -530,7 +530,7 @@ window.TL = (() => {
     const amb = Number((metas.find((r) => r.concepto === 'Meta ambiciosa 2026') || {}).monto_m) || 0;
     const pizarra = evento(d).total / 1e6;
     const esc = (id) => (d.escenarios || []).find((e) => e.id === id) || {};
-    const de = esc('deseado'), ca = esc('caotico');
+    const de = esc('deseado'), ca = esc('caotico'), ba = esc('base');
     const extra = (de.rubros || []).filter((r) => !r.del).map((r) => ({ ...r, lineas: (r.lineas || []).filter((l) => !l.del), total: sm((r.lineas || []).filter((l) => !l.del), (l) => l.monto_m) }));
     const extraT = extra.reduce((s, r) => s + r.total, 0);
     const peor = P.totY.length ? Math.min(...P.totY) : 0;
@@ -538,7 +538,9 @@ window.TL = (() => {
     const real = { ...mk(asegurado + pizarra, efectivo), meta, faltaMeta: meta - (asegurado + pizarra), avance: meta ? (asegurado + pizarra) / meta : 0 };
     const deseado = { ...mk(Number(de.ingresos_m) || meta, efectivo + extraT), base: efectivo, rubros: extra, extraT, metaMinima: efectivo + extraT, porDefecto: !(Number(de.ingresos_m) > 0) };
     const caotico = { ...mk(Number(ca.ingresos_m) || peor, fijos), peor, porDefecto: !(Number(ca.ingresos_m) > 0), fijosRows: costos.filter((r) => r.fijo !== false) };
-    return { pf, dc, asegurado, proy: P, proyeccion: P.proy, efectivo, especie, fijos, meta, amb, pizarra, escenarios: { real, deseado, caotico } };
+    const base = { ...mk(Number(ba.ingresos_m) || P.proy, efectivo), porDefecto: !(Number(ba.ingresos_m) > 0), canales: ba.canales || null };
+    deseado.canales = de.canales || null; caotico.canales = ca.canales || null;
+    return { pf, dc, asegurado, proy: P, proyeccion: P.proy, efectivo, especie, fijos, meta, amb, pizarra, escenarios: { real, base, deseado, caotico } };
   }
   // ---------- Descargas completas (Excel / PDF / PowerPoint) y carga de datos ----------
   const scriptP = {};
@@ -592,10 +594,10 @@ window.TL = (() => {
       filas: costos.map((r) => [r.concepto, mm(r.efectivo_m), mm(r.donacion_m), r.fijo !== false ? 'Fijo' : 'Variable']), totales: ['Total 2026', mm(P.efectivo), mm(P.especie), 'Fijos ' + col(mm(P.fijos))] });
     const cev = (d.costos_evento || []).filter((r) => Number(r.efectivo_m));
     if (cev.length) sec.push({ tipo: 'grafico', titulo: 'Costo del evento por rubro (solo efectivo)', grafico: 'barra', formato: 'colones', etiquetas: cev.map((r) => r.rubro || 'Rubro'), series: [{ nombre: 'Efectivo', valores: cev.map((r) => mm(r.efectivo_m)) }] });
-    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Real', 'Deseado', 'Caótico'], series: [{ nombre: 'Ingresos', valores: [S.real, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.real, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
+    sec.push({ tipo: 'grafico', titulo: 'Escenarios financieros: ingresos vs. costos', grafico: 'columna', formato: 'colones', etiquetas: ['Real', 'Base', 'Optimista', 'Pesimista'], series: [{ nombre: 'Ingresos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.ingresos)) }, { nombre: 'Costos', valores: [S.real, S.base, S.deseado, S.caotico].map((e) => mm(e.costos)) }] });
     sec.push({ tipo: 'tabla', titulo: 'Escenarios financieros', columnas: ['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado'], formatos: [null, 'colones', 'colones', 'colones', null],
-      filas: [['Real', S.real], ['Deseado', S.deseado], ['Caótico', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
-      nota: 'Real: total asegurado + pizarra vs. costos en efectivo. Deseado: meta que cubre todos los costos y rubros adicionales. Caótico: solo costos fijos.' });
+      filas: [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].map(([n, e]) => [n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']),
+      nota: 'Real: total asegurado + pizarra vs. costos en efectivo. Base, Optimista y Pesimista: proyecciones 2026 por canales frente a los costos en efectivo.' });
     sec.push({ tipo: 'seccion', numero: '02', titulo: 'Teletón 2026', texto: 'Pizarra del evento · 20 y 21 de noviembre · Gimnasio Nacional' });
     if (P.meta) sec.push({ tipo: 'progreso', titulo: 'Pizarra frente a la Meta 2026', meta: mm(P.meta), recaudado: E.total });
     sec.push({ tipo: 'cifras', titulo: 'Composición de la pizarra', cifras: [{ valor: E.manual, formato: 'colones', etiqueta: 'Pizarras registradas' }, { valor: E.rubrosTotal, formato: 'colones', etiqueta: 'Rubros personalizados' }, { valor: E.previo, formato: 'colones', etiqueta: 'Monto previo al evento' }, { valor: E.pizarras.length, formato: 'numero', etiqueta: 'pizarras presentadas' }] });
@@ -703,7 +705,7 @@ window.TL = (() => {
       .forEach((r) => { rs.addRow(r).getCell(2).numFmt = MON; });
     rs.addRow([]);
     head(rs.addRow(['Escenario', 'Ingresos', 'Costos', 'Diferencia', 'Resultado']));
-    [['Real', S.real], ['Deseado', S.deseado], ['Caótico', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
+    [['Real', S.real], ['Base', S.base], ['Optimista', S.deseado], ['Pesimista', S.caotico]].forEach(([n, e]) => { const r = rs.addRow([n, mm(e.ingresos), mm(e.costos), mm(e.diferencia), e.superavit ? 'Superávit' : 'Déficit']); [2, 3, 4].forEach((c) => { r.getCell(c).numFmt = MON; }); });
     // Datos editables
     const ej = []; (d.patrocinios || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Patrocinio', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) })); (d.donaciones || []).forEach((r) => ej.push({ Ejecutivo: r.agente, Tipo: 'Donación', Estado: r.estado, Cantidad: Number(r.cantidad) || 0, Monto: mm(r.monto_m) }));
     hoja('Ejecutivos', [{ h: 'Ejecutivo' }, { h: 'Tipo' }, { h: 'Estado' }, { h: 'Cantidad' }, { h: 'Monto', m: 1 }], ej, 'Tipo: Patrocinio (Firmado, Sin firmar, Prospectado) o Donación (Confirmada, Prospectada).');
@@ -765,7 +767,7 @@ window.TL = (() => {
         if (/^meta deseada$/i.test(norm(ru))) { de.ingresos_m = m; return; }
         let rb = de.rubros.find((x) => x.nombre === (ru || 'Rubro')); if (!rb) { rb = { id: uid(), nombre: ru || 'Rubro', lineas: [] }; de.rubros.push(rb); }
         if (m || String(g(r, 'Concepto')).trim()) rb.lineas.push({ id: uid(), concepto: String(g(r, 'Concepto')), monto_m: m }); });
-      out.escenarios = [de, cao]; hojas.push('Escenarios'); }
+      out.escenarios = [de, cao].concat(((d || {}).escenarios || []).filter((e) => e.id === 'base')); hojas.push('Escenarios'); }
     const pv = sheet('Monto previo');
     if (pv) { const r = pv.find((x) => !isNota(x)) || {}; const m = num(g(r, 'Monto')); if (!isNaN(m)) { const c = { ...(act(d.evento_config)[0] || { id: 'config' }) }; if ((Number(c.previo) || 0) !== m || (c.nota_previo || '') !== String(g(r, 'Detalle'))) { c.previo = m; c.nota_previo = String(g(r, 'Detalle')); c.t = nowIso(); } out.evento_config = [c]; } hojas.push('Monto previo'); }
     let ev = null;
@@ -1590,18 +1592,23 @@ body:has(.btn-save) #ch-fab{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
         <h2>Escenarios financieros</h2>
         <p class="hint">Los costos salen de Costos 2026 (solo efectivo). Todo se recalcula solo.</p>
         <div class="esc-res" id="esc-res"></div>
-        <h3 class="sub-h">Escenario deseado</h3>
+        <h3 class="sub-h">Escenario base</h3>
+        <p class="hint">Proyección base 2026 por canales. Si la dejás en 0 se usa la proyección por tendencia del histórico.</p>
+        <div class="prev-row">
+          <div class="f"><span class="lab">Ingresos base</span><span id="ba-ing"></span></div>
+        </div>
+        <h3 class="sub-h">Escenario optimista</h3>
         <p class="hint">Meta que cubre los costos del evento, del proyecto y de la operativa del club. Agregá los rubros adicionales que la meta debe cubrir, con todas las líneas que necesités.</p>
         <div class="prev-row">
-          <div class="f"><span class="lab">Meta deseada (ingresos)</span><span id="de-ing"></span></div>
+          <div class="f"><span class="lab">Ingresos optimistas</span><span id="de-ing"></span></div>
           <p class="hint" id="de-ing-h"></p>
         </div>
         <div class="blocks-ed" id="de-rubros"></div>
         <div><button class="btn-s" id="add-de-rubro" type="button">+ Agregar rubro</button></div>
-        <h3 class="sub-h">Escenario caótico</h3>
+        <h3 class="sub-h">Escenario pesimista</h3>
         <p class="hint">No se alcanza la meta, pero igual hay que cubrir los costos fijos del evento, del proyecto y de la operativa de la oficina (los marcados como Fijo en Costos 2026).</p>
         <div class="prev-row">
-          <div class="f"><span class="lab">Ingresos esperados (caótico)</span><span id="ca-ing"></span></div>
+          <div class="f"><span class="lab">Ingresos esperados (pesimista)</span><span id="ca-ing"></span></div>
           <p class="hint" id="ca-ing-h"></p>
         </div>
       </div>
@@ -1882,6 +1889,7 @@ window.TL_INFORMES_BASE = '../informes/';
   }
   function renderEsc() {
     const de = esc('deseado'), ca = esc('caotico'); de.rubros = de.rubros || [];
+    $('ba-ing').replaceChildren(num(esc('base'), 'ingresos_m', { m: true, label: 'Ingresos del escenario base' }));
     $('de-ing').replaceChildren(num(de, 'ingresos_m', { m: true, label: 'Meta deseada' }));
     $('ca-ing').replaceChildren(num(ca, 'ingresos_m', { m: true, label: 'Ingresos esperados en el escenario caótico' }));
     const box = $('de-rubros'); box.replaceChildren();
@@ -1921,8 +1929,9 @@ window.TL_INFORMES_BASE = '../informes/';
     };
     box.replaceChildren(
       card('Real', S.real, S.real.meta ? (S.real.faltaMeta > 0 ? 'Faltan ' + M(S.real.faltaMeta) + ' para la Meta 2026 (' + Math.round(S.real.avance * 100) + '%)' : 'Meta 2026 alcanzada') : ''),
-      card('Deseado', S.deseado, 'Meta mínima para cubrir todo: ' + M(S.deseado.metaMinima)),
-      card('Caótico', S.caotico, 'Cubre solo costos fijos: ' + M(P.fijos)));
+      card('Base', S.base, S.base.porDefecto ? 'Ingresos = proyección por tendencia' : ''),
+      card('Optimista', S.deseado, 'Meta mínima para cubrir todo: ' + M(S.deseado.metaMinima)),
+      card('Pesimista', S.caotico, 'Cubre solo costos fijos: ' + M(P.fijos)));
   }
 
   // ---------- Pizarra: utilidades ----------
